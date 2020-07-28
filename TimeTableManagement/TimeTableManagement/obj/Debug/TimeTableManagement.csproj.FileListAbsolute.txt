@@ -1,0 +1,12 @@
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\bin\Debug\myDB.mdf
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\bin\Debug\myDB_log.ldf
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe.config
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.pdb
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csprojAssemblyReference.cache
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Controller.Location.Location.resources
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Properties.Resources.resources
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.GenerateResource.cache
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.CoreCompileInputs.cache
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.exe
+C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.pdb
