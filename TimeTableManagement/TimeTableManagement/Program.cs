@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TimeTableManagement.Forms.Location;
+using TimeTableManagement.Forms;
 
 namespace TimeTableManagement
 {
@@ -15,7 +15,7 @@ namespace TimeTableManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Location());
+            Application.Run(new students());
         }
     }
 }
