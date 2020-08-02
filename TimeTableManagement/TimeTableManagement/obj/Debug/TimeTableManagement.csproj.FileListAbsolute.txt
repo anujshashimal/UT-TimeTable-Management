@@ -10,3 +10,14 @@ C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\
 C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.CoreCompileInputs.cache
 C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.exe
 C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.pdb
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe.config
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.exe
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.pdb
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csprojResolveAssemblyReference.cache
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB.mdf
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB_log.ldf
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.pdb
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Properties.Resources.resources
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.GenerateResource.Cache
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.students.resources

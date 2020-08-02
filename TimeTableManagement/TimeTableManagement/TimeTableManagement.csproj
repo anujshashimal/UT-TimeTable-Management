@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TimeTableManagement</RootNamespace>
     <AssemblyName>TimeTableManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -61,13 +62,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Location.cs">
+    <Compile Include="Controller\lahiruconn\Studentcon.cs" />
+    <Compile Include="DBConnection\DbConn.cs" />
+    <Compile Include="Forms\students.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Location.Designer.cs">
-      <DependentUpon>Location.cs</DependentUpon>
+    <Compile Include="Forms\students.Designer.cs">
+      <DependentUpon>students.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBConnection\DbConn.cs" />
+    <Compile Include="Model\lahirumodel\studentmodel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,8 +78,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Location.resx">
-      <DependentUpon>Location.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\students.resx">
+      <DependentUpon>students.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +89,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="myDBDataSet.xsc">
       <DependentUpon>myDBDataSet.xsd</DependentUpon>
@@ -112,6 +116,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore">
+      <SubType>Form</SubType>
+    </Content>
     <Content Include="myDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -121,9 +128,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\getConn\" />
     <Folder Include="Controller\Location\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
