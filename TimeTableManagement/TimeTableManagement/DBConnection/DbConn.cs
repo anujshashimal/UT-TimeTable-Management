@@ -16,5 +16,32 @@ namespace TimeTableManagement.DBConnection
             return conn;
         }
 
+        public SqlConnection getDBConnection1()
+        {
+            string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=Students;Integrated Security=True;MultipleActiveResultSets = True";
+            SqlConnection conn = new SqlConnection(conString);
+            return conn;
+        }
+
+        public SqlConnection getDBConnection2()
+        {
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\myDB.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection conn = new SqlConnection(conString);
+            return conn;
+        }
+        public SqlConnection getDBConnection3()
+        {
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\myDB.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection conn = new SqlConnection(conString);
+            return conn;
+        }
+
+
     }
+
+
+
+
+
+
 }
