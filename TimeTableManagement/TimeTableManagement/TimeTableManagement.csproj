@@ -74,6 +74,12 @@
     <Compile Include="Forms\Admindashboard.Designer.cs">
       <DependentUpon>Admindashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\anujTesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\anujTesting.Designer.cs">
+      <DependentUpon>anujTesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

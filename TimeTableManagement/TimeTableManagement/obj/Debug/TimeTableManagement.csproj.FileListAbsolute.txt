@@ -25,3 +25,19 @@ C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagemen
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.studentdashboard.resources
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Form3.resources
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.lakatesting.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB.mdf
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB_log.ldf
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe.config
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.pdb
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Admindashboard.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.dashboard.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.lakatesting.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.students.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.studentdashboard.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Form3.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Properties.Resources.resources
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.GenerateResource.cache
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.CoreCompileInputs.cache
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.exe
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.pdb
