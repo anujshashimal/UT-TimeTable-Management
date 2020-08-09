@@ -13,7 +13,6 @@ C:\Users\Aux-138\source\repos\TimeTableManagement\TimeTableManagement\obj\Debug\
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe.config
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.exe
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.pdb
-C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csprojResolveAssemblyReference.cache
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB.mdf
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB_log.ldf
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe
@@ -25,3 +24,4 @@ C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagemen
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.dashboard.resources
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.studentdashboard.resources
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Form3.resources
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.lakatesting.resources

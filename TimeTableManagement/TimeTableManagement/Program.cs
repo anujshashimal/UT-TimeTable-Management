@@ -15,7 +15,7 @@ namespace TimeTableManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admindashboard());
+            Application.Run(new lakatesting());
         }
     }
 }
