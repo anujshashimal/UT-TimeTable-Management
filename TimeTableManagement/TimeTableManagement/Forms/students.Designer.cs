@@ -332,6 +332,7 @@
             this.Student_Data_Grid_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Student_Data_Grid_View.Size = new System.Drawing.Size(332, 150);
             this.Student_Data_Grid_View.TabIndex = 30;
+            this.Student_Data_Grid_View.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Student_Data_Grid_View_CellContentClick);
             // 
             // button15
             // 
@@ -358,7 +359,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(770, 465);
+            this.ClientSize = new System.Drawing.Size(751, 417);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.Student_Data_Grid_View);

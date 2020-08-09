@@ -94,5 +94,10 @@ namespace TimeTableManagement.Forms
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Form2());
+        }
     }
 }

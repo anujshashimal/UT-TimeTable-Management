@@ -617,5 +617,10 @@ namespace TimeTableManagement.Forms
         {
 
         }
+
+        private void Student_Data_Grid_View_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     }
