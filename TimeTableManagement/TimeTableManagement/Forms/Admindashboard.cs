@@ -69,7 +69,7 @@ namespace TimeTableManagement.Forms
 
         private void button7_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new studentdashboard());
+            OpenChildForm(new students());
         }
 
 
@@ -93,6 +93,11 @@ namespace TimeTableManagement.Forms
         private void button12_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
