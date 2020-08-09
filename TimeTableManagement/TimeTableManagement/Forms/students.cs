@@ -15,7 +15,6 @@ namespace TimeTableManagement.Forms
 {
     public partial class students : Form
     {
-
         Studentcon studentCon = new Studentcon();
         studentmodel studentmod = new studentmodel();
         public static String academicyrsemshldupdatevalue;
@@ -25,93 +24,44 @@ namespace TimeTableManagement.Forms
         public int updatesubgroupnumber;
         public String updatesubgroupid;
 
+
         public students()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tabPage1_Click(object sender, EventArgs e)
         {
+          
+
+
+
+        }
+        private Form activeform = null;
+        public void OpenChildForm(Form childform)
+        {
+
+            if (activeform != null)
+                activeform = null;
+            activeform = childform;
+            childform.TopLevel = false;
+            childform.FormBorderStyle = FormBorderStyle.None;
+            childform.Dock = DockStyle.Fill;
+            tabPage1.Controls.Add(childform);
+            childform.BringToFront();
+            childform.Show();
+
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
+            Student_Data_Grid_View.DataSource = studentCon.GetStudentallvalues();
 
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            studentmod.Academicyearsemester1 = academicyearsem.Text;
-            studentCon.insertAcademicyearsemesterDetails(studentmod);
-
-            academicyearsem.Items.Clear();
 
             SqlDataReader dr = studentCon.loadacademicyrsemestervalues();
             while (dr.Read())
-            {
-                academicyearsem.Items.Add(dr.GetValue(0).ToString());
-            }
-
-            dr.Close();
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // academicyrsemshldupdatevalue_index = academicyearsem.Items.IndexOf(academicyearsem.Text);
-            //// Console.WriteLine(academicyrsemshldupdatevalue_index.ToString());
-            academicyrsemshldupdatevalue =  academicyearsem.Text;
-          // GroupId_txt.Text = academicyrsemshldupdatevalue.ToString();
-           
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-                SqlDataReader dr = studentCon.loadacademicyrsemesterallvalues();
-           
-                
-           while (dr.Read())
-            {
-                String academicyrsem = Convert.ToString(dr["AcademicYrsem"]);
-                int academicindexprimarykey = Convert.ToInt32(dr["AcademicYrsemId"]);
-                
-                if (academicyrsemshldupdatevalue.Equals(academicyrsem))
-                {
-                    //GroupId_txt.Text = academicyearsem.Text;
-                    studentmod.Academicyearsemester1 = academicyearsem.Text;
-                    studentmod.Academicyearsemester_id1 = academicindexprimarykey;
-                   
-                     
-                }
-            }
-
-            studentCon.updateacademicyrandsem(studentmod);
-            academicyearsem.Items.Clear();
-            SqlDataReader dr1 = studentCon.loadacademicyrsemestervalues();
-            while (dr1.Read())
-            {
-                academicyearsem.Items.Add(dr1.GetValue(0).ToString());
-            }
-
-            dr1.Close();
-
-
-
-        }
-
-        private void students_Load(object sender, EventArgs e)
-        { 
-
-
-
-            Student_Data_Grid_View.DataSource = studentCon.GetStudentallvalues();
-         
-        
-        
-          SqlDataReader dr = studentCon.loadacademicyrsemestervalues();
-            while(dr.Read())
             {
                 academicyearsem.Items.Add(dr.GetValue(0).ToString());
             }
@@ -158,6 +108,63 @@ namespace TimeTableManagement.Forms
             dr5.Close();
             dr6.Close();
 
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            studentmod.Academicyearsemester1 = academicyearsem.Text;
+            studentCon.insertAcademicyearsemesterDetails(studentmod);
+
+            academicyearsem.Items.Clear();
+
+            SqlDataReader dr = studentCon.loadacademicyrsemestervalues();
+            while (dr.Read())
+            {
+                academicyearsem.Items.Add(dr.GetValue(0).ToString());
+            }
+
+            dr.Close();
+        }
+
+        private void academicyearsem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            // academicyrsemshldupdatevalue_index = academicyearsem.Items.IndexOf(academicyearsem.Text);
+            //// Console.WriteLine(academicyrsemshldupdatevalue_index.ToString());
+            academicyrsemshldupdatevalue = academicyearsem.Text;
+            // GroupId_txt.Text = academicyrsemshldupdatevalue.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlDataReader dr = studentCon.loadacademicyrsemesterallvalues();
+
+
+            while (dr.Read())
+            {
+                String academicyrsem = Convert.ToString(dr["AcademicYrsem"]);
+                int academicindexprimarykey = Convert.ToInt32(dr["AcademicYrsemId"]);
+
+                if (academicyrsemshldupdatevalue.Equals(academicyrsem))
+                {
+                    //GroupId_txt.Text = academicyearsem.Text;
+                    studentmod.Academicyearsemester1 = academicyearsem.Text;
+                    studentmod.Academicyearsemester_id1 = academicindexprimarykey;
+
+
+                }
+            }
+
+            studentCon.updateacademicyrandsem(studentmod);
+            academicyearsem.Items.Clear();
+            SqlDataReader dr1 = studentCon.loadacademicyrsemestervalues();
+            while (dr1.Read())
+            {
+                academicyearsem.Items.Add(dr1.GetValue(0).ToString());
+            }
+
+            dr1.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -191,18 +198,12 @@ namespace TimeTableManagement.Forms
 
             dr1.Close();
 
-
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void Programme_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             programmeupdatevalue = Programme_comboBox.Text;
-           // GroupId_txt.Text = academicyrsemshldupdatevalue.ToString();
+            // GroupId_txt.Text = academicyrsemshldupdatevalue.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -220,7 +221,6 @@ namespace TimeTableManagement.Forms
             }
 
             dr.Close();
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -287,6 +287,11 @@ namespace TimeTableManagement.Forms
             dr1.Close();
         }
 
+        private void Groupnumber_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateGroupnumber = Convert.ToInt32(Groupnumber_comboBox.Text);
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
@@ -302,15 +307,6 @@ namespace TimeTableManagement.Forms
 
             dr.Close();
 
-
-
-
-
-        }
-
-        private void Groupnumber_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            updateGroupnumber = Convert.ToInt32(Groupnumber_comboBox.Text);
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -375,20 +371,9 @@ namespace TimeTableManagement.Forms
             dr1.Close();
         }
 
-        private void GroupId_txt_TextChanged(object sender, EventArgs e)
+        private void GroupId_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void studSubmitbtn_Click(object sender, EventArgs e)
-        {
-                 studentmod.Group_Id1  =  GroupId_comboBox.Text;
-                studentmod.Sub_Group_Id1 = Sub_group_comboBox.Text;
-
-             studentCon.insert_Group_Id_and_SubGroupId(studentmod);
-
-         
-
+            updategroupid = GroupId_comboBox.Text;
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -411,7 +396,6 @@ namespace TimeTableManagement.Forms
             }
 
             dr.Close();
-
 
         }
 
@@ -448,14 +432,14 @@ namespace TimeTableManagement.Forms
             dr1.Close();
         }
 
-        private void GroupId_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void Sub_group_number_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-           updategroupid = GroupId_comboBox.Text;
+            updatesubgroupnumber = Convert.ToInt32(Sub_group_number_comboBox.Text);
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            studentmod.Sub_group_number1  = Convert.ToInt32(Sub_group_number_comboBox.Text);
+            studentmod.Sub_group_number1 = Convert.ToInt32(Sub_group_number_comboBox.Text);
             studentCon.insertsubgroupnumber(studentmod);
 
             Sub_group_number_comboBox.Items.Clear();
@@ -467,12 +451,6 @@ namespace TimeTableManagement.Forms
             }
 
             dr.Close();
-
-        }
-
-        private void Sub_group_number_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            updatesubgroupnumber = Convert.ToInt32(Sub_group_number_comboBox.Text);
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -482,7 +460,7 @@ namespace TimeTableManagement.Forms
 
             while (dr.Read())
             {
-                int subgroupnumber= Convert.ToInt32(dr["Sub_group_number"]);
+                int subgroupnumber = Convert.ToInt32(dr["Sub_group_number"]);
                 int subgroupid = Convert.ToInt32(dr["Sub_group_id"]);
 
                 if (updatesubgroupnumber.Equals(subgroupnumber))
@@ -538,13 +516,18 @@ namespace TimeTableManagement.Forms
             dr1.Close();
         }
 
+        private void Sub_group_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updatesubgroupid = Sub_group_comboBox.Text;
+        }
+
         private void button16_Click(object sender, EventArgs e)
         {
             String academictext = academicyearsem.Text;
             String Programmetxt = Programme_comboBox.Text;
             String groupnumbertxt = Groupnumber_comboBox.Text;
 
-           // GroupId_comboBox.Text = Convert.ToString(academicyearsem.Text.ToString()) + '.' + (Convert.ToString(Programme_comboBox.Text.ToString())) + '.' + (Convert.ToString(Groupnumber_comboBox.Text));
+            // GroupId_comboBox.Text = Convert.ToString(academicyearsem.Text.ToString()) + '.' + (Convert.ToString(Programme_comboBox.Text.ToString())) + '.' + (Convert.ToString(Groupnumber_comboBox.Text));
 
             Sub_group_comboBox.Text = Convert.ToString(GroupId_comboBox.Text.ToString()) + '.' + (Convert.ToString(Sub_group_number_comboBox.Text.ToString()));
 
@@ -561,11 +544,11 @@ namespace TimeTableManagement.Forms
             }
 
             dr.Close();
+
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-
             SqlDataReader dr = studentCon.loadsubgroupidrallvalues();
 
 
@@ -587,7 +570,7 @@ namespace TimeTableManagement.Forms
 
 
             studentCon.DeletesubgroupId(studentmod);
-             Sub_group_comboBox.Items.Clear();
+            Sub_group_comboBox.Items.Clear();
             SqlDataReader dr1 = studentCon.loadsubgroupidrvalues();
             while (dr1.Read())
             {
@@ -597,30 +580,13 @@ namespace TimeTableManagement.Forms
             dr1.Close();
         }
 
-        private void Sub_group_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void studSubmitbtn_Click(object sender, EventArgs e)
         {
-            updatesubgroupid = Sub_group_comboBox.Text;
-        }
+            studentmod.Group_Id1 = GroupId_comboBox.Text;
+            studentmod.Sub_Group_Id1 = Sub_group_comboBox.Text;
 
-        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tagToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            studentdashboard das = new studentdashboard();
-            das.Show();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void Student_Data_Grid_View_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            studentCon.insert_Group_Id_and_SubGroupId(studentmod);
 
         }
     }
-    }
+}

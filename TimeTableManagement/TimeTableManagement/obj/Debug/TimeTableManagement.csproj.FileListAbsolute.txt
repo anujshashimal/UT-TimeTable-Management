@@ -24,4 +24,4 @@ C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagemen
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Admindashboard.resources
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.dashboard.resources
 C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.studentdashboard.resources
-C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Form2.resources
+C:\Users\Hello\Documents\tspm project\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.Form3.resources

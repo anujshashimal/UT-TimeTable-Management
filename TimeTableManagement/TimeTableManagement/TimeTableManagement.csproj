@@ -80,11 +80,11 @@
     <Compile Include="Forms\dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form2.cs">
+    <Compile Include="Forms\students.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Forms\students.Designer.cs">
+      <DependentUpon>students.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\studentdashboard.cs">
       <SubType>Form</SubType>
@@ -92,11 +92,11 @@
     <Compile Include="Forms\studentdashboard.Designer.cs">
       <DependentUpon>studentdashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\students.cs">
+    <Compile Include="Forms\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\students.Designer.cs">
-      <DependentUpon>students.cs</DependentUpon>
+    <Compile Include="Forms\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
@@ -112,14 +112,14 @@
     <EmbeddedResource Include="Forms\dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\students.resx">
+      <DependentUpon>students.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\studentdashboard.resx">
       <DependentUpon>studentdashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\students.resx">
-      <DependentUpon>students.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
