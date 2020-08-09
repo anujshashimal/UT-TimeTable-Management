@@ -80,6 +80,12 @@
     <Compile Include="Forms\dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\lakatesting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\lakatesting.Designer.cs">
+      <DependentUpon>lakatesting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\students.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,12 +104,6 @@
     <Compile Include="Forms\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\testing1cs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\testing1cs.Designer.cs">
-      <DependentUpon>testing1cs.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\lakatesting.resx">
+      <DependentUpon>lakatesting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\students.resx">
       <DependentUpon>students.cs</DependentUpon>
