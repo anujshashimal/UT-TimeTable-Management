@@ -1,6 +1,6 @@
 ﻿namespace TimeTableManagement.Forms
 {
-    partial class testing1cs
+    partial class lakatesting
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "testing1cs";
+            this.Text = "lakatesting";
         }
 
         #endregion

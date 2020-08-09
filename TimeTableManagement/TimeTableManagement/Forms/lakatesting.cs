@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TimeTableManagement.Forms
 {
-    public partial class testing1cs : Form
+    public partial class lakatesting : Form
     {
-        public testing1cs()
+        public lakatesting()
         {
             InitializeComponent();
         }
