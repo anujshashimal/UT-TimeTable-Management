@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\lahiruconn\Studentcon.cs" />
+    <Compile Include="Controller\LocationConn\LocationConn.cs" />
     <Compile Include="DBConnection\DbConn.cs" />
     <Compile Include="Forms\Admindashboard.cs">
       <SubType>Form</SubType>
@@ -92,6 +93,12 @@
     <Compile Include="Forms\lakatesting.Designer.cs">
       <DependentUpon>lakatesting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\location.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\location.Designer.cs">
+      <DependentUpon>location.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\students.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +118,7 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
+    <Compile Include="Model\locationModel\locationModel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\lakatesting.resx">
       <DependentUpon>lakatesting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\location.resx">
+      <DependentUpon>location.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\students.resx">
       <DependentUpon>students.cs</DependentUpon>
@@ -182,9 +193,7 @@
       <DependentUpon>myDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\Location\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

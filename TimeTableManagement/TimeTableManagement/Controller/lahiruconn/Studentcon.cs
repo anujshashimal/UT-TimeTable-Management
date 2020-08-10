@@ -54,6 +54,7 @@ namespace TimeTableManagement.Controller.lahiruconn
         }
 
 
+
         public SqlDataReader loadacademicyrsemesterallvalues()
         {
             if (con.State.ToString() != "Open")
