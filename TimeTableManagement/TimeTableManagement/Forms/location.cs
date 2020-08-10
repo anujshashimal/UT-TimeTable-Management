@@ -66,15 +66,14 @@ namespace TimeTableManagement.Forms
 
         private void locBtn2_Click(object sender, EventArgs e)
         {
+            
 
             locationModel.locationPID = locationID.Text;
             locationModel.locationPName = buildingName.Text;
-
             LocationConn.insertLocationDetails(locationModel);
 
             SqlDataReader dr = LocationConn.loadLocavalues();
             locationdataGridView.DataSource = LocationConn.GetLocationvalues();
-
 
             dr.Close();
         }
@@ -85,6 +84,12 @@ namespace TimeTableManagement.Forms
 
             roomDatagridView.DataSource = LocationConn.GetRoomvalues();
             SqlDataReader dr2 = LocationConn.loadRoomvalues();
+
+
+            String val = "BUI";
+            int value = 00000;
+            value = value + 1;
+            locationID.Text = val + value.ToString("00000");
 
         }
 
@@ -110,6 +115,9 @@ namespace TimeTableManagement.Forms
             dr.Close();
         }
 
-        
+        private void deleteB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
