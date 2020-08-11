@@ -206,6 +206,7 @@
             this.roomDatagridView.Name = "roomDatagridView";
             this.roomDatagridView.Size = new System.Drawing.Size(895, 299);
             this.roomDatagridView.TabIndex = 0;
+            this.roomDatagridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomDatagridView_DoubleClick);
             // 
             // label7
             // 
@@ -330,6 +331,7 @@
             this.deleteB1.TabIndex = 67;
             this.deleteB1.Text = "Delete";
             this.deleteB1.UseVisualStyleBackColor = false;
+            this.deleteB1.Click += new System.EventHandler(this.deleteB1_Click);
             // 
             // updateB1
             // 
