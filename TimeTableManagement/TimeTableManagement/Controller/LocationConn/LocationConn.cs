@@ -59,7 +59,7 @@ namespace TimeTableManagement.Controller.LocationConn
             if (con.State.ToString() != "Open")
             {con.Open();}
 
-            string query = "DELETE  FROM   RoomTable  WHERE  roomID='" + studentMod.roomID + "'";
+            string query = "DELETE  FROM RoomTable  WHERE  buildingName='" + studentMod.roomID + "'";
             SqlCommand com = new SqlCommand(query, con);
 
             string ans = MessageBox.Show("Are sure to delete this record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning).ToString();
@@ -75,6 +75,20 @@ namespace TimeTableManagement.Controller.LocationConn
 
         }
 
+        public SqlDataReader loadallvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT *  from Academicyrsemtable";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+            return dr1;
+
+
+        }
+
         public SqlDataReader loadLocavalues()
         {
             if (con.State.ToString() != "Open")
@@ -84,8 +98,6 @@ namespace TimeTableManagement.Controller.LocationConn
 
             string query = "SELECT * from LocationTimeTable";
             SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
-            dr.Close();
-
             return dr;
 
         }
@@ -99,7 +111,6 @@ namespace TimeTableManagement.Controller.LocationConn
 
             string query = "SELECT * from RoomTable";
             SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
-            dr.Close();
 
             return dr;
 
