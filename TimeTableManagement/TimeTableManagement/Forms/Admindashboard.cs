@@ -44,7 +44,7 @@ namespace TimeTableManagement.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new LecturerForm());
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -100,6 +100,11 @@ namespace TimeTableManagement.Forms
         {
             OpenChildForm(new location());
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new subjectsform());
         }
     }
 }
