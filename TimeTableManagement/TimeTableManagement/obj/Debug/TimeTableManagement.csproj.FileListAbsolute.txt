@@ -16,3 +16,4 @@ C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTa
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.pdb
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.exe
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.pdb
+C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.Forms.ManageStatics.resources

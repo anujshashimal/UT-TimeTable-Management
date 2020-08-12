@@ -15,7 +15,7 @@ namespace TimeTableManagement.Model.locationModel
         public String buildingName;
         public String roomID;
         public String roomName;
-        public String roomCapacity;
+        public int roomCapacity;
         public String roomType;
 
         

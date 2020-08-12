@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.deleteB1 = new System.Windows.Forms.Button();
+            this.updateB1 = new System.Windows.Forms.Button();
             this.buildingName = new System.Windows.Forms.TextBox();
             this.locationID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.deleteB = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.roomDatagridView = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,10 +56,6 @@
             this.addB = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.deleteB = new System.Windows.Forms.Button();
-            this.deleteB1 = new System.Windows.Forms.Button();
-            this.updateB1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -102,6 +102,28 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // deleteB1
+            // 
+            this.deleteB1.BackColor = System.Drawing.Color.Red;
+            this.deleteB1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.deleteB1.Location = new System.Drawing.Point(506, 110);
+            this.deleteB1.Name = "deleteB1";
+            this.deleteB1.Size = new System.Drawing.Size(109, 46);
+            this.deleteB1.TabIndex = 67;
+            this.deleteB1.Text = "Delete";
+            this.deleteB1.UseVisualStyleBackColor = false;
+            this.deleteB1.Click += new System.EventHandler(this.deleteB1_Click);
+            // 
+            // updateB1
+            // 
+            this.updateB1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.updateB1.Location = new System.Drawing.Point(506, 63);
+            this.updateB1.Name = "updateB1";
+            this.updateB1.Size = new System.Drawing.Size(109, 39);
+            this.updateB1.TabIndex = 66;
+            this.updateB1.Text = "Update";
+            this.updateB1.UseVisualStyleBackColor = true;
             // 
             // buildingName
             // 
@@ -188,6 +210,29 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // deleteB
+            // 
+            this.deleteB.BackColor = System.Drawing.Color.Red;
+            this.deleteB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.deleteB.Location = new System.Drawing.Point(514, 107);
+            this.deleteB.Name = "deleteB";
+            this.deleteB.Size = new System.Drawing.Size(109, 45);
+            this.deleteB.TabIndex = 65;
+            this.deleteB.Text = "Delete";
+            this.deleteB.UseVisualStyleBackColor = false;
+            this.deleteB.Click += new System.EventHandler(this.deleteB_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(514, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 39);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel3
             // 
@@ -298,50 +343,6 @@
             this.label4.Size = new System.Drawing.Size(218, 23);
             this.label4.TabIndex = 52;
             this.label4.Text = "Building Name";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(514, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 39);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // deleteB
-            // 
-            this.deleteB.BackColor = System.Drawing.Color.Red;
-            this.deleteB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.deleteB.Location = new System.Drawing.Point(514, 107);
-            this.deleteB.Name = "deleteB";
-            this.deleteB.Size = new System.Drawing.Size(109, 45);
-            this.deleteB.TabIndex = 65;
-            this.deleteB.Text = "Delete";
-            this.deleteB.UseVisualStyleBackColor = false;
-            this.deleteB.Click += new System.EventHandler(this.deleteB_Click);
-            // 
-            // deleteB1
-            // 
-            this.deleteB1.BackColor = System.Drawing.Color.Red;
-            this.deleteB1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.deleteB1.Location = new System.Drawing.Point(506, 110);
-            this.deleteB1.Name = "deleteB1";
-            this.deleteB1.Size = new System.Drawing.Size(109, 46);
-            this.deleteB1.TabIndex = 67;
-            this.deleteB1.Text = "Delete";
-            this.deleteB1.UseVisualStyleBackColor = false;
-            this.deleteB1.Click += new System.EventHandler(this.deleteB1_Click);
-            // 
-            // updateB1
-            // 
-            this.updateB1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.updateB1.Location = new System.Drawing.Point(506, 63);
-            this.updateB1.Name = "updateB1";
-            this.updateB1.Size = new System.Drawing.Size(109, 39);
-            this.updateB1.TabIndex = 66;
-            this.updateB1.Text = "Update";
-            this.updateB1.UseVisualStyleBackColor = true;
             // 
             // location
             // 

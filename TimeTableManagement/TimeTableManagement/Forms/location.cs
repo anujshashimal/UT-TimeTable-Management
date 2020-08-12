@@ -105,7 +105,7 @@ namespace TimeTableManagement.Forms
             locationModel.buildingName = buildingNameT.Text;
             locationModel.roomID = roomIDT.Text;
             locationModel.roomName = roomNameT.Text;
-            locationModel.roomCapacity = roomCapacity.Text;
+            locationModel.roomCapacity = Convert.ToInt32(roomCapacity.Text);
             locationModel.roomType = roomCapacityT.Text;
 
             LocationConn.insertRoomDetails(locationModel);
@@ -163,6 +163,48 @@ namespace TimeTableManagement.Forms
             roomCapacity.Text = selectedName3.ToString();
             roomCapacityT.Text = selectedName4.ToString();
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            String academicyrsemshldupdatevalue = buildingNameT.Text;
+            String nme1 = roomIDT.Text;
+            String nme2 = roomNameT.Text;
+            String nme3 = roomCapacity.Text;
+            String nme4 = roomCapacityT.Text;
+
+            SqlDataReader dr = LocationConn.loadRoomvalues();
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+            while (dr.Read())
+            {
+                String buildingNme = Convert.ToString(dr["buildingName"]);
+                if (academicyrsemshldupdatevalue.Equals(buildingNme))
+                {
+                    string sql = "UPDATE RoomTable SET roomID='" + nme1 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
+                    string sql1 = "UPDATE RoomTable SET roomName='" + nme2 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
+                    string sql2 = "UPDATE RoomTable SET roomCapacity='" + nme3 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
+                    string sql3 = "UPDATE RoomTable SET roomType='" + nme4 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
+
+                    SqlCommand com = new SqlCommand(sql, con);
+                    SqlCommand com2 = new SqlCommand(sql1, con);
+                    SqlCommand com3 = new SqlCommand(sql2, con);
+                    SqlCommand com4 = new SqlCommand(sql3, con);
+
+                    MessageBox.Show("Updated!");
+
+                    com.ExecuteNonQuery();
+                    com2.ExecuteNonQuery();
+                    com3.ExecuteNonQuery();
+                    com4.ExecuteNonQuery();
+
+                }
+            }
+
+            dr.Close();
+            roomDatagridView.DataSource = LocationConn.GetRoomvalues();
         }
     }
 }

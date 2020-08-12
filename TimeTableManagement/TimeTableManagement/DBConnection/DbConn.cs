@@ -11,7 +11,7 @@ namespace TimeTableManagement.DBConnection
     {
         public SqlConnection getDBConnection()
         {
-            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aux-138\Documents\myDB.mdf;Integrated Security=True;Connect Timeout=30";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\myDB.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
