@@ -67,7 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\lahiruconn\Studentcon.cs" />
+    <Compile Include="Controller\LectureController\LectureController.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
+    <Compile Include="Controller\SubjectController\subjectController.cs" />
     <Compile Include="DBConnection\DbConn.cs" />
     <Compile Include="Forms\Admindashboard.cs">
       <SubType>Form</SubType>
@@ -93,6 +95,12 @@
     <Compile Include="Forms\lakatesting.Designer.cs">
       <DependentUpon>lakatesting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LecturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LecturerForm.Designer.cs">
+      <DependentUpon>LecturerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\location.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,8 +125,16 @@
     <Compile Include="Forms\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\subjectsform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\subjectsform.Designer.cs">
+      <DependentUpon>subjectsform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
+    <Compile Include="Model\LecturerModel\Lecturer.cs" />
     <Compile Include="Model\locationModel\locationModel.cs" />
+    <Compile Include="Model\SubjectModel\subjectModel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +151,9 @@
     <EmbeddedResource Include="Forms\lakatesting.resx">
       <DependentUpon>lakatesting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LecturerForm.resx">
+      <DependentUpon>LecturerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\location.resx">
       <DependentUpon>location.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\subjectsform.resx">
+      <DependentUpon>subjectsform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
