@@ -54,6 +54,7 @@ namespace TimeTableManagement.Controller.lahiruconn
         }
 
 
+
         public SqlDataReader loadacademicyrsemesterallvalues()
         {
             if (con.State.ToString() != "Open")
@@ -105,15 +106,8 @@ namespace TimeTableManagement.Controller.lahiruconn
             {
                 int ret = com.ExecuteNonQuery();
                 MessageBox.Show("No of records deleted" + ret, "Information");
-
-
             }
-
-
             con.Close();
-
-
-
         }
 
 
