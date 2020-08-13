@@ -9,8 +9,6 @@ C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTa
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.GenerateResource.cache
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csproj.CoreCompileInputs.cache
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\obj\Debug\TimeTableManagement.csprojAssemblyReference.cache
-C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB.mdf
-C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\myDB_log.ldf
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe.config
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.exe
 C:\Users\Aux-138\source\repos\UT-TimeTable-Management\TimeTableManagement\TimeTableManagement\bin\Debug\TimeTableManagement.pdb

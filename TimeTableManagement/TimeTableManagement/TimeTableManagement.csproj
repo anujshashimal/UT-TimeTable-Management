@@ -179,13 +179,6 @@
     <Content Include=".gitignore">
       <SubType>Form</SubType>
     </Content>
-    <Content Include="myDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="myDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>myDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
