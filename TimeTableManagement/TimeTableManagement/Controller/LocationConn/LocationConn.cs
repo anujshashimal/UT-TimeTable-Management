@@ -42,9 +42,8 @@ namespace TimeTableManagement.Controller.LocationConn
         public void insertRoomDetails(locationModel studentMod)
         {
             if (con.State.ToString() != "Open")
-            {
-                con.Open();
-            }
+            {con.Open();}
+
             string query = "INSERT INTO RoomTable(buildingName,roomID,roomName, roomCapacity,roomType)  VALUES ('" + studentMod.buildingName + "','" + studentMod.roomID + "','" + studentMod.roomName + "','" + studentMod.roomCapacity + "','" + studentMod.roomType +"')";
 
             SqlCommand com = new SqlCommand(query, con);
@@ -52,6 +51,42 @@ namespace TimeTableManagement.Controller.LocationConn
 
             MessageBox.Show("No of Records have been inserted" + ret, "Information");
             con.Close();
+        }
+
+        //Delete Queries
+        public void DeleteLocationDet(locationModel studentMod)
+        {
+            if (con.State.ToString() != "Open")
+            {con.Open();}
+
+            string query = "DELETE  FROM RoomTable  WHERE  buildingName='" + studentMod.roomID + "'";
+            SqlCommand com = new SqlCommand(query, con);
+
+            string ans = MessageBox.Show("Are sure to delete this record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning).ToString();
+
+
+            if (ans == "Yes")
+            {
+                int ret = com.ExecuteNonQuery();
+                MessageBox.Show("No of records deleted" + ret, "Information");
+            }
+
+            con.Close();
+
+        }
+
+        public SqlDataReader loadallvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT *  from Academicyrsemtable";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+            return dr1;
+
+
         }
 
         public SqlDataReader loadLocavalues()
@@ -63,8 +98,6 @@ namespace TimeTableManagement.Controller.LocationConn
 
             string query = "SELECT * from LocationTimeTable";
             SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
-            dr.Close();
-
             return dr;
 
         }
@@ -78,7 +111,6 @@ namespace TimeTableManagement.Controller.LocationConn
 
             string query = "SELECT * from RoomTable";
             SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
-            dr.Close();
 
             return dr;
 

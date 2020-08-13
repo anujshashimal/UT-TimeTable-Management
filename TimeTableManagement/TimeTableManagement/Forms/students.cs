@@ -175,6 +175,7 @@ namespace TimeTableManagement.Forms
 
             while (dr.Read())
             {
+
                 String academicyrsem = Convert.ToString(dr["AcademicYrsem"]);
                 int academicindexprimarykey = Convert.ToInt32(dr["AcademicYrsemId"]);
 
@@ -182,8 +183,6 @@ namespace TimeTableManagement.Forms
                 {
                     studentmod.Academicyearsemester1 = academicyearsem.Text;
                     studentmod.Academicyearsemester_id1 = academicindexprimarykey;
-
-
                 }
             }
 

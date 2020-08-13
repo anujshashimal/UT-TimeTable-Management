@@ -18,6 +18,6 @@ namespace TimeTableManagement.Model.locationModel
         public String roomCapacity;
         public String roomType;
 
- 
+        
     }
 }

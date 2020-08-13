@@ -106,15 +106,8 @@ namespace TimeTableManagement.Controller.lahiruconn
             {
                 int ret = com.ExecuteNonQuery();
                 MessageBox.Show("No of records deleted" + ret, "Information");
-
-
             }
-
-
             con.Close();
-
-
-
         }
 
 
