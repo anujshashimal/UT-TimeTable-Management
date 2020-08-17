@@ -106,5 +106,11 @@ namespace TimeTableManagement.Forms
         {
             OpenChildForm(new subjectsform());
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new StaticsRelated());
+
+        }
     }
 }
