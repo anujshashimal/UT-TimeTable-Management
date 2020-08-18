@@ -23,5 +23,10 @@ namespace TimeTableManagement.Forms
             this.roomTableTableAdapter.Fill(this.myDBDataSet1.RoomTable);
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
