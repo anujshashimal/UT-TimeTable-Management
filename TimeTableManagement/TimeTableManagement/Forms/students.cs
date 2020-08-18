@@ -17,6 +17,9 @@ namespace TimeTableManagement.Forms
     {
         Studentcon studentCon = new Studentcon();
         studentmodel studentmod = new studentmodel();
+        Tagcon tagCon = new Tagcon();
+        Tagmodel tagmod = new Tagmodel();
+        public static String tagupdatevalue;
         public static String academicyrsemshldupdatevalue;
         public static String programmeupdatevalue;
         public static int updateGroupnumber;
@@ -56,9 +59,13 @@ namespace TimeTableManagement.Forms
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Student_Data_Grid_View.DataSource = studentCon.GetStudentallvalues();
-
-
+           // Student_Data_Grid_View.DataSource = studentCon.GetStudentallvalues();
+            TagdataGridView.DataSource = tagCon.GetTagallvalues();
+            Academicyrdatagrid.DataSource = studentCon.GetAcademicyrandsemallvalues();
+            Programmedatagrid.DataSource = studentCon.GetPorgrammeallvalues();
+            groupidgridview.DataSource = studentCon.GetGroupIdvalues();
+            subgroupiddatagridview.DataSource = studentCon.GetSubGroupIdvalues();
+            
 
             SqlDataReader dr = studentCon.loadacademicyrsemestervalues();
             while (dr.Read())
@@ -99,6 +106,11 @@ namespace TimeTableManagement.Forms
             }
 
 
+            SqlDataReader dr7 = tagCon.loadtagdetailsvalues();
+            while (dr7.Read())
+            {
+                Tagcombobox.Items.Add(dr7.GetValue(0).ToString());
+            }
 
 
             dr.Close();
@@ -113,18 +125,29 @@ namespace TimeTableManagement.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            studentmod.Academicyearsemester1 = academicyearsem.Text;
-            studentCon.insertAcademicyearsemesterDetails(studentmod);
 
-            academicyearsem.Items.Clear();
-
-            SqlDataReader dr = studentCon.loadacademicyrsemestervalues();
-            while (dr.Read())
+            if (academicyearsem.Text == "")
             {
-                academicyearsem.Items.Add(dr.GetValue(0).ToString());
+                MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
-            dr.Close();
+            else {
+                        studentmod.Academicyearsemester1 = academicyearsem.Text;
+                        studentCon.insertAcademicyearsemesterDetails(studentmod);
+
+                        academicyearsem.Items.Clear();
+
+                        SqlDataReader dr = studentCon.loadacademicyrsemestervalues();
+                        while (dr.Read())
+                        {
+                            academicyearsem.Items.Add(dr.GetValue(0).ToString());
+                        }
+
+                        academicyearsem.Text = "";
+                        Academicyrdatagrid.DataSource = studentCon.GetAcademicyrandsemallvalues();
+                        dr.Close();
+                    }
         }
 
         private void academicyearsem_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,7 +186,8 @@ namespace TimeTableManagement.Forms
             {
                 academicyearsem.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            academicyearsem.Text = "";
+            Academicyrdatagrid.DataSource = studentCon.GetAcademicyrandsemallvalues();
             dr1.Close();
         }
 
@@ -195,7 +219,8 @@ namespace TimeTableManagement.Forms
             {
                 academicyearsem.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            academicyearsem.Text = "";
+            Academicyrdatagrid.DataSource = studentCon.GetAcademicyrandsemallvalues();
             dr1.Close();
 
         }
@@ -209,18 +234,28 @@ namespace TimeTableManagement.Forms
         private void button4_Click(object sender, EventArgs e)
         {
 
-            studentmod.Programmename1 = Programme_comboBox.Text;
-            studentCon.insertProgrammeDetails(studentmod);
-
-            Programme_comboBox.Items.Clear();
-
-            SqlDataReader dr = studentCon.loadprogrammevalues();
-            while (dr.Read())
+            if (Programme_comboBox.Text == "")
             {
-                Programme_comboBox.Items.Add(dr.GetValue(0).ToString());
+                MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
-            dr.Close();
+            else
+            {
+                studentmod.Programmename1 = Programme_comboBox.Text;
+                studentCon.insertProgrammeDetails(studentmod);
+
+                Programme_comboBox.Items.Clear();
+
+                SqlDataReader dr = studentCon.loadprogrammevalues();
+                while (dr.Read())
+                {
+                    Programme_comboBox.Items.Add(dr.GetValue(0).ToString());
+                }
+                Programme_comboBox.Text = "";
+                Programmedatagrid.DataSource = studentCon.GetPorgrammeallvalues();
+                dr.Close();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -250,7 +285,8 @@ namespace TimeTableManagement.Forms
             {
                 Programme_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Programme_comboBox.Text = "";
+            Programmedatagrid.DataSource = studentCon.GetPorgrammeallvalues();
             dr1.Close();
         }
 
@@ -283,7 +319,8 @@ namespace TimeTableManagement.Forms
             {
                 Programme_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Programme_comboBox.Text = "";
+            Programmedatagrid.DataSource = studentCon.GetPorgrammeallvalues();
             dr1.Close();
         }
 
@@ -294,19 +331,38 @@ namespace TimeTableManagement.Forms
 
         private void button7_Click(object sender, EventArgs e)
         {
-            studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
-            studentCon.insertGroupnumber(studentmod);
-
-            Groupnumber_comboBox.Items.Clear();
-
-            SqlDataReader dr = studentCon.loadgroupnumbervalues();
-            while (dr.Read())
+            if (Groupnumber_comboBox.Text == "")
             {
-                Groupnumber_comboBox.Items.Add(dr.GetValue(0).ToString());
+                MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
+            else
+            {
 
-            dr.Close();
+                try
+                {
+                    studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
+                    studentCon.insertGroupnumber(studentmod);
+                }
+                catch (Exception h)
+                {
 
+                    MessageBox.Show("Please provide number only ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Groupnumber_comboBox.Text = "";
+                }
+
+
+
+                Groupnumber_comboBox.Items.Clear();
+
+                SqlDataReader dr = studentCon.loadgroupnumbervalues();
+                while (dr.Read())
+                {
+                    Groupnumber_comboBox.Items.Add(dr.GetValue(0).ToString());
+                }
+                Groupnumber_comboBox.Text = "";
+                dr.Close();
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -319,24 +375,51 @@ namespace TimeTableManagement.Forms
                 int groupnumber = Convert.ToInt32(dr["Group_number"]);
                 int groupid = Convert.ToInt32(dr["Group_number_id"]);
 
+
                 if (updateGroupnumber.Equals(groupnumber))
                 {
                     //GroupId_txt.Text = academicyearsem.Text;
-                    studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
-                    studentmod.Group_number_id1 = groupid;
+
+                    try
+                    {
+                        studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
+
+                    }
+                    catch(Exception h)
+                    {
+                        MessageBox.Show("Please provide number only ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Groupnumber_comboBox.Text = "";
+                    }
+                    
+                     studentmod.Group_number_id1 = groupid;
 
 
                 }
             }
 
-            studentCon.updategroupnumber(studentmod);
+
+            try
+            {
+                studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
+                studentCon.updategroupnumber(studentmod);
+            }
+            catch (Exception h)
+            {
+
+                MessageBox.Show("Please provide number only ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Groupnumber_comboBox.Text = "";
+            }
+
+
+
+           
             Groupnumber_comboBox.Items.Clear();
             SqlDataReader dr1 = studentCon.loadgroupnumbervalues();
             while (dr1.Read())
             {
                 Groupnumber_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Groupnumber_comboBox.Text = "";
             dr1.Close();
         }
 
@@ -367,7 +450,7 @@ namespace TimeTableManagement.Forms
             {
                 Groupnumber_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Groupnumber_comboBox.Text = "";
             dr1.Close();
         }
 
@@ -394,7 +477,8 @@ namespace TimeTableManagement.Forms
             {
                 GroupId_comboBox.Items.Add(dr.GetValue(0).ToString());
             }
-
+            GroupId_comboBox.Text = "";
+            groupidgridview.DataSource = studentCon.GetGroupIdvalues();
             dr.Close();
 
         }
@@ -428,7 +512,8 @@ namespace TimeTableManagement.Forms
             {
                 GroupId_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            GroupId_comboBox.Text = "";
+            groupidgridview.DataSource = studentCon.GetGroupIdvalues();
             dr1.Close();
         }
 
@@ -439,18 +524,36 @@ namespace TimeTableManagement.Forms
 
         private void button11_Click(object sender, EventArgs e)
         {
-            studentmod.Sub_group_number1 = Convert.ToInt32(Sub_group_number_comboBox.Text);
-            studentCon.insertsubgroupnumber(studentmod);
-
-            Sub_group_number_comboBox.Items.Clear();
-
-            SqlDataReader dr = studentCon.loadsubgroupnumbervalues();
-            while (dr.Read())
+            if (Sub_group_number_comboBox.Text == "")
             {
-                Sub_group_number_comboBox.Items.Add(dr.GetValue(0).ToString());
-            }
+                MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            dr.Close();
+            }
+            else
+            {
+                try
+                {
+                    studentmod.Sub_group_number1 = Convert.ToInt32(Sub_group_number_comboBox.Text);
+                    studentCon.insertsubgroupnumber(studentmod);
+                }
+                catch (Exception h)
+                {
+
+                    MessageBox.Show("Please provide number only ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Sub_group_number_comboBox.Text = "";
+                }
+
+                Sub_group_number_comboBox.Items.Clear();
+
+                SqlDataReader dr = studentCon.loadsubgroupnumbervalues();
+                while (dr.Read())
+                {
+                    Sub_group_number_comboBox.Items.Add(dr.GetValue(0).ToString());
+                }
+
+                Sub_group_number_comboBox.Text = "";
+                dr.Close();
+            }
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -465,22 +568,43 @@ namespace TimeTableManagement.Forms
 
                 if (updatesubgroupnumber.Equals(subgroupnumber))
                 {
-                    //GroupId_txt.Text = academicyearsem.Text;
-                    studentmod.Sub_group_number1 = Convert.ToInt32(Sub_group_number_comboBox.Text);
+                    //GroupId_txt.Text = academicyearsem.Text;             
+                    try
+                    {
+                        studentmod.Sub_group_number1 = Convert.ToInt32(Sub_group_number_comboBox.Text);
+
+                    }
+                    catch (Exception h)
+                    {
+                        MessageBox.Show("Please provide number only ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Groupnumber_comboBox.Text = "";
+                    }
+
+
                     studentmod.Sub_group_number_primary_key1 = subgroupid;
 
 
                 }
             }
+            try
+            {
+                studentmod.Sub_group_number1 = Convert.ToInt32(Sub_group_number_comboBox.Text);
+                studentCon.updatesubgroupnumber(studentmod);
+            }
+            catch (Exception h)
+            {
 
-            studentCon.updatesubgroupnumber(studentmod);
+                MessageBox.Show("Please provide number only ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Groupnumber_comboBox.Text = "";
+            }
+
             Sub_group_number_comboBox.Items.Clear();
             SqlDataReader dr1 = studentCon.loadsubgroupnumbervalues();
             while (dr1.Read())
             {
                 Sub_group_number_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Sub_group_number_comboBox.Text = "";
             dr1.Close();
         }
 
@@ -512,7 +636,7 @@ namespace TimeTableManagement.Forms
             {
                 Sub_group_number_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Sub_group_number_comboBox.Text = "";
             dr1.Close();
         }
 
@@ -542,7 +666,8 @@ namespace TimeTableManagement.Forms
             {
                 Sub_group_comboBox.Items.Add(dr.GetValue(0).ToString());
             }
-
+            Sub_group_comboBox.Text = "";
+            subgroupiddatagridview.DataSource = studentCon.GetSubGroupIdvalues();
             dr.Close();
 
         }
@@ -576,19 +701,163 @@ namespace TimeTableManagement.Forms
             {
                 Sub_group_comboBox.Items.Add(dr1.GetValue(0).ToString());
             }
-
+            Sub_group_comboBox.Text = "";
+            subgroupiddatagridview.DataSource = studentCon.GetSubGroupIdvalues();
             dr1.Close();
         }
 
         private void studSubmitbtn_Click(object sender, EventArgs e)
         {
+            studentmod.Academic_yr_sem1 = academicyearsem.Text;
+            studentmod.Programme1 = Programme_comboBox.Text;
+            studentmod.Group_number1 = Convert.ToInt32(Groupnumber_comboBox.Text);
+            studentmod.Sub_group_number2 = Convert.ToInt32(Sub_group_number_comboBox.Text);
             studentmod.Group_Id1 = GroupId_comboBox.Text;
             studentmod.Sub_Group_Id1 = Sub_group_comboBox.Text;
+            studentCon.All_Details(studentmod);
+           // Student_Data_Grid_View.DataSource = studentCon.GetStudentallvalues();
 
-            studentCon.insert_Group_Id_and_SubGroupId(studentmod);
+
+
+            academicyearsem.Text = "";
+            Programme_comboBox.Text = "";
+            Groupnumber_comboBox.Text = "";
+            Sub_group_number_comboBox.Text = "";
+            GroupId_comboBox.Text = "";
+            Sub_group_comboBox.Text = "";
 
         }
 
-      
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tagaddbutton_Click(object sender, EventArgs e)
+        {
+            if (Tagcombobox.Text == "")
+            {
+                MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            else
+            {
+                tagmod.Tag_name1 = Tagcombobox.Text;
+                tagCon.insertTagDetails(tagmod);
+
+                Tagcombobox.Items.Clear();
+
+                SqlDataReader dr = tagCon.loadtagdetailsvalues();
+                while (dr.Read())
+                {
+                    Tagcombobox.Items.Add(dr.GetValue(0).ToString());
+                }
+                TagdataGridView.DataSource = tagCon.GetTagallvalues();
+                dr.Close();
+            }
+        }
+
+        private void Tagcombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tagupdatevalue = Tagcombobox.Text;
+        }
+
+        private void Tageditbutton_Click(object sender, EventArgs e)
+        {
+            SqlDataReader dr = tagCon.loadatagallvalues();
+
+
+            while (dr.Read())
+            {
+                String tagname = Convert.ToString(dr["Tag_Name"]);
+                int tagid = Convert.ToInt32(dr["Tag_Id"]);
+
+                if (tagupdatevalue.Equals(tagname))
+                {
+                    //GroupId_txt.Text = academicyearsem.Text;
+                    tagmod.Tag_name1 = Tagcombobox.Text;
+                    tagmod.Tag_id1 = tagid;
+
+
+                }
+            }
+
+            tagCon.updatetagdetails(tagmod);
+            Tagcombobox.Items.Clear();
+            SqlDataReader dr1 = tagCon.loadtagdetailsvalues();
+            while (dr1.Read())
+            {
+                Tagcombobox.Items.Add(dr1.GetValue(0).ToString());
+            }
+            TagdataGridView.DataSource = tagCon.GetTagallvalues();
+            dr1.Close();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tagdeletebutton_Click(object sender, EventArgs e)
+        {
+            SqlDataReader dr = tagCon.loadatagallvalues();
+
+
+            while (dr.Read())
+            {
+                String tagname = Convert.ToString(dr["Tag_Name"]);
+                int tagid = Convert.ToInt32(dr["Tag_Id"]);
+
+                if (tagupdatevalue.Equals(tagname))
+                {
+                    //GroupId_txt.Text = academicyearsem.Text;
+                    tagmod.Tag_name1 = Tagcombobox.Text;
+                    tagmod.Tag_id1 = tagid;
+
+
+                }
+            }
+
+            tagCon.DeleteTagdetails(tagmod);
+            Tagcombobox.Items.Clear();
+            SqlDataReader dr1 = tagCon.loadtagdetailsvalues();
+            while (dr1.Read())
+            {
+                Tagcombobox.Items.Add(dr1.GetValue(0).ToString());
+            }
+            TagdataGridView.DataSource = tagCon.GetTagallvalues();
+            dr1.Close();
+        }
+
+        private void Academicyrsemret_Click(object sender, EventArgs e)
+        {
+            Academicyrdatagrid.DataSource = studentCon.GetAcademicyrandsemallvalues();
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Programmedatagrid.DataSource = studentCon.GetPorgrammeallvalues();
+        }
+
+        private void Student_Data_Grid_View_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void Academicyrdatagrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
