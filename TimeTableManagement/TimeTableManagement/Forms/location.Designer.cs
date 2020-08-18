@@ -42,10 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.roomCapacity = new System.Windows.Forms.TextBox();
-            this.roomCapacityT = new System.Windows.Forms.TextBox();
             this.roomNameT = new System.Windows.Forms.TextBox();
             this.roomIDT = new System.Windows.Forms.TextBox();
-            this.buildingNameT = new System.Windows.Forms.TextBox();
             this.deleteB = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,6 +54,10 @@
             this.addB = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buildingNameT = new System.Windows.Forms.ComboBox();
+            this.roomCapacityT = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.allLocationDet = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -64,6 +66,8 @@
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomDatagridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.allLocationDet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,7 +83,8 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 11);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(4, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(909, 570);
@@ -134,7 +139,7 @@
             // 
             // updateB1
             // 
-            this.updateB1.BackColor = System.Drawing.Color.OrangeRed;
+            this.updateB1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.updateB1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.updateB1.Location = new System.Drawing.Point(501, 68);
             this.updateB1.Name = "updateB1";
@@ -165,7 +170,7 @@
             // 
             // locBtn2
             // 
-            this.locBtn2.BackColor = System.Drawing.Color.OrangeRed;
+            this.locBtn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.locBtn2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.locBtn2.Location = new System.Drawing.Point(501, 22);
             this.locBtn2.Name = "locBtn2";
@@ -178,28 +183,30 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(18, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 23);
+            this.label2.Size = new System.Drawing.Size(122, 23);
             this.label2.TabIndex = 43;
             this.label2.Text = "Building Name";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(18, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 23);
+            this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 38;
             this.label1.Text = "Location ID";
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.roomCapacity);
             this.tabPage2.Controls.Add(this.roomCapacityT);
+            this.tabPage2.Controls.Add(this.buildingNameT);
+            this.tabPage2.Controls.Add(this.roomCapacity);
             this.tabPage2.Controls.Add(this.roomNameT);
             this.tabPage2.Controls.Add(this.roomIDT);
-            this.tabPage2.Controls.Add(this.buildingNameT);
             this.tabPage2.Controls.Add(this.deleteB);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.panel3);
@@ -220,18 +227,10 @@
             // roomCapacity
             // 
             this.roomCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomCapacity.Location = new System.Drawing.Point(131, 126);
+            this.roomCapacity.Location = new System.Drawing.Point(131, 127);
             this.roomCapacity.Name = "roomCapacity";
             this.roomCapacity.Size = new System.Drawing.Size(344, 26);
             this.roomCapacity.TabIndex = 73;
-            // 
-            // roomCapacityT
-            // 
-            this.roomCapacityT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomCapacityT.Location = new System.Drawing.Point(131, 165);
-            this.roomCapacityT.Name = "roomCapacityT";
-            this.roomCapacityT.Size = new System.Drawing.Size(344, 26);
-            this.roomCapacityT.TabIndex = 72;
             // 
             // roomNameT
             // 
@@ -249,14 +248,6 @@
             this.roomIDT.Size = new System.Drawing.Size(344, 26);
             this.roomIDT.TabIndex = 71;
             // 
-            // buildingNameT
-            // 
-            this.buildingNameT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buildingNameT.Location = new System.Drawing.Point(131, 14);
-            this.buildingNameT.Name = "buildingNameT";
-            this.buildingNameT.Size = new System.Drawing.Size(344, 26);
-            this.buildingNameT.TabIndex = 70;
-            // 
             // deleteB
             // 
             this.deleteB.BackColor = System.Drawing.Color.Red;
@@ -271,7 +262,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.OrangeRed;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(503, 66);
             this.button1.Name = "button1";
@@ -303,7 +294,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label7.Location = new System.Drawing.Point(6, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 23);
@@ -313,7 +304,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(6, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 23);
@@ -323,7 +314,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(6, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 23);
@@ -332,7 +323,7 @@
             // 
             // addB
             // 
-            this.addB.BackColor = System.Drawing.Color.OrangeRed;
+            this.addB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.addB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.addB.Location = new System.Drawing.Point(503, 14);
             this.addB.Name = "addB";
@@ -345,7 +336,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(6, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 23);
@@ -355,12 +346,52 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(6, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 23);
             this.label4.TabIndex = 52;
             this.label4.Text = "Building Name";
+            // 
+            // buildingNameT
+            // 
+            this.buildingNameT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.buildingNameT.FormattingEnabled = true;
+            this.buildingNameT.Location = new System.Drawing.Point(131, 17);
+            this.buildingNameT.Name = "buildingNameT";
+            this.buildingNameT.Size = new System.Drawing.Size(344, 21);
+            this.buildingNameT.TabIndex = 75;
+            this.buildingNameT.SelectedIndexChanged += new System.EventHandler(this.buildingNameT_SelectedIndexChanged);
+            // 
+            // roomCapacityT
+            // 
+            this.roomCapacityT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.roomCapacityT.FormattingEnabled = true;
+            this.roomCapacityT.Location = new System.Drawing.Point(131, 173);
+            this.roomCapacityT.Name = "roomCapacityT";
+            this.roomCapacityT.Size = new System.Drawing.Size(344, 21);
+            this.roomCapacityT.TabIndex = 76;
+            this.roomCapacityT.SelectedIndexChanged += new System.EventHandler(this.roomCapacityT_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.allLocationDet);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(901, 544);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // allLocationDet
+            // 
+            this.allLocationDet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.allLocationDet.Location = new System.Drawing.Point(3, 152);
+            this.allLocationDet.Name = "allLocationDet";
+            this.allLocationDet.Size = new System.Drawing.Size(864, 371);
+            this.allLocationDet.TabIndex = 0;
+            this.allLocationDet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.allLocationDet_CellContentClick);
             // 
             // location
             // 
@@ -382,6 +413,8 @@
             this.tabPage2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roomDatagridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.allLocationDet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,9 +445,11 @@
         private System.Windows.Forms.TextBox locationID;
         private System.Windows.Forms.TextBox buildingName;
         private System.Windows.Forms.TextBox roomCapacity;
-        private System.Windows.Forms.TextBox roomCapacityT;
         private System.Windows.Forms.TextBox roomNameT;
         private System.Windows.Forms.TextBox roomIDT;
-        private System.Windows.Forms.TextBox buildingNameT;
+        private System.Windows.Forms.ComboBox buildingNameT;
+        private System.Windows.Forms.ComboBox roomCapacityT;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView allLocationDet;
     }
 }

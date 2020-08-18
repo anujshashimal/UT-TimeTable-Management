@@ -132,6 +132,22 @@ namespace TimeTableManagement.Controller.LocationConn
             return dtstudents;
         }
 
+        public DataTable GetAllLocationvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from  LocationTimeTable inner join RoomTable on LocationTimeTable.locationName = RoomTable.buildingName";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
         public DataTable GetRoomvalues()
         {
             if (con.State.ToString() != "Open")

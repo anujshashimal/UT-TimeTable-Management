@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,10 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +54,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,6 +108,12 @@
     <Compile Include="Forms\location.Designer.cs">
       <DependentUpon>location.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StaticsRelated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StaticsRelated.Designer.cs">
+      <DependentUpon>StaticsRelated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\students.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +147,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="myDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Admindashboard.resx">
@@ -156,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\location.resx">
       <DependentUpon>location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StaticsRelated.resx">
+      <DependentUpon>StaticsRelated.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\students.resx">
       <DependentUpon>students.cs</DependentUpon>
@@ -190,6 +205,17 @@
     <None Include="myDBDataSet.xss">
       <DependentUpon>myDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="myDBDataSet1.xsc">
+      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myDBDataSet1.xss">
+      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -204,8 +230,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore">
-      <SubType>Form</SubType>
+    <Content Include="myDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="myDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>myDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup />

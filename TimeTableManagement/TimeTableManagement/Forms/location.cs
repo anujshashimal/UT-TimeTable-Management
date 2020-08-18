@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTableManagement.Controller.LocationConn;
 using TimeTableManagement.DBConnection;
@@ -23,7 +16,8 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
             con = DBConnection.getDBConnection();
-
+            fillCombo();
+            loadLabItems();
         }
         public static String academicyrsemshldupdatevalue;
 
@@ -65,33 +59,27 @@ namespace TimeTableManagement.Forms
 
         }
 
-        private void academicyearsem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void locBtn2_Click(object sender, EventArgs e)
         {
 
-
             locationModel.locationPID = locationID.Text;
             locationModel.locationPName = buildingName.Text;
-            LocationConn.insertLocationDetails(locationModel);
 
-            SqlDataReader dr = LocationConn.loadLocavalues();
-            dr.Close();
+            LocationConn.insertLocationDetails(locationModel);
+            
+            locationdataGridView.DataSource = LocationConn.GetLocationvalues();
+            fillCombo();
         }
 
         private void location_Load(object sender, EventArgs e)
         {
             locationdataGridView.DataSource = LocationConn.GetLocationvalues();
-
+            allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
             roomDatagridView.DataSource = LocationConn.GetRoomvalues();
-
-            String val = "BUI";
-            int value = 00000;
-            value = value + 1;
-            locationID.Text = val + value.ToString("00000");
+            //String val = "BUI";
+            //int value = 00000;
+            //value = value + 1;
+            //locationID.Text = val + value.ToString("00000");
 
         }
 
@@ -169,7 +157,7 @@ namespace TimeTableManagement.Forms
             }
 
             dr.Close();
-            roomDatagridView.DataSource = LocationConn.GetLocationvalues();
+            locationdataGridView.DataSource = LocationConn.GetLocationvalues();
         }
 
         private void roomDatagridView_DoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -237,7 +225,7 @@ namespace TimeTableManagement.Forms
             dr.Close();
             roomDatagridView.DataSource = LocationConn.GetRoomvalues();
         }
-    
+
 
 
         private void updateB1_Click(object sender, EventArgs e)
@@ -275,9 +263,49 @@ namespace TimeTableManagement.Forms
 
                 }
             }
-
+            fillCombo();
             dr.Close();
             locationdataGridView.DataSource = LocationConn.GetLocationvalues();
+        }
+
+        private void buildingNameT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            academicyrsemshldupdatevalue = buildingNameT.Text;
+
+        }
+
+        void fillCombo()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+            String query = "SELECT * FROM LocationTimeTable";
+            SqlCommand com = new SqlCommand(query, con);
+            SqlDataReader dr = LocationConn.loadLocavalues();
+            while (dr.Read())
+            {
+                String sname = Convert.ToString(dr["locationName"]);
+                buildingNameT.Items.Add(sname);
+            }
+            dr.Close();
+        }
+
+        void loadLabItems()
+        {
+            roomCapacityT.Items.Add("Lecturer");
+            roomCapacityT.Items.Add("Lab");
+        }
+
+        private void roomCapacityT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void allLocationDet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
