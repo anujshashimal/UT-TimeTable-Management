@@ -530,14 +530,14 @@ namespace TimeTableManagement.Controller.lahiruconn
         }
 
 
-        public void insert_Group_Id_and_SubGroupId(studentmodel studentMod)
+        public void All_Details(studentmodel studentMod)
         {
             if (con.State.ToString() != "Open")
             {
                 con.Open();
             }
 
-            string query = "INSERT INTO Student_Details(Group_Id,Sub_Group_Id)  VALUES ('" + studentMod.Group_Id1 + "','"+studentMod.Sub_Group_Id1 +"')";
+            string query = "INSERT INTO Student_Details(AcademicYrSemester,Programme,Groupnumber,GroupId,SubGroupnumber,SubGroupId)  VALUES ('" + studentMod.Academic_yr_sem1 + "','"+studentMod.Programme1 + "','" + studentMod.Group_number1 + "','" + studentMod.Group_Id1 + "','" + studentMod.Sub_group_number2 + "','" + studentMod.Sub_Group_Id1 + "')";
             SqlCommand com = new SqlCommand(query, con);
             int ret = NewMethod(com);
 
@@ -558,9 +558,79 @@ namespace TimeTableManagement.Controller.lahiruconn
             string query = "SELECT *  from  Student_Details";
             SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
 
+
+
             dtstudents.Load(dr1);
             return dtstudents;
         }
+
+        public DataTable GetAcademicyrandsemallvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from  Academicyrsemtable";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
+        public DataTable GetPorgrammeallvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from  Programme_table";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
+
+        public DataTable GetGroupIdvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from  Group_id";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
+        public DataTable GetSubGroupIdvalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from  Sub_group_id_table";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
+
+
 
 
 

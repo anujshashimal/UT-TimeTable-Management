@@ -385,7 +385,7 @@ namespace TimeTableManagement.Forms
                  studentmod.Group_Id1  =  GroupId_comboBox.Text;
                 studentmod.Sub_Group_Id1 = Sub_group_comboBox.Text;
 
-             studentCon.insert_Group_Id_and_SubGroupId(studentmod);
+             studentCon.All_Details(studentmod);
 
          
 
