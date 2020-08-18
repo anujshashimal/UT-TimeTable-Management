@@ -230,9 +230,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore">
-      <SubType>Form</SubType>
-    </Content>
     <Content Include="myDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
