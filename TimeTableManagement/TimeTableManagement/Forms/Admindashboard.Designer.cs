@@ -110,6 +110,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -439,8 +440,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelheader);
             this.Controls.Add(this.panel2);
+            this.MinimizeBox = false;
             this.Name = "Admindashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admindashboard";
             this.Load += new System.EventHandler(this.Admindashboard_Load);
             this.panel2.ResumeLayout(false);
