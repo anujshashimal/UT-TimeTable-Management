@@ -19,6 +19,10 @@ namespace TimeTableManagement.Forms
 
         private void StaticsRelated_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'myDBDataSet4.LecturerTbl' table. You can move, or remove it, as needed.
+            this.lecturerTblTableAdapter.Fill(this.myDBDataSet4.LecturerTbl);
+            // TODO: This line of code loads data into the 'myDBDataSet3.SubjectTable' table. You can move, or remove it, as needed.
+            this.subjectTableTableAdapter.Fill(this.myDBDataSet3.SubjectTable);
             // TODO: This line of code loads data into the 'myDBDataSet2.RoomTable' table. You can move, or remove it, as needed.
             this.roomTableTableAdapter1.Fill(this.myDBDataSet2.RoomTable);
 

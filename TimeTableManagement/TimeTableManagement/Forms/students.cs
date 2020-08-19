@@ -112,13 +112,13 @@ namespace TimeTableManagement.Forms
                 Tagcombobox.Items.Add(dr7.GetValue(0).ToString());
             }
 
-
             dr.Close();
-            dr.Close();
+            dr1.Close();
             dr3.Close();
             dr4.Close();
             dr5.Close();
             dr6.Close();
+            dr7.Close();
 
 
         }

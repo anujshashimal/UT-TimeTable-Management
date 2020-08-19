@@ -18,7 +18,7 @@ namespace TimeTableManagement.Controller.lahiruconn
 
         public Studentcon()
         {
-            con = DBConnection.getDBConnection1();
+            con = DBConnection.getDBConnection();
         }
 
 

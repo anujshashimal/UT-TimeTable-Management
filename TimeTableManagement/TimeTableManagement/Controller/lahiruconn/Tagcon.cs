@@ -22,7 +22,7 @@ namespace TimeTableManagement.Controller.lahiruconn
 
         public Tagcon()
         {
-            con = DBConnection.getDBConnection1();
+            con = DBConnection.getDBConnection();
 
 
         }

@@ -159,6 +159,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="myDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="myDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Admindashboard.resx">
@@ -233,6 +243,28 @@
     </None>
     <None Include="myDBDataSet2.xss">
       <DependentUpon>myDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet3.xsc">
+      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myDBDataSet3.xss">
+      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet4.xsc">
+      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myDBDataSet4.xss">
+      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

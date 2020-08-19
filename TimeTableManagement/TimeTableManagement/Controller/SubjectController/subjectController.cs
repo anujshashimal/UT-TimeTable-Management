@@ -18,7 +18,7 @@ namespace TimeTableManagement.Controller.SubjectController
 
         public subjectController()
         {
-            con = DBConnection.getDBConnection3();
+            con = DBConnection.getDBConnection();
         }
 
         public void insertSubjectDetails(subjectModel subject)

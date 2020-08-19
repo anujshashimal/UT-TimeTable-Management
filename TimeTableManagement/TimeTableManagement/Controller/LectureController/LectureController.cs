@@ -19,7 +19,7 @@ namespace TimeTableManagement.Controller.LectureController
 
         public LectureController()
         {
-            con = DBConnection.getDBConnection3();
+            con = DBConnection.getDBConnection();
         }
 
         public void insertLecturerDetails(Lecturer lecturer)
