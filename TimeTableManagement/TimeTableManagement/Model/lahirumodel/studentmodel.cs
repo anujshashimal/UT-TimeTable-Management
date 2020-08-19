@@ -22,7 +22,12 @@ namespace TimeTableManagement.Model.lahirumodel
         private String Sub_Group_id;
 
 
+
+        private String Academic_yr_sem;
+        private String Programme;
+        private int group_number1;
         private String Group_Id;
+        private int sub_group_number;
         private String Sub_Group_Id;
 
 
@@ -207,6 +212,11 @@ namespace TimeTableManagement.Model.lahirumodel
                 Sub_Group_Id = value;
             }
         }
+
+        public string Academic_yr_sem1 { get => Academic_yr_sem; set => Academic_yr_sem = value; }
+        public string Programme1 { get => Programme; set => Programme = value; }
+        public int Group_number2 { get => group_number1; set => group_number1 = value; }
+        public int Sub_group_number2 { get => sub_group_number; set => sub_group_number = value; }
     }
 
 
