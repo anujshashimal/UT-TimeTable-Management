@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\lahiruconn\Studentcon.cs" />
+    <Compile Include="Controller\lahiruconn\Tagcon.cs" />
     <Compile Include="Controller\LectureController\LectureController.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
     <Compile Include="Controller\SubjectController\subjectController.cs" />
@@ -139,6 +140,7 @@
       <DependentUpon>subjectsform.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
+    <Compile Include="Model\lahirumodel\Tagmodel.cs" />
     <Compile Include="Model\LecturerModel\Lecturer.cs" />
     <Compile Include="Model\locationModel\locationModel.cs" />
     <Compile Include="Model\SubjectModel\subjectModel.cs" />
@@ -228,15 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="myDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="myDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>myDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
