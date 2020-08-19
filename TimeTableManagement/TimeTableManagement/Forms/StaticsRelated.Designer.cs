@@ -39,30 +39,35 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.roomTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.myDBDataSet1 = new TimeTableManagement.myDBDataSet1();
             this.myDBDataSet = new TimeTableManagement.myDBDataSet();
             this.myDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.myDBDataSet1 = new TimeTableManagement.myDBDataSet1();
-            this.roomTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomTableTableAdapter = new TimeTableManagement.myDBDataSet1TableAdapters.RoomTableTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.myDBDataSet2 = new TimeTableManagement.myDBDataSet2();
+            this.roomTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.roomTableTableAdapter1 = new TimeTableManagement.myDBDataSet2TableAdapters.RoomTableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.DataSource = this.roomTableBindingSource;
+            this.chart1.DataSource = this.roomTableBindingSource1;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(215, 12);
@@ -77,6 +82,16 @@
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
+            // roomTableBindingSource
+            // 
+            this.roomTableBindingSource.DataMember = "RoomTable";
+            this.roomTableBindingSource.DataSource = this.myDBDataSet1;
+            // 
+            // myDBDataSet1
+            // 
+            this.myDBDataSet1.DataSetName = "myDBDataSet1";
+            this.myDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // myDBDataSet
             // 
             this.myDBDataSet.DataSetName = "myDBDataSet";
@@ -86,16 +101,6 @@
             // 
             this.myDBDataSetBindingSource.DataSource = this.myDBDataSet;
             this.myDBDataSetBindingSource.Position = 0;
-            // 
-            // myDBDataSet1
-            // 
-            this.myDBDataSet1.DataSetName = "myDBDataSet1";
-            this.myDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // roomTableBindingSource
-            // 
-            this.roomTableBindingSource.DataMember = "RoomTable";
-            this.roomTableBindingSource.DataSource = this.myDBDataSet1;
             // 
             // roomTableTableAdapter
             // 
@@ -164,6 +169,20 @@
             this.chart3.TabIndex = 57;
             this.chart3.Text = "chart3";
             // 
+            // myDBDataSet2
+            // 
+            this.myDBDataSet2.DataSetName = "myDBDataSet2";
+            this.myDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roomTableBindingSource1
+            // 
+            this.roomTableBindingSource1.DataMember = "RoomTable";
+            this.roomTableBindingSource1.DataSource = this.myDBDataSet2;
+            // 
+            // roomTableTableAdapter1
+            // 
+            this.roomTableTableAdapter1.ClearBeforeFill = true;
+            // 
             // StaticsRelated
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,12 +198,14 @@
             this.Text = "StaticsRelated";
             this.Load += new System.EventHandler(this.StaticsRelated_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomTableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,5 +223,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private myDBDataSet2 myDBDataSet2;
+        private System.Windows.Forms.BindingSource roomTableBindingSource1;
+        private myDBDataSet2TableAdapters.RoomTableTableAdapter roomTableTableAdapter1;
     }
 }
