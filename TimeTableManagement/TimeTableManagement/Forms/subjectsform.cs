@@ -19,12 +19,16 @@ namespace TimeTableManagement.Forms
             InitializeComponent();
             subjectController subctrl = new subjectController();
             subTbl.DataSource = subctrl.getSubjectdatatoTable();
+            for(int i = 2015; i <= 2100; i++)
+            {
+                Year.Items.Add(i);
+            }
         }
 
         private void subAdd_Click(object sender, EventArgs e)
         {
             subjectModel subjectModel = new subjectModel();
-
+            subjectModel.year = Year.Text;
             subjectModel.OffYear = offyear.Text;
             subjectModel.OffSem = offSem.Text;
             subjectModel.SubName = subName.Text;
@@ -38,7 +42,7 @@ namespace TimeTableManagement.Forms
             subctrl.insertSubjectDetails(subjectModel);
 
             subTbl.DataSource = subctrl.getSubjectdatatoTable();
-
+            Year.Text = "";
             offyear.Text = "";
             offSem.Text = "";
             subName.Text = "";
@@ -55,6 +59,7 @@ namespace TimeTableManagement.Forms
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow data = this.subTbl.Rows[e.RowIndex];
+                Year.Text = data.Cells["year"].Value.ToString();
                 offyear.Text = data.Cells["offYear"].Value.ToString();
                 offSem.Text = data.Cells["offSem"].Value.ToString();
                 subName.Text = data.Cells["SubName"].Value.ToString();
@@ -80,6 +85,7 @@ namespace TimeTableManagement.Forms
             subjectController subController = new subjectController();
             subController.DeleteSubject(subject);
 
+            Year.Text = "";
             offyear.Text = "";
             offSem.Text = "";
             subName.Text = "";
@@ -98,6 +104,7 @@ namespace TimeTableManagement.Forms
 
         private void subClear_Click(object sender, EventArgs e)
         {
+            Year.Text = "";
             offyear.Text = "";
             offSem.Text = "";
             subName.Text = "";
@@ -114,6 +121,7 @@ namespace TimeTableManagement.Forms
         {
             subjectModel subjectModel = new subjectModel();
 
+            subjectModel.year = Year.Text;
             subjectModel.OffYear = offyear.Text;
             subjectModel.OffSem = offSem.Text;
             subjectModel.SubName = subName.Text;
@@ -130,6 +138,7 @@ namespace TimeTableManagement.Forms
 
             subTbl.DataSource = ctrl.getSubjectdatatoTable();
 
+            Year.Text = "";
             offyear.Text = "";
             offSem.Text = "";
             subName.Text = "";
@@ -143,3 +152,5 @@ namespace TimeTableManagement.Forms
         }
     }
 }
+
+

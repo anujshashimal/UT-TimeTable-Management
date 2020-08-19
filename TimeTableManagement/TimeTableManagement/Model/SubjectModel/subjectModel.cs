@@ -8,6 +8,7 @@ namespace TimeTableManagement.Model.SubjectModel
 {
     class subjectModel
     {
+        public String year;
         public String OffYear;
         public String OffSem;
         public String SubName;
