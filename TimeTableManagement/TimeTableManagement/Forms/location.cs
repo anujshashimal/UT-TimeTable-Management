@@ -108,6 +108,7 @@ namespace TimeTableManagement.Forms
             SqlDataReader dr = LocationConn.loadRoomvalues();
             dr.Close();
             roomDatagridView.DataSource = LocationConn.GetRoomvalues();
+            allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
 
         }
 
@@ -133,6 +134,7 @@ namespace TimeTableManagement.Forms
 
             dr.Close();
             roomDatagridView.DataSource = LocationConn.GetRoomvalues();
+            allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
 
         }
 
@@ -224,6 +226,8 @@ namespace TimeTableManagement.Forms
 
             dr.Close();
             roomDatagridView.DataSource = LocationConn.GetRoomvalues();
+            allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
+
         }
 
 

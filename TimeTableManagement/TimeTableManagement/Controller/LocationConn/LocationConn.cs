@@ -141,7 +141,7 @@ namespace TimeTableManagement.Controller.LocationConn
 
             DataTable dtstudents = new DataTable();
 
-            string query = "SELECT *  from  LocationTimeTable inner join RoomTable on LocationTimeTable.locationName = RoomTable.buildingName";
+            string query = "SELECT LocationTimeTable.locationID, LocationTimeTable.locationName, RoomTable.roomID, RoomTable.roomName, RoomTable.roomCapacity, RoomTable.roomType  from  LocationTimeTable inner join RoomTable on LocationTimeTable.locationName = RoomTable.buildingName";
             SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
 
             dtstudents.Load(dr1);
