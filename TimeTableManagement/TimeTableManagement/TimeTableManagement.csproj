@@ -68,6 +68,10 @@
   <ItemGroup>
     <Compile Include="Controller\lahiruconn\Studentcon.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
+    <Compile Include="Controller\TimeTableCon\TimeSloatCon.cs" />
+    <Compile Include="Controller\TimeTableCon\WorkingDaysCon.cs" />
+    <Compile Include="Controller\TimeTableCon\NumberOfWorkingDaysCon.cs" />
+    <Compile Include="Controller\TimeTableCon\WorkingTimeCon.cs" />
     <Compile Include="DBConnection\DbConn.cs" />
     <Compile Include="Forms\Admindashboard.cs">
       <SubType>Form</SubType>
@@ -117,8 +121,18 @@
     <Compile Include="Forms\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeTable.Designer.cs">
+      <DependentUpon>TimeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
     <Compile Include="Model\locationModel\locationModel.cs" />
+    <Compile Include="Model\TimeTableModel\NumberOfWorkingDaysModel.cs" />
+    <Compile Include="Model\TimeTableModel\TimeSloatModel.cs" />
+    <Compile Include="Model\TimeTableModel\WorkingDaysModel.cs" />
+    <Compile Include="Model\TimeTableModel\WorkingTimeModel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeTable.resx">
+      <DependentUpon>TimeTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

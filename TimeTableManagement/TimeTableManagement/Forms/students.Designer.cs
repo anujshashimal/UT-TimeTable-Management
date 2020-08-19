@@ -409,6 +409,7 @@
             this.label1.Size = new System.Drawing.Size(218, 23);
             this.label1.TabIndex = 33;
             this.label1.Text = "Academic Year and  Semester";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabPage2
             // 
