@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using TimeTableManagement.Controller.LocationConn;
@@ -114,7 +115,7 @@ namespace TimeTableManagement.Forms
 
         private void deleteB_Click(object sender, EventArgs e)
         {
-            String academicyrsemshldupdatevalue = buildingNameT.Text;
+            String academicyrsemshldupdatevalue = roomIDT.Text;
             SqlDataReader dr = LocationConn.loadRoomvalues();
             if (con.State.ToString() != "Open")
             {
@@ -122,11 +123,11 @@ namespace TimeTableManagement.Forms
             }
             while (dr.Read())
             {
-                String buildingNme = Convert.ToString(dr["buildingName"]);
-                if (academicyrsemshldupdatevalue.Equals(buildingNme))
+                String roomID = Convert.ToString(dr["roomID"]);
+                if (academicyrsemshldupdatevalue.Equals(roomID))
                 {
                     String buldingName = buildingNameT.Text;
-                    string query = "DELETE  FROM RoomTable  WHERE  buildingName='" + buldingName + "'";
+                    string query = "DELETE  FROM RoomTable  WHERE  roomID='" + roomID + "'";
                     SqlCommand com = new SqlCommand(query, con);
                     com.ExecuteNonQuery();
                 }
@@ -310,6 +311,42 @@ namespace TimeTableManagement.Forms
         private void allLocationDet_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+            String sqlquery = "SELECT * FROM RoomTable where roomName = '" + textBox1.Text + "'";
+            SqlCommand sqlccomm = new SqlCommand(sqlquery, con);
+            SqlDataAdapter sdr = new SqlDataAdapter(sqlccomm);
+            DataTable dt = new DataTable();
+            sdr.Fill(dt);
+            allLocationDet.DataSource = dt;
+            con.Close();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+            String sqlquery = "SELECT * FROM RoomTable where buildingName = '" + textBox2.Text + "'";
+            SqlCommand sqlccomm = new SqlCommand(sqlquery, con);
+            SqlDataAdapter sdr = new SqlDataAdapter(sqlccomm);
+            DataTable dt = new DataTable();
+            sdr.Fill(dt);
+            allLocationDet.DataSource = dt;
+            con.Close();
         }
     }
 }
