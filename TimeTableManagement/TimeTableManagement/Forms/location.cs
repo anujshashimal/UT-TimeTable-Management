@@ -63,13 +63,23 @@ namespace TimeTableManagement.Forms
         private void locBtn2_Click(object sender, EventArgs e)
         {
 
-            locationModel.locationPID = locationID.Text;
-            locationModel.locationPName = buildingName.Text;
+            if(locationID.Text != "" && buildingName.Text != "")
+            {
+                locationModel.locationPID = locationID.Text;
+                locationModel.locationPName = buildingName.Text;
 
-            LocationConn.insertLocationDetails(locationModel);
-            
-            locationdataGridView.DataSource = LocationConn.GetLocationvalues();
-            fillCombo();
+                LocationConn.insertLocationDetails(locationModel);
+
+                locationdataGridView.DataSource = LocationConn.GetLocationvalues();
+
+                fillCombo();
+            }
+            else
+            {
+                MessageBox.Show("Please Fill the all the required fields ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
 
         private void location_Load(object sender, EventArgs e)
@@ -98,18 +108,27 @@ namespace TimeTableManagement.Forms
 
         private void addB_Click(object sender, EventArgs e)
         {
-            locationModel.buildingName = buildingNameT.Text;
-            locationModel.roomID = roomIDT.Text;
-            locationModel.roomName = roomNameT.Text;
-            locationModel.roomCapacity = roomCapacity.Text;
-            locationModel.roomType = roomCapacityT.Text;
+            if (buildingNameT.Text != "" && roomIDT.Text != "" && roomNameT.Text != "" && roomCapacity.Text != "" && roomCapacityT.Text != "")
+            {
+                locationModel.buildingName = buildingNameT.Text;
+                locationModel.roomID = roomIDT.Text;
+                locationModel.roomName = roomNameT.Text;
+                locationModel.roomCapacity = roomCapacity.Text;
+                locationModel.roomType = roomCapacityT.Text;
 
-            LocationConn.insertRoomDetails(locationModel);
+                LocationConn.insertRoomDetails(locationModel);
 
-            SqlDataReader dr = LocationConn.loadRoomvalues();
-            dr.Close();
-            roomDatagridView.DataSource = LocationConn.GetRoomvalues();
-            allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
+                SqlDataReader dr = LocationConn.loadRoomvalues();
+                dr.Close();
+                roomDatagridView.DataSource = LocationConn.GetRoomvalues();
+                allLocationDet.DataSource = LocationConn.GetAllLocationvalues();
+
+            }
+            else
+            {
+                MessageBox.Show("Please Fill the all the required fields ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
@@ -130,6 +149,8 @@ namespace TimeTableManagement.Forms
                     string query = "DELETE  FROM RoomTable  WHERE  roomID='" + roomID + "'";
                     SqlCommand com = new SqlCommand(query, con);
                     com.ExecuteNonQuery();
+                    MessageBox.Show("Deleted!");
+
                 }
             }
 
@@ -156,6 +177,8 @@ namespace TimeTableManagement.Forms
                     string query = "DELETE  FROM LocationTimeTable  WHERE  locationID='" + locationID1 + "'";
                     SqlCommand com = new SqlCommand(query, con);
                     com.ExecuteNonQuery();
+                    MessageBox.Show("Deleted!");
+
                 }
             }
 
@@ -202,13 +225,13 @@ namespace TimeTableManagement.Forms
             }
             while (dr.Read())
             {
-                String buildingNme = Convert.ToString(dr["buildingName"]);
-                if (academicyrsemshldupdatevalue.Equals(buildingNme))
+                String roomID = Convert.ToString(dr["roomID"]);
+                if (nme1.Equals(roomID))
                 {
-                    string sql = "UPDATE RoomTable SET roomID='" + nme1 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
-                    string sql1 = "UPDATE RoomTable SET roomName='" + nme2 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
-                    string sql2 = "UPDATE RoomTable SET roomCapacity='" + nme3 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
-                    string sql3 = "UPDATE RoomTable SET roomType='" + nme4 + "' WHERE buildingName = '" + academicyrsemshldupdatevalue + "'";
+                    string sql = "UPDATE RoomTable SET roomID='" + nme1 + "' WHERE roomID = '" + nme1 + "'";
+                    string sql1 = "UPDATE RoomTable SET roomName='" + nme2 + "' WHERE roomID = '" + nme1 + "'";
+                    string sql2 = "UPDATE RoomTable SET roomCapacity='" + nme3 + "' WHERE roomID = '" + nme1 + "'";
+                    string sql3 = "UPDATE RoomTable SET roomType='" + nme4 + "' WHERE roomID = '" + nme1 + "'";
 
                     SqlCommand com = new SqlCommand(sql, con);
                     SqlCommand com2 = new SqlCommand(sql1, con);
@@ -270,6 +293,7 @@ namespace TimeTableManagement.Forms
             }
             fillCombo();
             dr.Close();
+
             locationdataGridView.DataSource = LocationConn.GetLocationvalues();
         }
 

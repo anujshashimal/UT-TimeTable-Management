@@ -27,30 +27,39 @@ namespace TimeTableManagement.Forms
 
         private void subAdd_Click(object sender, EventArgs e)
         {
-            subjectModel subjectModel = new subjectModel();
-            subjectModel.year = Year.Text;
-            subjectModel.OffYear = offyear.Text;
-            subjectModel.OffSem = offSem.Text;
-            subjectModel.SubName = subName.Text;
-            subjectModel.subCode = subCode.Text;
-            subjectModel.lechours = lecHrs.Text;
-            subjectModel.labHours = labHrs.Text;
-            subjectModel.tuteHours = tuteHrs.Text;
-            subjectModel.evalHours = evalHrs.Text;
+            if (Year.Text != "" && offyear.Text != "" && offSem.Text != "" && subName.Text != "" && subCode.Text != "" && lecHrs.Text != "" && labHrs.Text != "" && tuteHrs.Text != "" && evalHrs.Text != "")
+            {
+                subjectModel subjectModel = new subjectModel();
+                subjectModel.year = Year.Text;
+                subjectModel.OffYear = offyear.Text;
+                subjectModel.OffSem = offSem.Text;
+                subjectModel.SubName = subName.Text;
+                subjectModel.subCode = subCode.Text;
+                subjectModel.lechours = lecHrs.Text;
+                subjectModel.labHours = labHrs.Text;
+                subjectModel.tuteHours = tuteHrs.Text;
+                subjectModel.evalHours = evalHrs.Text;
 
-            subjectController subctrl = new subjectController();
-            subctrl.insertSubjectDetails(subjectModel);
+                subjectController subctrl = new subjectController();
+                subctrl.insertSubjectDetails(subjectModel);
 
-            subTbl.DataSource = subctrl.getSubjectdatatoTable();
-            Year.Text = "";
-            offyear.Text = "";
-            offSem.Text = "";
-            subName.Text = "";
-            subCode.Text = "";
-            lecHrs.Text = "";
-            labHrs.Text = "";
-            tuteHrs.Text = "";
-            evalHrs.Text = "";
+                subTbl.DataSource = subctrl.getSubjectdatatoTable();
+                Year.Text = "";
+                offyear.Text = "";
+                offSem.Text = "";
+                subName.Text = "";
+                subCode.Text = "";
+                lecHrs.Text = "";
+                labHrs.Text = "";
+                tuteHrs.Text = "";
+                evalHrs.Text = "";
+
+            }
+            else
+            {
+                MessageBox.Show("Please Fill the all the required fields ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
@@ -71,7 +80,7 @@ namespace TimeTableManagement.Forms
 
                 subCode.ReadOnly = true;
 
-
+                 subAdd.Enabled = false;
 
             }
         }
@@ -96,7 +105,7 @@ namespace TimeTableManagement.Forms
             evalHrs.Text = "";
 
             subCode.ReadOnly = false;
-
+            subAdd.Enabled = true;
 
             subTbl.DataSource = subController.getSubjectdatatoTable();
 
@@ -114,12 +123,16 @@ namespace TimeTableManagement.Forms
             tuteHrs.Text = "";
             evalHrs.Text = "";
 
+            subAdd.Enabled = true;
             subCode.ReadOnly = false;
         }
 
         private void subEdit_Click(object sender, EventArgs e)
         {
-            subjectModel subjectModel = new subjectModel();
+
+            if (Year.Text != "" && offyear.Text != "" && offSem.Text != "" && subName.Text != "" && subCode.Text != "" && lecHrs.Text != "" && labHrs.Text != "" && tuteHrs.Text != "" && evalHrs.Text != "")
+            {
+                subjectModel subjectModel = new subjectModel();
 
             subjectModel.year = Year.Text;
             subjectModel.OffYear = offyear.Text;
@@ -131,7 +144,8 @@ namespace TimeTableManagement.Forms
             subjectModel.tuteHours = tuteHrs.Text;
             subjectModel.evalHours = evalHrs.Text;
 
-        
+         subAdd.Enabled = true;
+
 
             subjectController ctrl = new subjectController();
             ctrl.UpdateSubject(subjectModel);
@@ -149,6 +163,22 @@ namespace TimeTableManagement.Forms
             evalHrs.Text = "";
 
             subCode.ReadOnly = false;
+            }
+            else
+            {
+                MessageBox.Show("Please Fill the all the required fields ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void offSem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -71,7 +71,12 @@
     <Compile Include="Controller\lahiruconn\Tagcon.cs" />
     <Compile Include="Controller\LectureController\LectureController.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
+    <Compile Include="Controller\session controller\session.cs" />
     <Compile Include="Controller\SubjectController\subjectController.cs" />
+    <Compile Include="Controller\TimeTableCon\NumberOfWorkingDaysCon.cs" />
+    <Compile Include="Controller\TimeTableCon\TimeSloatCon.cs" />
+    <Compile Include="Controller\TimeTableCon\WorkingDaysCon.cs" />
+    <Compile Include="Controller\TimeTableCon\WorkingTimeCon.cs" />
     <Compile Include="DBConnection\DbConn.cs" />
     <Compile Include="Forms\Admindashboard.cs">
       <SubType>Form</SubType>
@@ -84,6 +89,12 @@
     </Compile>
     <Compile Include="Forms\anujTesting.Designer.cs">
       <DependentUpon>anujTesting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateSession.Designer.cs">
+      <DependentUpon>CreateSession.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\dashboard.cs">
       <SubType>Form</SubType>
@@ -139,11 +150,22 @@
     <Compile Include="Forms\subjectsform.Designer.cs">
       <DependentUpon>subjectsform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeTable.designer.cs">
+      <DependentUpon>TimeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
     <Compile Include="Model\lahirumodel\Tagmodel.cs" />
     <Compile Include="Model\LecturerModel\Lecturer.cs" />
     <Compile Include="Model\locationModel\locationModel.cs" />
+    <Compile Include="Model\SessionModel\sessionModel.cs" />
     <Compile Include="Model\SubjectModel\subjectModel.cs" />
+    <Compile Include="Model\TimeTableModel\NumberOfWorkingDaysModel.cs" />
+    <Compile Include="Model\TimeTableModel\TimeSloatModel.cs" />
+    <Compile Include="Model\TimeTableModel\WorkingDaysModel.cs" />
+    <Compile Include="Model\TimeTableModel\WorkingTimeModel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,10 +191,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myDBDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="myDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="myDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="myDBDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Admindashboard.resx">
       <DependentUpon>Admindashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateSession.resx">
+      <DependentUpon>CreateSession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
@@ -200,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\subjectsform.resx">
       <DependentUpon>subjectsform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeTable.resx">
+      <DependentUpon>TimeTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -265,6 +308,39 @@
     </None>
     <None Include="myDBDataSet4.xss">
       <DependentUpon>myDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet5.xsc">
+      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myDBDataSet5.xss">
+      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet6.xsc">
+      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myDBDataSet6.xss">
+      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet7.xsc">
+      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="myDBDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDBDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="myDBDataSet7.xss">
+      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

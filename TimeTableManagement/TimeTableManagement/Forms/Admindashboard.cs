@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing.Drawing2D;
 namespace TimeTableManagement.Forms
 {
     public partial class Admindashboard : Form
@@ -15,6 +15,11 @@ namespace TimeTableManagement.Forms
         public Admindashboard()
         {
             InitializeComponent();
+
+          
+
+           
+            OpenChildForm(new dashboard());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -93,7 +98,7 @@ namespace TimeTableManagement.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+         
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -111,6 +116,23 @@ namespace TimeTableManagement.Forms
         {
             OpenChildForm(new StaticsRelated());
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TimeTable());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new CreateSession());
+            
         }
     }
 }

@@ -14,6 +14,15 @@ namespace TimeTableManagement.Forms
 {
     public partial class LecturerForm : Form
     {
+
+        string[] computingarr = {"orientation Program","information technology","Computer system technologies","information technology/Software Engineering(Curtin)",
+            "Software Engineering (SHU)"};
+        string[] businessarr = { "business Management (SLIIT)", "Business Management (LJMU)" };
+        string[] Engineeringarr = { "Engineering (SLIIT)", "Engieering (Curtin)", "Quantity Surveying", "B.Ed. in Technology Education" };
+        string[] hsArr = { "Biological Science", "Biotechnology", "English", "Law", "Nursing", "Physical Science", "Psychology" };
+        string[] architecturearr = { "Architecture" };
+        string[] graduationarr = { "Information technology", "Information Systems", "Information Management", "Enterprice Application Development", "Cyber Security", "MBA" };
+
         public LecturerForm()
         {
             InitializeComponent();
@@ -42,11 +51,7 @@ namespace TimeTableManagement.Forms
         {
             Lecturer lecturer = new Lecturer();
 
-            if (eidtxt.Text.Length != 6)
-            {
-
-            }
-            else
+            if (nametxt.Text != "" && eidtxt.Text != "" && factxt.Text != "" && depttxt.Text != "" && centertxt.Text != "" && buildingtxt.Text != "" && leveltxt.Text != ""  && ranktxt.Text != "")
             {
 
                 lecturer.lecName = nametxt.Text;
@@ -73,6 +78,12 @@ namespace TimeTableManagement.Forms
                 ranktxt.Text = "";
 
                 lecturerTble.DataSource = leccrl.getdatatoTable();
+               
+            }
+            else
+            {
+
+                MessageBox.Show("Please Fill the all the required fields ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -100,7 +111,7 @@ namespace TimeTableManagement.Forms
 
                 eidtxt.ReadOnly = true;
 
-
+                 addLec.Enabled = false;
 
             }
 
@@ -117,6 +128,7 @@ namespace TimeTableManagement.Forms
             leveltxt.Text = "";
             ranktxt.Text = "";
             eidtxt.ReadOnly = false;
+            addLec.Enabled = true;
 
 
         }
@@ -138,31 +150,114 @@ namespace TimeTableManagement.Forms
             leveltxt.Text = "";
             ranktxt.Text = "";
             eidtxt.ReadOnly = false;
-
+             addLec.Enabled = true;
            
             lecturerTble.DataSource = lectureController.getdatatoTable();
         }
 
         private void editLec_Click(object sender, EventArgs e)
         {
-            Lecturer lecturer = new Lecturer();
 
-            lecturer.lecName = nametxt.Text;
-            lecturer.eid = eidtxt.Text;
-            lecturer.faculty = factxt.Text;
-            lecturer.department = depttxt.Text;
-            lecturer.center = centertxt.Text;
-            lecturer.buildng = buildingtxt.Text;
-            lecturer.level = leveltxt.Text;
-            lecturer.rank = ranktxt.Text;
+            if (nametxt.Text != "" && eidtxt.Text != "" && factxt.Text != "" && depttxt.Text != "" && centertxt.Text != "" && buildingtxt.Text != "" && leveltxt.Text != "" && ranktxt.Text != "")
+            {
+                Lecturer lecturer = new Lecturer();
 
-            ranktxt.Text = lecturer.level + "." + lecturer.eid;
+                lecturer.lecName = nametxt.Text;
+                lecturer.eid = eidtxt.Text;
+                lecturer.faculty = factxt.Text;
+                lecturer.department = depttxt.Text;
+                lecturer.center = centertxt.Text;
+                lecturer.buildng = buildingtxt.Text;
+                lecturer.level = leveltxt.Text;
+                lecturer.rank = ranktxt.Text;
 
-            LectureController ctrl = new LectureController();
-            ctrl.UpdateLecturer(lecturer);
-           
-            lecturerTble.DataSource = ctrl.getdatatoTable();
+                ranktxt.Text = lecturer.level + "." + lecturer.eid;
 
+                LectureController ctrl = new LectureController();
+                ctrl.UpdateLecturer(lecturer);
+
+                nametxt.Text = "";
+                eidtxt.Text = "";
+                factxt.Text = "";
+                depttxt.Text = "";
+                centertxt.Text = "";
+                buildingtxt.Text = "";
+                leveltxt.Text = "";
+                ranktxt.Text = "";
+                eidtxt.ReadOnly = false;
+
+                lecturerTble.DataSource = ctrl.getdatatoTable();
+                addLec.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please Fill the all the required fields ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nametxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void factxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+            if (factxt.Text== "Computing")
+            {
+                depttxt.Items.Clear();
+                for (int i = 0; i < computingarr.Length; i++)
+                {
+                    depttxt.Items.Add(computingarr[i]);
+                }
+            }else if(factxt.Text == "Engineering")
+            {
+                depttxt.Items.Clear();
+                for (int i = 0; i < Engineeringarr.Length; i++)
+                {
+                    depttxt.Items.Add(Engineeringarr[i]);
+                }
+            }
+            else if (factxt.Text == "Business")
+            {
+                depttxt.Items.Clear();
+                for (int i = 0; i < businessarr.Length; i++)
+                {
+                    depttxt.Items.Add(businessarr[i]);
+                }
+            }
+            else if (factxt.Text == "Humanities & Sciences")
+            {
+                depttxt.Items.Clear();
+                for (int i = 0; i < hsArr.Length; i++)
+                {
+                    depttxt.Items.Add(hsArr[i]);
+                }
+            }
+            else if (factxt.Text == "School of Architecture")
+            {
+                depttxt.Items.Clear();
+                for (int i = 0; i < architecturearr.Length; i++)
+                {
+                    depttxt.Items.Add(architecturearr[i]);
+                }
+            }
+            else 
+            {
+                depttxt.Items.Clear();
+                for (int i = 0; i < graduationarr.Length; i++)
+                {
+                    depttxt.Items.Add(graduationarr[i]);
+                }
+            }
         }
     }
 }
