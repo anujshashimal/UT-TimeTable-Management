@@ -98,7 +98,7 @@ namespace TimeTableManagement.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-         
+            OpenChildForm(new Managesessions());
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -133,6 +133,11 @@ namespace TimeTableManagement.Forms
         {
             OpenChildForm(new CreateSession());
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new roomsManaging());
         }
     }
 }
