@@ -67,6 +67,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\lahiruconn\consecutivesession.cs" />
+    <Compile Include="Controller\lahiruconn\NotAvaliablesession.cs" />
+    <Compile Include="Controller\lahiruconn\parallelsessioncon.cs" />
     <Compile Include="Controller\lahiruconn\Studentcon.cs" />
     <Compile Include="Controller\lahiruconn\Tagcon.cs" />
     <Compile Include="Controller\LectureController\LectureController.cs" />
@@ -156,6 +159,9 @@
     <Compile Include="Forms\TimeTable.designer.cs">
       <DependentUpon>TimeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\lahirumodel\consecutivemodel.cs" />
+    <Compile Include="Model\lahirumodel\Notavaliablemodel.cs" />
+    <Compile Include="Model\lahirumodel\parallelmodel.cs" />
     <Compile Include="Model\lahirumodel\studentmodel.cs" />
     <Compile Include="Model\lahirumodel\Tagmodel.cs" />
     <Compile Include="Model\LecturerModel\Lecturer.cs" />
