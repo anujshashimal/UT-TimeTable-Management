@@ -354,7 +354,7 @@
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
-            // students
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -391,7 +391,7 @@
             this.Controls.Add(this.academicyearsem);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "students";
+            this.Name = "Form3";
             this.Text = "students";
             this.Load += new System.EventHandler(this.students_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Student_Data_Grid_View)).EndInit();

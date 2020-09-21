@@ -44,5 +44,16 @@ namespace TimeTableManagement.Properties {
                 return ((string)(this["myDBConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Vishaka\\Documents\\my" +
+            "DB.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string myDBConnectionString2 {
+            get {
+                return ((string)(this["myDBConnectionString2"]));
+            }
+        }
     }
 }

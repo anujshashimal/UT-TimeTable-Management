@@ -858,5 +858,10 @@ namespace TimeTableManagement.Forms
         {
 
         }
+
+        private void TagdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace TimeTableManagement.Forms
 {
-    public partial class Form3 : Form
+    public partial class CreateSession : Form
     {
-        public Form3()
+        public CreateSession()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
