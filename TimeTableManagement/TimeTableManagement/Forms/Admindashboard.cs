@@ -99,7 +99,6 @@ namespace TimeTableManagement.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Managesessions());
-
         }
 
         private void button4_Click(object sender, EventArgs e)
