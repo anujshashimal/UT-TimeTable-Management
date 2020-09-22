@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data;
 using System.Collections;
 using TimeTableManagement.Model.locationModel;
+using TimeTableManagement.Controller.lahiruconn;
+using TimeTableManagement.Controller.LocationConn;
 
 namespace TimeTableManagement.Controller.LocationConn
 {
@@ -18,9 +20,11 @@ namespace TimeTableManagement.Controller.LocationConn
         DbConn DBConnection = new DbConn();
         SqlConnection con = new SqlConnection();
 
+
         public roomsConn()
         {
             con = DBConnection.getDBConnection();
+
         }
 
         public ArrayList getRooms()
@@ -173,21 +177,49 @@ namespace TimeTableManagement.Controller.LocationConn
             }
 
             DataTable dataTable = new DataTable();
-            Console.WriteLine(roommodel.roomName);
-            string query = "update Consecutivetbl set roomName = '" + roommodel.roomName + "'where subjectCode = '" + roommodel.subjectCode + "'";
-            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+            consecutivesession consecutivesession = new consecutivesession();
 
+            SqlDataReader dr = consecutivesession.load_sesssion_details();
 
-            while (data.Read())
+            if (con.State.ToString() != "Open")
             {
-                int i = 0;
-                arrayList.Add(data.GetValue(i).ToString());
-                i++;
+                con.Open();
             }
+            while (dr.Read())
+            {
+           
+                    string query = "update Consecutivetbl set roomName = '" + roommodel.roomName + "'where subjectCode = '" + roommodel.subjectCode + "'";
+                    SqlCommand com = new SqlCommand(query, con);
+                    MessageBox.Show("Updated!");
+
+                    com.ExecuteNonQuery();
+
+                
+            }
+
+            roomsConn roomsConn = new roomsConn();
 
             Console.WriteLine("awdwadaw", arrayList);
 
             return arrayList;
+        }
+
+ 
+
+        public DataTable load_con_sesssion_details()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from Consecutivetbl ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
         }
     }
 }

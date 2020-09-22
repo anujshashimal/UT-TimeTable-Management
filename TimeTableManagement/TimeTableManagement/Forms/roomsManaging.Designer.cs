@@ -31,12 +31,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.aroomType = new System.Windows.Forms.ComboBox();
             this.assignRoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.roomManagingSource = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.atag2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.asubjectCode = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -53,11 +58,6 @@
             this.locBtn2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.aroomType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.atag2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -105,6 +105,16 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // aroomType
+            // 
+            this.aroomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aroomType.FormattingEnabled = true;
+            this.aroomType.Location = new System.Drawing.Point(133, 133);
+            this.aroomType.Name = "aroomType";
+            this.aroomType.Size = new System.Drawing.Size(387, 28);
+            this.aroomType.TabIndex = 66;
+            this.aroomType.SelectedIndexChanged += new System.EventHandler(this.aroomType_SelectedIndexChanged);
+            // 
             // assignRoom
             // 
             this.assignRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,6 +141,7 @@
             this.roomManagingSource.Name = "roomManagingSource";
             this.roomManagingSource.Size = new System.Drawing.Size(1042, 195);
             this.roomManagingSource.TabIndex = 0;
+            this.roomManagingSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomManagingSource_CellContentClick);
             // 
             // button2
             // 
@@ -141,7 +152,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(259, 43);
             this.button2.TabIndex = 58;
-            this.button2.Text = "Delete";
+            this.button2.Text = "Delete Session";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -153,7 +164,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(259, 43);
             this.button1.TabIndex = 57;
-            this.button1.Text = "Edit";
+            this.button1.Text = "Edit Session";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // panel2
@@ -176,6 +187,45 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1026, 241);
             this.panel2.TabIndex = 56;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(681, 109);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(300, 28);
+            this.comboBox1.TabIndex = 74;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(503, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 23);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Not available time";
+            // 
+            // atag2
+            // 
+            this.atag2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atag2.FormattingEnabled = true;
+            this.atag2.Location = new System.Drawing.Point(681, 65);
+            this.atag2.Name = "atag2";
+            this.atag2.Size = new System.Drawing.Size(300, 28);
+            this.atag2.TabIndex = 72;
+            this.atag2.SelectedIndexChanged += new System.EventHandler(this.atag2_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(503, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Tag 2";
             // 
             // comboBox7
             // 
@@ -313,7 +363,7 @@
             this.locBtn2.Name = "locBtn2";
             this.locBtn2.Size = new System.Drawing.Size(259, 43);
             this.locBtn2.TabIndex = 48;
-            this.locBtn2.Text = "Add";
+            this.locBtn2.Text = "Update session";
             this.locBtn2.UseVisualStyleBackColor = false;
             this.locBtn2.Click += new System.EventHandler(this.locBtn2_Click);
             // 
@@ -336,55 +386,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // aroomType
-            // 
-            this.aroomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aroomType.FormattingEnabled = true;
-            this.aroomType.Location = new System.Drawing.Point(133, 133);
-            this.aroomType.Name = "aroomType";
-            this.aroomType.Size = new System.Drawing.Size(387, 28);
-            this.aroomType.TabIndex = 66;
-            this.aroomType.SelectedIndexChanged += new System.EventHandler(this.aroomType_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(503, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Tag 2";
-            // 
-            // atag2
-            // 
-            this.atag2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.atag2.FormattingEnabled = true;
-            this.atag2.Location = new System.Drawing.Point(681, 65);
-            this.atag2.Name = "atag2";
-            this.atag2.Size = new System.Drawing.Size(300, 28);
-            this.atag2.TabIndex = 72;
-            this.atag2.SelectedIndexChanged += new System.EventHandler(this.atag2_SelectedIndexChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(681, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(300, 28);
-            this.comboBox1.TabIndex = 74;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(503, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 23);
-            this.label7.TabIndex = 73;
-            this.label7.Text = "Not available time";
             // 
             // roomsManaging
             // 

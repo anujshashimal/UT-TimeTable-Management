@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTableManagement.Controller.LocationConn;
+using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.locationModel;
 
 namespace TimeTableManagement.Forms
@@ -18,8 +19,12 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
             roomsConn roomsConn = new roomsConn();
+            consecutivesession consecutivesession = new consecutivesession();
+
             assignRoom.DataSource = roomsConn.getRooms();
             asubjectCode.DataSource = roomsConn.getSession();
+            roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+
 
         }
 
@@ -47,6 +52,7 @@ namespace TimeTableManagement.Forms
             roomsModel.roomName = assignRoom.Text;
             roomsModel.subjectCode = asubjectCode.Text;
             roomsConn.updateSessionTable(roomsModel);
+            roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
 
 
         }
@@ -70,6 +76,16 @@ namespace TimeTableManagement.Forms
 
         private void atag2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void roomManagingSource_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var currentRow = roomManagingSource.CurrentRow;
+
+            var selectedName = currentRow.Cells[0].Value;
+            var selectedName1 = currentRow.Cells[1].Value;
+
 
         }
     }
