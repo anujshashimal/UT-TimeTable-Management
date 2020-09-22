@@ -220,6 +220,7 @@
             this.subBox.Name = "subBox";
             this.subBox.Size = new System.Drawing.Size(129, 28);
             this.subBox.TabIndex = 14;
+            this.subBox.SelectedIndexChanged += new System.EventHandler(this.subBox_SelectedIndexChanged);
             // 
             // Gid
             // 
@@ -273,6 +274,7 @@
             this.subcodeList.Name = "subcodeList";
             this.subcodeList.Size = new System.Drawing.Size(387, 28);
             this.subcodeList.TabIndex = 11;
+            this.subcodeList.SelectedIndexChanged += new System.EventHandler(this.subcodeList_SelectedIndexChanged);
             // 
             // subNamelist
             // 
@@ -292,6 +294,7 @@
             this.lecturerlist.Name = "lecturerlist";
             this.lecturerlist.Size = new System.Drawing.Size(387, 28);
             this.lecturerlist.TabIndex = 9;
+            this.lecturerlist.SelectedIndexChanged += new System.EventHandler(this.lecturerlist_SelectedIndexChanged);
             // 
             // label9
             // 

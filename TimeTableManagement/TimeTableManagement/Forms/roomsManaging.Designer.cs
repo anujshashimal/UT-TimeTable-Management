@@ -31,33 +31,33 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.assignRoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.roomManagingSource = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.asubjectCode = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.agroupid = new System.Windows.Forms.ComboBox();
+            this.atags = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.locBtn2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.aroomType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.atag2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -86,19 +86,17 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.aroomType);
+            this.tabPage1.Controls.Add(this.assignRoom);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.locBtn2);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -106,6 +104,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // assignRoom
+            // 
+            this.assignRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignRoom.FormattingEnabled = true;
+            this.assignRoom.Location = new System.Drawing.Point(133, 89);
+            this.assignRoom.Name = "assignRoom";
+            this.assignRoom.Size = new System.Drawing.Size(387, 28);
+            this.assignRoom.TabIndex = 65;
+            this.assignRoom.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -150,17 +158,19 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.atag2);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.comboBox7);
-            this.panel2.Controls.Add(this.comboBox6);
+            this.panel2.Controls.Add(this.asubjectCode);
             this.panel2.Controls.Add(this.comboBox5);
-            this.panel2.Controls.Add(this.comboBox4);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.agroupid);
+            this.panel2.Controls.Add(this.atags);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(6, 205);
             this.panel2.Name = "panel2";
@@ -171,62 +181,54 @@
             // 
             this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(234, 199);
+            this.comboBox7.Location = new System.Drawing.Point(195, 190);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(387, 28);
+            this.comboBox7.Size = new System.Drawing.Size(300, 28);
             this.comboBox7.TabIndex = 69;
             // 
-            // comboBox6
+            // asubjectCode
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(234, 165);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(387, 28);
-            this.comboBox6.TabIndex = 68;
+            this.asubjectCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asubjectCode.FormattingEnabled = true;
+            this.asubjectCode.Location = new System.Drawing.Point(195, 21);
+            this.asubjectCode.Name = "asubjectCode";
+            this.asubjectCode.Size = new System.Drawing.Size(300, 28);
+            this.asubjectCode.TabIndex = 68;
+            this.asubjectCode.SelectedIndexChanged += new System.EventHandler(this.asubjectCode_SelectedIndexChanged);
             // 
             // comboBox5
             // 
             this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(234, 131);
+            this.comboBox5.Location = new System.Drawing.Point(195, 150);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(387, 28);
+            this.comboBox5.Size = new System.Drawing.Size(300, 28);
             this.comboBox5.TabIndex = 67;
             // 
-            // comboBox4
+            // agroupid
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(234, 97);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(387, 28);
-            this.comboBox4.TabIndex = 66;
+            this.agroupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agroupid.FormattingEnabled = true;
+            this.agroupid.Location = new System.Drawing.Point(195, 109);
+            this.agroupid.Name = "agroupid";
+            this.agroupid.Size = new System.Drawing.Size(300, 28);
+            this.agroupid.TabIndex = 66;
             // 
-            // comboBox3
+            // atags
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(234, 62);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(387, 28);
-            this.comboBox3.TabIndex = 65;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(234, 22);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(387, 28);
-            this.comboBox2.TabIndex = 64;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.atags.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atags.FormattingEnabled = true;
+            this.atags.Location = new System.Drawing.Point(195, 66);
+            this.atags.Name = "atags";
+            this.atags.Size = new System.Drawing.Size(300, 28);
+            this.atags.TabIndex = 64;
+            this.atags.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(17, 202);
+            this.label11.Location = new System.Drawing.Point(17, 192);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(168, 23);
             this.label11.TabIndex = 63;
@@ -236,17 +238,17 @@
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(18, 171);
+            this.label10.Location = new System.Drawing.Point(18, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(128, 23);
             this.label10.TabIndex = 62;
-            this.label10.Text = "Subject";
+            this.label10.Text = "Subject Code";
             // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(16, 134);
+            this.label9.Location = new System.Drawing.Point(16, 152);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 20);
             this.label9.TabIndex = 61;
@@ -256,37 +258,27 @@
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(16, 97);
+            this.label8.Location = new System.Drawing.Point(16, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(168, 20);
             this.label8.TabIndex = 60;
             this.label8.Text = "Group id/Subgroup id";
             // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(16, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 20);
-            this.label7.TabIndex = 59;
-            this.label7.Text = "Lecturer Name";
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(16, 25);
+            this.label6.Location = new System.Drawing.Point(16, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 20);
             this.label6.TabIndex = 57;
-            this.label6.Text = "Tags";
+            this.label6.Text = "Tag 1";
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(32, 13);
+            this.label5.Location = new System.Drawing.Point(23, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 23);
             this.label5.TabIndex = 55;
@@ -301,22 +293,6 @@
             this.label3.Size = new System.Drawing.Size(224, 23);
             this.label3.TabIndex = 54;
             this.label3.Text = "Select the one of these type";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(387, 26);
-            this.textBox1.TabIndex = 53;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(133, 131);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(387, 26);
-            this.textBox3.TabIndex = 52;
             // 
             // label4
             // 
@@ -339,6 +315,7 @@
             this.locBtn2.TabIndex = 48;
             this.locBtn2.Text = "Add";
             this.locBtn2.UseVisualStyleBackColor = false;
+            this.locBtn2.Click += new System.EventHandler(this.locBtn2_Click);
             // 
             // label2
             // 
@@ -350,16 +327,6 @@
             this.label2.TabIndex = 47;
             this.label2.Text = "Assign room name";
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(22, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "room ID";
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -370,14 +337,54 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // aroomType
+            // 
+            this.aroomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aroomType.FormattingEnabled = true;
+            this.aroomType.Location = new System.Drawing.Point(133, 133);
+            this.aroomType.Name = "aroomType";
+            this.aroomType.Size = new System.Drawing.Size(387, 28);
+            this.aroomType.TabIndex = 66;
+            this.aroomType.SelectedIndexChanged += new System.EventHandler(this.aroomType_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(503, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Tag 2";
+            // 
+            // atag2
+            // 
+            this.atag2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.atag2.FormattingEnabled = true;
+            this.atag2.Location = new System.Drawing.Point(681, 65);
+            this.atag2.Name = "atag2";
+            this.atag2.Size = new System.Drawing.Size(300, 28);
+            this.atag2.TabIndex = 72;
+            this.atag2.SelectedIndexChanged += new System.EventHandler(this.atag2_SelectedIndexChanged);
+            // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 89);
+            this.comboBox1.Location = new System.Drawing.Point(681, 109);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(387, 28);
-            this.comboBox1.TabIndex = 65;
+            this.comboBox1.Size = new System.Drawing.Size(300, 28);
+            this.comboBox1.TabIndex = 74;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(503, 111);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 23);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Not available time";
             // 
             // roomsManaging
             // 
@@ -390,7 +397,6 @@
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roomManagingSource)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -407,28 +413,28 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button locBtn2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView roomManagingSource;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox asubjectCode;
         private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox agroupid;
+        private System.Windows.Forms.ComboBox atags;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox assignRoom;
+        private System.Windows.Forms.ComboBox aroomType;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox atag2;
+        private System.Windows.Forms.Label label1;
     }
 }

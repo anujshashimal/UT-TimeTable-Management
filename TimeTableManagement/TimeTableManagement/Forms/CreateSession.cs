@@ -164,5 +164,20 @@ namespace TimeTableManagement.Forms
 
 
         }
+
+        private void subcodeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lecturerlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

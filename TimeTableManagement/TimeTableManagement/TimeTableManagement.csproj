@@ -177,6 +177,7 @@
     <Compile Include="Model\lahirumodel\Tagmodel.cs" />
     <Compile Include="Model\LecturerModel\Lecturer.cs" />
     <Compile Include="Model\locationModel\locationModel.cs" />
+    <Compile Include="Model\locationModel\roomModel.cs" />
     <Compile Include="Model\SessionModel\sessionModel.cs" />
     <Compile Include="Model\SubjectModel\subjectModel.cs" />
     <Compile Include="Model\TimeTableModel\NumberOfWorkingDaysModel.cs" />
