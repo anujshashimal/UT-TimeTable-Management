@@ -24,6 +24,8 @@ namespace TimeTableManagement.Forms
             assignRoom.DataSource = roomsConn.getRooms();
             asubjectCode.DataSource = roomsConn.getSession();
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+            faculty.DataSource = roomsConn.getFaultyRooms();
+
             loadSessionItems();
 
 
@@ -37,11 +39,11 @@ namespace TimeTableManagement.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             roomsConn roomsConn = new roomsConn();
-
             String selectedNme = assignRoom.Text.ToString();
-
+            String selectedFaculty = faculty.Text.ToString();
 
             aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
+
 
         }
 
@@ -49,10 +51,11 @@ namespace TimeTableManagement.Forms
         {
             roomsConn roomsConn = new roomsConn();
             roomModel roomsModel = new roomModel();
+            String selectedSessionType = sessionType.Text.ToString();
 
             roomsModel.roomName = assignRoom.Text;
             roomsModel.subjectCode = asubjectCode.Text;
-            roomsConn.updateSessionTable(roomsModel);
+            roomsConn.updateSessionTable(roomsModel, notavltime.Text.ToString(), selectedSessionType);
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
 
 
@@ -129,6 +132,13 @@ namespace TimeTableManagement.Forms
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void faculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            String selectedFaculty = faculty.Text.ToString();
+            assignRoom.DataSource = roomsConn.getRoomsByFaculty(selectedFaculty);
         }
     }
 }

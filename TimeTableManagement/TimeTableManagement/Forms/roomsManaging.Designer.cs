@@ -42,14 +42,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.atag2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.notavltime = new System.Windows.Forms.ComboBox();
             this.asubjectCode = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.agroupid = new System.Windows.Forms.ComboBox();
             this.atags = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,6 +58,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.sessionType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.faculty = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -88,6 +88,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.faculty);
+            this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.sessionType);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.aroomType);
@@ -114,7 +116,7 @@
             // 
             this.aroomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aroomType.FormattingEnabled = true;
-            this.aroomType.Location = new System.Drawing.Point(128, 89);
+            this.aroomType.Location = new System.Drawing.Point(133, 123);
             this.aroomType.Name = "aroomType";
             this.aroomType.Size = new System.Drawing.Size(387, 28);
             this.aroomType.TabIndex = 66;
@@ -124,7 +126,7 @@
             // 
             this.assignRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assignRoom.FormattingEnabled = true;
-            this.assignRoom.Location = new System.Drawing.Point(128, 50);
+            this.assignRoom.Location = new System.Drawing.Point(133, 84);
             this.assignRoom.Name = "assignRoom";
             this.assignRoom.Size = new System.Drawing.Size(387, 28);
             this.assignRoom.TabIndex = 65;
@@ -178,19 +180,17 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.atag2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.comboBox7);
+            this.panel2.Controls.Add(this.notavltime);
             this.panel2.Controls.Add(this.asubjectCode);
-            this.panel2.Controls.Add(this.comboBox5);
             this.panel2.Controls.Add(this.agroupid);
             this.panel2.Controls.Add(this.atags);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(6, 205);
+            this.panel2.Location = new System.Drawing.Point(6, 235);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1026, 241);
+            this.panel2.Size = new System.Drawing.Size(1026, 211);
             this.panel2.TabIndex = 56;
             // 
             // comboBox1
@@ -232,14 +232,14 @@
             this.label1.TabIndex = 70;
             this.label1.Text = "Tag 2";
             // 
-            // comboBox7
+            // notavltime
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(195, 190);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(300, 28);
-            this.comboBox7.TabIndex = 69;
+            this.notavltime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notavltime.FormattingEnabled = true;
+            this.notavltime.Location = new System.Drawing.Point(195, 153);
+            this.notavltime.Name = "notavltime";
+            this.notavltime.Size = new System.Drawing.Size(300, 28);
+            this.notavltime.TabIndex = 69;
             // 
             // asubjectCode
             // 
@@ -250,15 +250,6 @@
             this.asubjectCode.Size = new System.Drawing.Size(300, 28);
             this.asubjectCode.TabIndex = 68;
             this.asubjectCode.SelectedIndexChanged += new System.EventHandler(this.asubjectCode_SelectedIndexChanged);
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(195, 150);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(300, 28);
-            this.comboBox5.TabIndex = 67;
             // 
             // agroupid
             // 
@@ -283,7 +274,7 @@
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(17, 192);
+            this.label11.Location = new System.Drawing.Point(17, 155);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(168, 23);
             this.label11.TabIndex = 63;
@@ -299,21 +290,11 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Subject Code";
             // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(16, 152);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 20);
-            this.label9.TabIndex = 61;
-            this.label9.Text = "Session Type";
-            // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(16, 108);
+            this.label8.Location = new System.Drawing.Point(16, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(168, 20);
             this.label8.TabIndex = 60;
@@ -343,7 +324,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(32, 179);
+            this.label3.Location = new System.Drawing.Point(18, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(224, 23);
             this.label3.TabIndex = 54;
@@ -353,7 +334,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(17, 92);
+            this.label4.Location = new System.Drawing.Point(22, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 23);
             this.label4.TabIndex = 50;
@@ -376,7 +357,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(17, 55);
+            this.label2.Location = new System.Drawing.Point(22, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 23);
             this.label2.TabIndex = 47;
@@ -396,7 +377,7 @@
             // 
             this.sessionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sessionType.FormattingEnabled = true;
-            this.sessionType.Location = new System.Drawing.Point(128, 133);
+            this.sessionType.Location = new System.Drawing.Point(133, 167);
             this.sessionType.Name = "sessionType";
             this.sessionType.Size = new System.Drawing.Size(387, 28);
             this.sessionType.TabIndex = 68;
@@ -406,11 +387,31 @@
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(17, 136);
+            this.label12.Location = new System.Drawing.Point(22, 170);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(122, 23);
             this.label12.TabIndex = 67;
             this.label12.Text = "Session Type";
+            // 
+            // faculty
+            // 
+            this.faculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.faculty.FormattingEnabled = true;
+            this.faculty.Location = new System.Drawing.Point(133, 43);
+            this.faculty.Name = "faculty";
+            this.faculty.Size = new System.Drawing.Size(387, 28);
+            this.faculty.TabIndex = 70;
+            this.faculty.SelectedIndexChanged += new System.EventHandler(this.faculty_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(22, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 23);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "Faculty";
             // 
             // roomsManaging
             // 
@@ -444,14 +445,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox notavltime;
         private System.Windows.Forms.ComboBox asubjectCode;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox agroupid;
         private System.Windows.Forms.ComboBox atags;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -464,5 +463,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox sessionType;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox faculty;
+        private System.Windows.Forms.Label label9;
     }
 }
