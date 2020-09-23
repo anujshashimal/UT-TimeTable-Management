@@ -58,6 +58,8 @@
             this.locBtn2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.sessionType = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -86,6 +88,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.sessionType);
+            this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.aroomType);
             this.tabPage1.Controls.Add(this.assignRoom);
             this.tabPage1.Controls.Add(this.panel3);
@@ -104,12 +108,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // aroomType
             // 
             this.aroomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aroomType.FormattingEnabled = true;
-            this.aroomType.Location = new System.Drawing.Point(133, 133);
+            this.aroomType.Location = new System.Drawing.Point(128, 89);
             this.aroomType.Name = "aroomType";
             this.aroomType.Size = new System.Drawing.Size(387, 28);
             this.aroomType.TabIndex = 66;
@@ -119,7 +124,7 @@
             // 
             this.assignRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assignRoom.FormattingEnabled = true;
-            this.assignRoom.Location = new System.Drawing.Point(133, 89);
+            this.assignRoom.Location = new System.Drawing.Point(128, 50);
             this.assignRoom.Name = "assignRoom";
             this.assignRoom.Size = new System.Drawing.Size(387, 28);
             this.assignRoom.TabIndex = 65;
@@ -328,7 +333,7 @@
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(23, 46);
+            this.label5.Location = new System.Drawing.Point(18, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 23);
             this.label5.TabIndex = 55;
@@ -348,7 +353,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(22, 131);
+            this.label4.Location = new System.Drawing.Point(17, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 23);
             this.label4.TabIndex = 50;
@@ -371,7 +376,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(22, 94);
+            this.label2.Location = new System.Drawing.Point(17, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 23);
             this.label2.TabIndex = 47;
@@ -386,6 +391,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // sessionType
+            // 
+            this.sessionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionType.FormattingEnabled = true;
+            this.sessionType.Location = new System.Drawing.Point(128, 133);
+            this.sessionType.Name = "sessionType";
+            this.sessionType.Size = new System.Drawing.Size(387, 28);
+            this.sessionType.TabIndex = 68;
+            this.sessionType.SelectedIndexChanged += new System.EventHandler(this.sessionType_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(17, 136);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(122, 23);
+            this.label12.TabIndex = 67;
+            this.label12.Text = "Session Type";
             // 
             // roomsManaging
             // 
@@ -437,5 +462,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox atag2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox sessionType;
+        private System.Windows.Forms.Label label12;
     }
 }

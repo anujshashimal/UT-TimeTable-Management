@@ -24,6 +24,7 @@ namespace TimeTableManagement.Forms
             assignRoom.DataSource = roomsConn.getRooms();
             asubjectCode.DataSource = roomsConn.getSession();
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+            loadSessionItems();
 
 
         }
@@ -63,6 +64,10 @@ namespace TimeTableManagement.Forms
             String getSelectedSubject = asubjectCode.Text.ToString();
             atags.DataSource = roomsConn.getSessionType(getSelectedSubject);
             atag2.DataSource = roomsConn.getTag2Type(getSelectedSubject);
+
+            String selectedSessionType = sessionType.Text.ToString();
+            String selectedSubject = asubjectCode.Text.ToString();
+            atags.DataSource = roomsConn.getSessionTypeTag(selectedSessionType, selectedSubject, aroomType.Text.ToString());
         }
 
         private void aroomType_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,6 +91,43 @@ namespace TimeTableManagement.Forms
             var selectedName = currentRow.Cells[0].Value;
             var selectedName1 = currentRow.Cells[1].Value;
 
+
+        }
+
+        private void sessionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            String selectedSessionType = sessionType.Text.ToString();
+            asubjectCode.DataSource = roomsConn.getSessionTypeTable(selectedSessionType);
+            if (selectedSessionType.Equals("Normal")){
+                atag2.Hide();
+                label1.Hide();
+
+                comboBox1.Hide();
+                label7.Hide();
+            }
+            else
+            {
+                atag2.Show();
+                label1.Show();
+
+                comboBox1.Show();
+                label7.Show();
+            }
+
+        }
+        void loadSessionItems()
+        {
+            sessionType.Items.Add("Normal");
+            sessionType.Items.Add("Consecutive");
+            sessionType.Items.Add("Parallel");
+
+
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
 
         }
     }
