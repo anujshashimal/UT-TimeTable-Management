@@ -259,5 +259,10 @@ namespace TimeTableManagement.Forms
                 }
             }
         }
+
+        private void depttxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

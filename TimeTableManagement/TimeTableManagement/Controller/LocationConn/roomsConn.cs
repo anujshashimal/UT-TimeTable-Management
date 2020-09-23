@@ -221,5 +221,125 @@ namespace TimeTableManagement.Controller.LocationConn
             dtstudents.Load(dr1);
             return dtstudents;
         }
+
+
+        public ArrayList getSessionTypeTable(String name)
+        {
+
+            ArrayList arrayList = new ArrayList();
+
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+            Console.WriteLine(name);
+
+            DataTable dataTable = new DataTable();
+            if (name.Equals("Normal"))
+            {
+                string query = "select subjectcode from Session";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+            }
+            else if (name.Equals("Consecutive"))
+            {
+                string query = "select subjectcode from Consecutivetbl";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+            }
+            else if (name.Equals("Parallel"))
+            {
+                string query = "select subjectcode from Consecutivetbl";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+            }
+
+            Console.WriteLine("awdwadaw", arrayList);
+
+            return arrayList;
+        }
+
+
+        public ArrayList getSessionTypeTag(String tagType, String subCode, String tabName)
+        {
+
+            ArrayList arrayList = new ArrayList();
+
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+            Console.WriteLine("awdwafd");
+
+            Console.WriteLine(subCode);
+            Console.WriteLine(tagType);
+            Console.WriteLine(tabName);
+            Console.WriteLine("awdwafd");
+
+            DataTable dataTable = new DataTable();
+            if (tagType.Equals("Normal"))
+            {
+                string query = "select type from Session where subjectCode = '" + subCode + "' AND type= '" + tabName + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+                Console.WriteLine(arrayList);
+
+                MessageBox.Show("Updated!");
+
+            }
+            else if (tagType.Equals("Consecutive"))
+            {
+                string query = "select Tag1 from Consecutivetbl where subjectcode = '" + subCode + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+                Console.WriteLine(arrayList);
+
+
+            }
+            else if (tagType.Equals("Parallel"))
+            {
+                string query = "select Tag1 from Consecutivetbl where subjectcode = '" + subCode + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+            }
+            Console.WriteLine(arrayList);
+
+
+            return arrayList;
+        }
     }
 }
