@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.lahirumodel;
@@ -25,14 +18,14 @@ namespace TimeTableManagement.Forms
 
 
 
-        parallelsessioncon   parallecon = new parallelsessioncon();
+        parallelsessioncon parallecon = new parallelsessioncon();
         parallelmodel paramodel = new parallelmodel();
 
 
         public Managesessions()
         {
             InitializeComponent();
-          
+
 
         }
 
@@ -86,7 +79,7 @@ namespace TimeTableManagement.Forms
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void typecombobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,7 +107,7 @@ namespace TimeTableManagement.Forms
 
 
             }
-            else if (typecombobox.SelectedIndex == 2 )
+            else if (typecombobox.SelectedIndex == 2)
             {
                 typelistcomboBox.Text = "";
                 typelistcomboBox.Items.Clear();
@@ -124,7 +117,7 @@ namespace TimeTableManagement.Forms
                     typelistcomboBox.Items.Add(dr.GetValue(0).ToString());
                 }
 
-             
+
             }
         }
 
@@ -145,7 +138,7 @@ namespace TimeTableManagement.Forms
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -165,7 +158,7 @@ namespace TimeTableManagement.Forms
 
         private void subjectcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int total =0 ;
+            int total = 0;
 
 
             SqlDataReader dr = consecutivecon.load_sesssion_details();
@@ -180,7 +173,7 @@ namespace TimeTableManagement.Forms
                     groupidtxt.Text = dr.GetValue(4).ToString();
                     subgroupidtxt.Text = dr.GetValue(5).ToString();
 
-                    if(dr.GetValue(3).ToString() == "Lecture")
+                    if (dr.GetValue(3).ToString() == "Lecture")
                     {
 
                         tag1txt.Text = dr.GetValue(3).ToString();
@@ -188,7 +181,7 @@ namespace TimeTableManagement.Forms
                         total = total + Int32.Parse(tag1timeduration.Text);
 
                     }
-                     if (dr.GetValue(3).ToString() == "Tutorial")
+                    if (dr.GetValue(3).ToString() == "Tutorial")
                     {
 
                         tag2txt.Text = dr.GetValue(3).ToString();
@@ -197,17 +190,17 @@ namespace TimeTableManagement.Forms
 
 
                     }
-           
-                       
+
+
                     thrstxt.Text = total.ToString();
                 }
 
-              
+
 
 
             }
 
-          
+
 
 
 
@@ -216,35 +209,35 @@ namespace TimeTableManagement.Forms
         private void subjectcomboBox_MouseClick(object sender, MouseEventArgs e)
         {
 
-           
+
         }
 
         private void subjectcomboBox_DragEnter(object sender, DragEventArgs e)
         {
-            
+
         }
 
         private void subjectcomboBox_DragLeave(object sender, EventArgs e)
         {
-          
+
         }
 
         private void subjectcomboBox_DropDownClosed(object sender, EventArgs e)
         {
-           
+
         }
 
         private void subjectcomboBox_Click(object sender, EventArgs e)
         {
-                subjectcodetxt.Text = "";
-                groupidtxt.Text = "";
-                subgroupidtxt.Text = "";
-                tag1txt.Text = "";
-                tag1timeduration.Text = "";
-                tag2txt.Text = "";
-                tag2timeduration.Text = "";
-                thrstxt.Text = "";
-            
+            subjectcodetxt.Text = "";
+            groupidtxt.Text = "";
+            subgroupidtxt.Text = "";
+            tag1txt.Text = "";
+            tag1timeduration.Text = "";
+            tag2txt.Text = "";
+            tag2timeduration.Text = "";
+            thrstxt.Text = "";
+
 
 
 
@@ -288,11 +281,11 @@ namespace TimeTableManagement.Forms
                 consecutivemodel.subgroupid = subgroupidtxt.Text.ToString();
                 consecutivemodel.Tag1 = tag1txt.Text.ToString();
                 consecutivemodel.Tag2 = tag2txt.Text.ToString();
-               // consecutivemodel.Tag3 = tag3txt.Text.ToString();
+                // consecutivemodel.Tag3 = tag3txt.Text.ToString();
 
                 consecutivemodel.Tag1timeduration = Convert.ToInt32(tag1timeduration.Text);
                 consecutivemodel.Tag2timeduration = Convert.ToInt32(tag2timeduration.Text);
-             //   consecutivemodel.Tag3timeduration = Convert.ToInt32(tag3timeduration.Text);
+                //   consecutivemodel.Tag3timeduration = Convert.ToInt32(tag3timeduration.Text);
 
                 consecutivemodel.total_hours = Convert.ToInt32(thrstxt.Text);
 
@@ -301,10 +294,10 @@ namespace TimeTableManagement.Forms
 
                 tag1txt.Text = "";
                 tag2txt.Text = "";
-             //   tag3txt.Text = "";
+                //   tag3txt.Text = "";
                 tag1timeduration.Text = "";
                 tag2timeduration.Text = "";
-            //    tag3timeduration.Text = "";
+                //    tag3timeduration.Text = "";
                 subjectcodetxt.Text = "";
                 groupidtxt.Text = "";
                 subgroupidtxt.Text = "";
@@ -412,7 +405,7 @@ namespace TimeTableManagement.Forms
             SqlDataReader dr1 = parallecon.load_subject_details();
             while (dr1.Read())
             {
-               Subject_name_combo.Items.Add(dr1.GetValue(0).ToString());
+                Subject_name_combo.Items.Add(dr1.GetValue(0).ToString());
             }
 
         }
@@ -426,7 +419,7 @@ namespace TimeTableManagement.Forms
                 if (Subject_name_combo.Text.Equals(dr.GetValue(0).ToString()))
                 {
                     subject_cod_txt.Text = dr.GetValue(1).ToString();
-                  
+
 
                 }
 
