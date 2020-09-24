@@ -142,20 +142,20 @@ namespace TimeTableManagement.Controller.session_controller
             }
           
 
-            string query = "INSERT INTO Session(Subject,subjectCode,type,GroupID,subgroup,studentcount,typeduration)  VALUES ('" + session.SubName + "','" + session.subCode + "','" + session.Type + "','" + session.groupId + "','" + session.subgId + "','"  + session.studentcount + "','"+ hrs.ToString() + "')";
+            string query = "INSERT INTO Session(Subject,subjectCode,type,GroupID,subgroup,studentcount,typeduration,Lecturers)  VALUES ('" + session.SubName + "','" + session.subCode + "','" + session.Type + "','" + session.groupId + "','" + session.subgId + "','"  + session.studentcount + "','"+ hrs.ToString() + "','" +session.lec+ "')";
 
             SqlCommand com = new SqlCommand(query, con);
             int ret = com.ExecuteNonQuery();
 
             if (ret != 0)
             {
-               /* string searchId = "select subjectCode from Session where subjectCode = '" + session.subCode + "'";
+              /*  string searchId = "select subjectCode from Session where subjectCode = '" + session.subCode + "'";
                 SqlDataReader data = new SqlCommand(searchId, con).ExecuteReader();
                 string id = data.GetValue(0).ToString();*/
 
-               foreach(string str in session.lecturers) 
+                foreach (string str in session.lecturers)
                 {
-                    string insertlectures = "INSERT INTO sessionLecturer(subjectCode,Lecturer)  VALUES ('" + session.subCode + "','"  + str + "')";
+                    string insertlectures = "INSERT INTO sessionLecturer(subjectCode,Lecturer)  VALUES ('" + session.subCode + "','" + str + "')";
                     SqlCommand com1 = new SqlCommand(insertlectures, con);
                     int ret1 = NewMethod(com1);
                 }
@@ -205,7 +205,7 @@ namespace TimeTableManagement.Controller.session_controller
             }
 
             DataTable dataTable = new DataTable();
-            string query = "SELECT Session.Subject, Session.subjectCode, Session.type,Session.GroupID ,Session.subgroup, Session.studentcount, Session.typeduration,sessionLecturer.Lecturer FROM Session INNER JOIN sessionLecturer ON Session.subjectCode = sessionLecturer.subjectCode";
+            string query = "SELECT Session.Subject, Session.subjectCode, Session.type,Session.GroupID ,Session.subgroup, Session.studentcount, Session.typeduration,Session.Lecturers,SubjectTable.offYear,offSem FROM Session LEFT Join  SubjectTable on Session.subjectCode = SubjectTable.SubCode";
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
             dataTable.Load(data);
@@ -225,7 +225,7 @@ namespace TimeTableManagement.Controller.session_controller
 
             DataTable dataTable = new DataTable();
             string query = "SELECT Session.Subject, Session.subjectCode, Session.type,Session.GroupID ,Session.subgroup, Session.studentcount, " +
-                "Session.typeduration,sessionLecturer.Lecturer FROM Session INNER JOIN sessionLecturer ON Session.subjectCode = sessionLecturer.subjectCode " +
+                "Session.typeduration,sessionLecturer.Lecturer FROM Session left JOIN sessionLecturer ON Session.subjectCode = sessionLecturer.subjectCode " +
                 " where Session.GroupID ='" + sessionModel.groupId+ "' and Session.Subject = '"+sessionModel.SubName+ "' and sessionLecturer.Lecturer = '"+sessionModel.lec+"' ";
 
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
