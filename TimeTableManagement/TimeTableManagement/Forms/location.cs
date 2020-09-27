@@ -322,7 +322,8 @@ namespace TimeTableManagement.Forms
 
         void loadLabItems()
         {
-            roomCapacityT.Items.Add("Lecturer");
+            roomCapacityT.Items.Add("Lecture");
+            roomCapacityT.Items.Add("Tutorial");
             roomCapacityT.Items.Add("Lab");
         }
 

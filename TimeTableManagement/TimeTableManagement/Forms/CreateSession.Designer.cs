@@ -34,6 +34,8 @@
             this.lecList = new System.Windows.Forms.ListView();
             this.Createsessions = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.datapnl = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.sessionList = new System.Windows.Forms.DataGridView();
             this.Addlecture = new System.Windows.Forms.Button();
             this.Scount = new System.Windows.Forms.TextBox();
@@ -66,6 +68,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.datapnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sessionList)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -149,11 +152,32 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.datapnl);
             this.panel2.Controls.Add(this.sessionList);
             this.panel2.Location = new System.Drawing.Point(6, 356);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1043, 320);
             this.panel2.TabIndex = 24;
+            // 
+            // datapnl
+            // 
+            this.datapnl.Controls.Add(this.flowLayoutPanel1);
+            this.datapnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datapnl.Location = new System.Drawing.Point(0, 0);
+            this.datapnl.Name = "datapnl";
+            this.datapnl.Size = new System.Drawing.Size(1043, 320);
+            this.datapnl.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1043, 320);
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.DoubleClick += new System.EventHandler(this.flowLayoutPanel1_DoubleClick);
             // 
             // sessionList
             // 
@@ -221,21 +245,22 @@
             this.subBox.Name = "subBox";
             this.subBox.Size = new System.Drawing.Size(129, 28);
             this.subBox.TabIndex = 14;
+            this.subBox.SelectedIndexChanged += new System.EventHandler(this.subBox_SelectedIndexChanged);
             // 
             // Gid
             // 
             this.Gid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gid.FormattingEnabled = true;
             this.Gid.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
             "10",
             "11",
             "12",
@@ -274,6 +299,7 @@
             this.subcodeList.Name = "subcodeList";
             this.subcodeList.Size = new System.Drawing.Size(387, 28);
             this.subcodeList.TabIndex = 11;
+            this.subcodeList.SelectedIndexChanged += new System.EventHandler(this.subcodeList_SelectedIndexChanged);
             // 
             // subNamelist
             // 
@@ -293,6 +319,7 @@
             this.lecturerlist.Name = "lecturerlist";
             this.lecturerlist.Size = new System.Drawing.Size(387, 28);
             this.lecturerlist.TabIndex = 9;
+            this.lecturerlist.SelectedIndexChanged += new System.EventHandler(this.lecturerlist_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -494,6 +521,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.datapnl.ResumeLayout(false);
+            this.datapnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sessionList)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -528,7 +557,6 @@
         private System.Windows.Forms.ComboBox subcodeList;
         private System.Windows.Forms.Button Createsessions;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView sessionList;
         private System.Windows.Forms.ListView lecList;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button searchSession;
@@ -540,5 +568,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView sessionList;
+        private System.Windows.Forms.Panel datapnl;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

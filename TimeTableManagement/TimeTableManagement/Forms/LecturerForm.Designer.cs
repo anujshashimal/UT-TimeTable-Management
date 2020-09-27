@@ -214,6 +214,7 @@
             this.depttxt.Name = "depttxt";
             this.depttxt.Size = new System.Drawing.Size(392, 28);
             this.depttxt.TabIndex = 12;
+            this.depttxt.SelectedIndexChanged += new System.EventHandler(this.depttxt_SelectedIndexChanged);
             // 
             // factxt
             // 

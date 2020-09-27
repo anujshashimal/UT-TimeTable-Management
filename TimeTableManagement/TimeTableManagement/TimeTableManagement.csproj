@@ -76,6 +76,7 @@
     <Compile Include="Controller\lahiruconn\Tagcon.cs" />
     <Compile Include="Controller\LectureController\LectureController.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
+    <Compile Include="Controller\LocationConn\roomsConn.cs" />
     <Compile Include="Controller\session controller\session.cs" />
     <Compile Include="Controller\SubjectController\subjectController.cs" />
     <Compile Include="Controller\TimeTableCon\NumberOfWorkingDaysCon.cs" />
@@ -131,6 +132,16 @@
     <Compile Include="Forms\Managesessions.designer.cs">
       <DependentUpon>Managesessions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Managesessions.cs" />
+    <Compile Include="Forms\Managesessions.designer.cs">
+      <DependentUpon>Managesessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\roomsManaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\roomsManaging.designer.cs">
+      <DependentUpon>roomsManaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StaticsRelated.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +185,7 @@
     <Compile Include="Model\lahirumodel\Tagmodel.cs" />
     <Compile Include="Model\LecturerModel\Lecturer.cs" />
     <Compile Include="Model\locationModel\locationModel.cs" />
+    <Compile Include="Model\locationModel\roomModel.cs" />
     <Compile Include="Model\SessionModel\sessionModel.cs" />
     <Compile Include="Model\SubjectModel\subjectModel.cs" />
     <Compile Include="Model\TimeTableModel\NumberOfWorkingDaysModel.cs" />
@@ -242,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Managesessions.resx">
       <DependentUpon>Managesessions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\roomsManaging.resx">
+      <DependentUpon>roomsManaging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaticsRelated.resx">
       <DependentUpon>StaticsRelated.cs</DependentUpon>

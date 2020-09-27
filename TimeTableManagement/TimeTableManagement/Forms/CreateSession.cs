@@ -13,6 +13,7 @@ using TimeTableManagement.Model.SessionModel;
 
 namespace TimeTableManagement.Forms
 {
+   
     public partial class CreateSession : Form
     {
         ArrayList lec = new ArrayList();
@@ -20,8 +21,15 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
 
+           
 
             session lecturer = new session();
+
+            for (int i = 0; i < lecturer.getSessiondatatoTable().Rows.Count; i++)
+            {
+
+                show_data(lecturer.getSessiondatatoTable(), i);
+            }
             lecturerlist.DataSource = lecturer.getLectures();
 
             subNamelist.DataSource = lecturer.getSubjects();
@@ -64,45 +72,86 @@ namespace TimeTableManagement.Forms
 
         private void Createsessions_Click(object sender, EventArgs e)
         {
-            if(type.Text != "" &&  Gid.Text!="" && Scount.Text != "" && subNamelist.Text!= "" && subcodeList.Text != ""  && lecList.Items.Count != 0 )
+            if (type.Text != "" && Gid.Text != "" && Scount.Text != "" && subNamelist.Text != "" && subcodeList.Text != "" && lecList.Items.Count != 0)
             {
-                
+
                 foreach (DataGridViewRow row in sessionList.Rows)
                 {
-                    if (row.Cells[1].Value.ToString().Equals(subcodeList.Text) && row.Cells[2].Value.ToString().Equals(type.Text) )
+
+
+                    if (row.Cells[1].Value.ToString().Equals(subcodeList.Text) && row.Cells[2].Value.ToString().Equals(type.Text) && row.Cells[3].Value.ToString().Equals(Gid.Text))
                     {
-                        System.Windows.Forms.MessageBox.Show("This session already added !", "Warning").ToString();
-                        return;
+                        if (type.Text == "Practical")
+                        {
+                            if (row.Cells[4].Value.ToString().Equals(subBox.Text))
+                            {
+                                System.Windows.Forms.MessageBox.Show("This session already added !", "Warning").ToString();
+                                return;
+                            }
+
+                        }
+                        else
+                        {
+                            System.Windows.Forms.MessageBox.Show("This session already added !", "Warning").ToString();
+                            return;
+                        }
+
+
+
                     }
-                   
-                  
+
+
                 }
+
+                sessionModel sessionmodel = new sessionModel();
+                sessionmodel.SubName = subNamelist.Text;
+                sessionmodel.subCode = subcodeList.Text;
+                sessionmodel.Type = type.Text;
+                sessionmodel.groupId = Int32.Parse(Gid.Text);
+
+                sessionmodel.subgId = subBox.Text;
+                sessionmodel.studentcount = Int32.Parse(Scount.Text);
+
+                sessionmodel.lec = "";
+
+                for (int i = 0; i < lecList.Items.Count; i++)
+                {
+                    sessionmodel.lec = sessionmodel.lec + lecList.Items[i].Text +",";
+                }
+
+                sessionmodel.lecturers = lec;
+                session session = new session();
+                session.insertSessions(sessionmodel);
+
+                lecList.Items.Clear();
+                lecturerlist.Text = "";
+                subNamelist.Text = "";
+                subcodeList.Text = "";
+
+                lecturerbox.DataSource = session.getLectures();
+
+                subjectBox.DataSource = session.getSubjects();
+
+                GroupBox.DataSource = session.getGroupID();
+
+                //sessionList.DataSource = session.getSessiondatatoTable();
+
+
+                 sessionList.DataSource = session.getSessiondatatoTable();
+
+                flowLayoutPanel1.Controls.Clear();
+
+                for (int i = 0; i < session.getSessiondatatoTable().Rows.Count;i++)
+                {
+
+                    show_data(session.getSessiondatatoTable(), i);
+                }
+
                 
-                    sessionModel sessionmodel = new sessionModel();
-                    sessionmodel.SubName = subNamelist.Text;
-                    sessionmodel.subCode = subcodeList.Text;
-                    sessionmodel.Type = type.Text;
-                    sessionmodel.groupId = Int32.Parse(Gid.Text);
-
-                    sessionmodel.subgId = subBox.Text;
-                    sessionmodel.studentcount = Int32.Parse(Scount.Text);
-
-                    /* for(int i = 1; i <= lecList.Items.Count; i++)
-                     {*/
-                    sessionmodel.lecturers = lec;
-
-                    //}
 
 
-                    session session = new session();
-                    session.insertSessions(sessionmodel);
 
-                    sessionList.DataSource = session.getSessiondatatoTable();
-                
-               
-                   
-               
-               
+
 
             }
             else
@@ -145,6 +194,8 @@ namespace TimeTableManagement.Forms
 
             sessionList.DataSource = lec.getSessiondatatoTable();
 
+            findSessionList.DataSource = lec.getSessiondatatoTable();
+
         }
 
         private void searchSession_Click(object sender, EventArgs e)
@@ -166,6 +217,45 @@ namespace TimeTableManagement.Forms
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        public void show_data(DataTable dataTable, int count)
+        {
+           
+
+            Label lecturers = new Label();
+            lecturers.AutoSize = true;
+            lecturers.Height = 15;
+            lecturers.Font = new Font("Microsoft Sans Serif", 12f);
+            lecturers.BackColor =Color.SandyBrown;
+            lecturers.BorderStyle = BorderStyle.FixedSingle;
+            
+            lecturers.Text = dataTable.Rows[count][7].ToString() +"\n"
+                        + dataTable.Rows[count][0].ToString() + "(" + dataTable.Rows[count][1].ToString() + ") \n"+ dataTable.Rows[count][2].ToString()+"\n"
+                        + dataTable.Rows[count][8].ToString() + "." + dataTable.Rows[count][9].ToString() + "." + dataTable.Rows[count][3].ToString() + "." + dataTable.Rows[count][4].ToString()+"\n"+
+                        dataTable.Rows[count][5].ToString() + "(" + dataTable.Rows[count][6].ToString() + ") \n \n";
+            lecturers.Margin = new Padding(2);
+          
+
+
+            flowLayoutPanel1.Controls.Add(lecturers);
+
+
+
+        }
+
+        private void flowLayoutPanel1_DoubleClick(object sender, EventArgs e)
+        {
+            
+        private void subcodeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lecturerlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
