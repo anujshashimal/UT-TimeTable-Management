@@ -205,7 +205,7 @@ namespace TimeTableManagement.Controller.session_controller
             }
 
             DataTable dataTable = new DataTable();
-            string query = "SELECT Session.Subject, Session.subjectCode, Session.type,Session.GroupID ,Session.subgroup, Session.studentcount, Session.typeduration,sessionLecturer.Lecturer FROM Session INNER JOIN sessionLecturer ON Session.subjectCode = sessionLecturer.subjectCode";
+            string query = "SELECT Session.Subject, Session.subjectCode, Session.type,Session.GroupID ,Session.subgroup, Session.studentcount, Session.typeduration, Session.Lecturer FROM Session INNER JOIN sessionLecturer ON Session.subjectCode = sessionLecturer.subjectCode";
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
             dataTable.Load(data);

@@ -12,6 +12,8 @@ namespace TimeTableManagement.Model.lahirumodel
         public String  type;
         public String type_name;
         public String day;
+        public String subjectcode;
+        public String tagname;
         public String timefrom;
         public String timeto;
         public String not_avaliable;

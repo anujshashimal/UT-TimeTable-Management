@@ -35,11 +35,35 @@ namespace TimeTableManagement.Controller.lahiruconn
                 con.Open();
             }
 
-            string query = "INSERT INTO  Tag_table(Tag_Name)  VALUES ('" + tagmodel.Tag_name1 + "')";
-            SqlCommand com = new SqlCommand(query, con);
-            int ret = NewMethod(com);
+            int i = 0;
 
-            MessageBox.Show("No of Records have been inserted" + ret, "Information");
+            string query1 = "SELECT *  from  Tag_table";
+            SqlDataReader dr1 = new SqlCommand(query1, con).ExecuteReader();
+
+
+            while (dr1.Read())
+            {
+                if (tagmodel.Tag_name1.Equals(dr1.GetValue(1).ToString()) || tagmodel.Tag_name1 == "Tutorial")
+                {
+
+                    MessageBox.Show("Tags Repeated!!", "Error");
+                    i = 1;
+                    break;
+                }
+
+            }
+
+            if (i != 1)
+            {
+
+                string query = "INSERT INTO  Tag_table(Tag_Name)  VALUES ('" + tagmodel.Tag_name1 + "')";
+                SqlCommand com = new SqlCommand(query, con);
+                int ret = NewMethod(com);
+
+                MessageBox.Show("No of Records have been inserted" + ret, "Information");
+            }
+
+            dr1.Close();
             con.Close();
         }
 

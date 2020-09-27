@@ -176,6 +176,7 @@
             this.Tagcombobox.Size = new System.Drawing.Size(384, 28);
             this.Tagcombobox.TabIndex = 35;
             this.Tagcombobox.SelectedIndexChanged += new System.EventHandler(this.Tagcombobox_SelectedIndexChanged);
+            this.Tagcombobox.TextUpdate += new System.EventHandler(this.Tagcombobox_TextUpdate);
             // 
             // label7
             // 
@@ -411,6 +412,8 @@
             this.Sub_group_comboBox.Size = new System.Drawing.Size(214, 28);
             this.Sub_group_comboBox.TabIndex = 57;
             this.Sub_group_comboBox.SelectedIndexChanged += new System.EventHandler(this.Sub_group_comboBox_SelectedIndexChanged);
+            this.Sub_group_comboBox.TextUpdate += new System.EventHandler(this.Sub_group_comboBox_TextUpdate);
+            this.Sub_group_comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Sub_group_comboBox_KeyPress);
             // 
             // label6
             // 
@@ -507,6 +510,8 @@
             this.GroupId_comboBox.Size = new System.Drawing.Size(214, 28);
             this.GroupId_comboBox.TabIndex = 49;
             this.GroupId_comboBox.SelectedIndexChanged += new System.EventHandler(this.GroupId_comboBox_SelectedIndexChanged);
+            this.GroupId_comboBox.TextUpdate += new System.EventHandler(this.GroupId_comboBox_TextUpdate);
+            this.GroupId_comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GroupId_comboBox_KeyPress);
             // 
             // label4
             // 
@@ -631,6 +636,8 @@
             this.Programme_comboBox.Size = new System.Drawing.Size(214, 28);
             this.Programme_comboBox.TabIndex = 39;
             this.Programme_comboBox.SelectedIndexChanged += new System.EventHandler(this.Programme_comboBox_SelectedIndexChanged);
+            this.Programme_comboBox.TextUpdate += new System.EventHandler(this.Programme_comboBox_TextUpdate);
+            this.Programme_comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Programme_comboBox_KeyPress);
             // 
             // label2
             // 
@@ -694,6 +701,8 @@
             this.academicyearsem.Size = new System.Drawing.Size(214, 28);
             this.academicyearsem.TabIndex = 34;
             this.academicyearsem.SelectedIndexChanged += new System.EventHandler(this.academicyearsem_SelectedIndexChanged);
+            this.academicyearsem.TextUpdate += new System.EventHandler(this.academicyearsem_TextUpdate);
+            this.academicyearsem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.academicyearsem_KeyPress);
             // 
             // label1
             // 

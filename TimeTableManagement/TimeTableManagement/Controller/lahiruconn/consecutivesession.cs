@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,7 @@ namespace TimeTableManagement.Controller.lahiruconn
                 con.Open();
             }
 
-            string query = "INSERT INTO  Consecutivetbl(subject,subjectcode,groupid,subgroupid,Tag1,Tag1timeduration,Tag2,Tag2timeduration,Tag3,Tag3timeduration,Totalhours)  VALUES ('" + consecutivemodel.subject + "','" + consecutivemodel.subjectcode + "','" + consecutivemodel.groupid + "','" + consecutivemodel.subgroupid + "','" + consecutivemodel.Tag1 + "','" + consecutivemodel.Tag1timeduration + "','" + consecutivemodel.Tag2 + "','" + consecutivemodel.Tag2timeduration + "','" + consecutivemodel.Tag3 + "','" + consecutivemodel.Tag3timeduration + "','" + consecutivemodel.total_hours + "')";
+            string query = "INSERT INTO  Consecutivetbl(Lecturer,subject,subjectcode,groupid,subgroupid,Tag1,Tag1timeduration,Tag2,Tag2timeduration,Tag3,Tag3timeduration,Totalhours)  VALUES ('" + consecutivemodel.lecturer + "','" + consecutivemodel.subject + "','" + consecutivemodel.subjectcode + "','" + consecutivemodel.groupid + "','" + consecutivemodel.subgroupid + "','" + consecutivemodel.Tag1 + "','" + consecutivemodel.Tag1timeduration + "','" + consecutivemodel.Tag2 + "','" + consecutivemodel.Tag2timeduration + "','" + consecutivemodel.Tag3 + "','" + consecutivemodel.Tag3timeduration + "','" + consecutivemodel.total_hours + "')";
             SqlCommand com = new SqlCommand(query, con);
             int ret = NewMethod(com);
 
@@ -68,7 +69,34 @@ namespace TimeTableManagement.Controller.lahiruconn
             con.Close();
         }
 
+        public DataTable loadnotconsecutivevalues()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
 
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from  Consecutivetbl";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+        public SqlDataReader loadlectueres()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT name from LecturerTbl";
+            SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
+
+            return dr;
+
+        }
 
 
 

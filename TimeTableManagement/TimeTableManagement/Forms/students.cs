@@ -737,13 +737,14 @@ namespace TimeTableManagement.Forms
             if (Tagcombobox.Text == "")
             {
                 MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Tagcombobox.Text = "";
             }
 
             else
             {
                 tagmod.Tag_name1 = Tagcombobox.Text;
                 tagCon.insertTagDetails(tagmod);
+                Tagcombobox.Text = "";
 
                 Tagcombobox.Items.Clear();
 
@@ -862,6 +863,84 @@ namespace TimeTableManagement.Forms
         private void TagdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void academicyearsem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Programme_comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void GroupId_comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Sub_group_comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void academicyearsem_TextUpdate(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(academicyearsem.Text, "^[a-zA-Z ]"))
+            {
+                MessageBox.Show("This box accepts only alphabetical characters");
+              //  academicyearsem.Text.Remove(academicyearsem.Text.Length - 1);
+            }
+        }
+
+        private void Programme_comboBox_TextUpdate(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Programme_comboBox.Text, "^[a-zA-Z ]"))
+            {
+                MessageBox.Show("This box accepts only alphabetical characters");
+              //  Programme_comboBox.Text.Remove(Programme_comboBox.Text.Length - 1);
+            }
+        }
+
+        private void GroupId_comboBox_TextUpdate(object sender, EventArgs e)
+        {
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(GroupId_comboBox.Text, "^[a-zA-Z ]"))
+            {
+                MessageBox.Show("This box accepts only alphabetical characters");
+              //  GroupId_comboBox.Text.Remove(GroupId_comboBox.Text.Length - 1);
+            }
+        }
+
+        private void Sub_group_comboBox_TextUpdate(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Sub_group_comboBox.Text, "^[a-zA-Z ]"))
+            {
+                MessageBox.Show("This box accepts only alphabetical characters");
+               // Sub_group_comboBox.Text.Remove(Sub_group_comboBox.Text.Length - 1);
+            }
+        }
+
+        private void Tagcombobox_TextUpdate(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Tagcombobox.Text, "^[a-zA-Z ]"))
+            {
+                MessageBox.Show("This box accepts only alphabetical characters");
+               // Tagcombobox.Text.Remove(Tagcombobox.Text.Length - 1);
+            }
         }
     }
 }

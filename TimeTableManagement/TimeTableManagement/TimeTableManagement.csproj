@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -122,6 +124,12 @@
     </Compile>
     <Compile Include="Forms\location.Designer.cs">
       <DependentUpon>location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Managesessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Managesessions.designer.cs">
+      <DependentUpon>Managesessions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StaticsRelated.cs">
       <SubType>Form</SubType>
@@ -231,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\location.resx">
       <DependentUpon>location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Managesessions.resx">
+      <DependentUpon>Managesessions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaticsRelated.resx">
       <DependentUpon>StaticsRelated.cs</DependentUpon>

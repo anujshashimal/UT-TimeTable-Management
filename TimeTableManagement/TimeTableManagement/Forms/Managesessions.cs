@@ -53,7 +53,19 @@ namespace TimeTableManagement.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SqlDataReader dr = notavaliableCon.load_subjectname_subjectcode_details();
 
+            while (dr.Read())
+            {
+                if (typelistcomboBox.Text.Equals(dr.GetValue(0).ToString()))
+                {
+                    textBox1.Text = dr.GetValue(1).ToString();
+
+
+                }
+
+
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -73,20 +85,43 @@ namespace TimeTableManagement.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            notavaliablemod.type = typecombobox.Text;
-            notavaliablemod.type_name = typelistcomboBox.Text;
-            notavaliablemod.day = daycomboBox.Text;
-            notavaliablemod.timefrom = startTimetxt.Text + "." + starttimecomboBox.Text;
-            notavaliablemod.timeto = endTimetxt.Text + "." + endtimecomboBox.Text;
-            notavaliablemod.not_avaliable = Avaliabletxt.Text;
 
-            notavaliableCon.insertNotavaliableDetails(notavaliablemod);
+            if (typecombobox.Text == ""  || typelistcomboBox.Text == ""  || daycomboBox.Text == "")
+            {
+                MessageBox.Show("Please Fill the text boxes ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+            else
+            {
+                notavaliablemod.type = typecombobox.Text;
+                notavaliablemod.type_name = typelistcomboBox.Text;
+                notavaliablemod.subjectcode = textBox1.Text;
+                notavaliablemod.tagname = not_avaa_tag_combo.Text;
+                notavaliablemod.day = daycomboBox.Text;
+                notavaliablemod.timefrom = startTimetxt.Text + "." + starttimecomboBox.Text;
+                notavaliablemod.timeto = endTimetxt.Text + "." + endtimecomboBox.Text;
+                notavaliablemod.not_avaliable = Avaliabletxt.Text;
+
+                notavaliableCon.insertNotavaliableDetails(notavaliablemod);
+                NotAvaliabletable.DataSource = notavaliableCon.loadnotavaliablevalues();
+
+
+                typecombobox.Text = "";
+                typelistcomboBox.Text = "";
+                textBox1.Text = "";
+                startTimetxt.Text = "";
+                starttimecomboBox.Text = "";
+                endTimetxt.Text = "";
+                endtimecomboBox.Text = "";
+                not_avaa_tag_combo.Text = "";
+                daycomboBox.Text = "";
+                Avaliabletxt.Text = "";
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-          
+            NotAvaliabletable.DataSource = notavaliableCon.loadnotavaliablevalues();
         }
 
         private void typecombobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,37 +130,75 @@ namespace TimeTableManagement.Forms
             {
                 typelistcomboBox.Text = "";
                 typelistcomboBox.Items.Clear();
+                not_avaa_tag_combo.Items.Clear();
+                textBox1.Text = "";
                 SqlDataReader dr = notavaliableCon.load_lecturename_allvalues();
                 while (dr.Read())
                 {
                     typelistcomboBox.Items.Add(dr.GetValue(0).ToString());
                 }
 
+                textBox1.Enabled = false;
+                not_avaa_tag_combo.Enabled = false;
+
             }
             else if (typecombobox.SelectedIndex == 1)
             {
                 typelistcomboBox.Text = "";
                 typelistcomboBox.Items.Clear();
+                not_avaa_tag_combo.Items.Clear();
+                textBox1.Text = "";
                 SqlDataReader dr = notavaliableCon.load_Group_Id_allvalues();
                 while (dr.Read())
                 {
                     typelistcomboBox.Items.Add(dr.GetValue(0).ToString());
                 }
-
+                textBox1.Enabled = false;
+                not_avaa_tag_combo.Enabled = false;
 
             }
             else if (typecombobox.SelectedIndex == 2 )
             {
                 typelistcomboBox.Text = "";
                 typelistcomboBox.Items.Clear();
+                not_avaa_tag_combo.Items.Clear();
+                textBox1.Text = "";
                 SqlDataReader dr = notavaliableCon.load_Sub_Group_Id_allvalues();
                 while (dr.Read())
                 {
                     typelistcomboBox.Items.Add(dr.GetValue(0).ToString());
                 }
-
-             
+                textBox1.Enabled = false;
+                not_avaa_tag_combo.Enabled = false;
             }
+            else if(typecombobox.SelectedIndex == 3)
+            {
+                typelistcomboBox.Text = "";
+                typelistcomboBox.Items.Clear();
+                not_avaa_tag_combo.Items.Clear();
+                textBox1.Text = "";
+                SqlDataReader dr = notavaliableCon.load_subject_details();
+                SqlDataReader dr1 = notavaliableCon.loadtagdetailsvalues();
+                while (dr.Read())
+                {
+                    typelistcomboBox.Items.Add(dr.GetValue(3).ToString());
+                   
+
+                    while(dr1.Read())
+                    {
+                        not_avaa_tag_combo.Items.Add(dr1.GetValue(0).ToString());
+                    }
+
+                    
+                }
+                textBox1.Enabled =  true;
+                not_avaa_tag_combo.Enabled = true;
+
+            }
+
+
+
+
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -180,7 +253,7 @@ namespace TimeTableManagement.Forms
                     groupidtxt.Text = dr.GetValue(4).ToString();
                     subgroupidtxt.Text = dr.GetValue(5).ToString();
 
-                    if(dr.GetValue(3).ToString() == "Lecture")
+                    if(dr.GetValue(3).ToString() == "lecture")
                     {
 
                         tag1txt.Text = dr.GetValue(3).ToString();
@@ -188,7 +261,7 @@ namespace TimeTableManagement.Forms
                         total = total + Int32.Parse(tag1timeduration.Text);
 
                     }
-                     if (dr.GetValue(3).ToString() == "Tutorial")
+                     if (dr.GetValue(3).ToString() == "tutorial")
                     {
 
                         tag2txt.Text = dr.GetValue(3).ToString();
@@ -236,6 +309,8 @@ namespace TimeTableManagement.Forms
 
         private void subjectcomboBox_Click(object sender, EventArgs e)
         {
+            consecutive_data_table.DataSource = consecutivecon.loadnotconsecutivevalues();
+
                 subjectcodetxt.Text = "";
                 groupidtxt.Text = "";
                 subgroupidtxt.Text = "";
@@ -252,6 +327,12 @@ namespace TimeTableManagement.Forms
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
+            consecutive_data_table.DataSource = consecutivecon.loadnotconsecutivevalues();
+            NotAvaliabletable.DataSource = notavaliableCon.loadnotavaliablevalues();
+            parallel_tbl.DataSource = parallecon.loadparallelvalues();
+
+            subjectcomboBox.Items.Clear();
+            lecturer_combo_box.Items.Clear();
 
             SqlDataReader dr1 = consecutivecon.load_subject_details();
             while (dr1.Read())
@@ -259,14 +340,19 @@ namespace TimeTableManagement.Forms
                 subjectcomboBox.Items.Add(dr1.GetValue(0).ToString());
             }
 
-
-            SqlDataReader dr = parallecon.loadtagdetailsvalues();
-
-            while (dr.Read())
+            SqlDataReader dr3 = consecutivecon.loadlectueres();
+            while (dr3.Read())
             {
-                type_combo_box.Items.Add(dr.GetValue(0).ToString());
+                consecutive_lecturer_combo.Items.Add(dr3.GetValue(0).ToString());
             }
 
+
+
+            SqlDataReader dr2 = parallecon.loadlectueres();
+            while (dr2.Read())
+            {
+                lecturer_combo_box.Items.Add(dr2.GetValue(0).ToString());
+            }
 
 
         }
@@ -274,7 +360,7 @@ namespace TimeTableManagement.Forms
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (subjectcomboBox.Text == "")
+            if (subjectcomboBox.Text == "" || consecutive_lecturer_combo.Text == "")
             {
                 MessageBox.Show("Please Fill the text box ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -282,6 +368,7 @@ namespace TimeTableManagement.Forms
 
             else
             {
+                consecutivemodel.lecturer = consecutive_lecturer_combo.Text.ToString();
                 consecutivemodel.subject = subjectcomboBox.Text.ToString();
                 consecutivemodel.subjectcode = subjectcodetxt.Text.ToString();
                 consecutivemodel.groupid = groupidtxt.Text.ToString();
@@ -297,8 +384,9 @@ namespace TimeTableManagement.Forms
                 consecutivemodel.total_hours = Convert.ToInt32(thrstxt.Text);
 
                 consecutivecon.insertConcecutiveDetails(consecutivemodel);
+                consecutive_data_table.DataSource = consecutivecon.loadnotconsecutivevalues();
 
-
+                consecutive_lecturer_combo.Text = "";
                 tag1txt.Text = "";
                 tag2txt.Text = "";
              //   tag3txt.Text = "";
@@ -402,7 +490,25 @@ namespace TimeTableManagement.Forms
 
             }
 
+            SqlDataReader dr1 = parallecon.load_sesssion_details();
 
+
+
+            while (dr1.Read())
+            {
+                if (Subject_name_combo.Text.Equals(dr1.GetValue(1).ToString()))
+                {
+
+                   type_combo_box.Items.Add(dr1.GetValue(3).ToString());
+                   groupid_combo_box.Items.Add(dr1.GetValue(4).ToString());
+                   sub_group_id_combo_box.Items.Add(dr1.GetValue(5).ToString());
+                  /// duration_combo_box.Items.Add(dr1.GetValue(7).ToString());
+                  // Count_combo_box.Items.Add(dr1.GetValue(6).ToString());
+
+                }
+
+
+            }
 
         }
 
@@ -414,6 +520,16 @@ namespace TimeTableManagement.Forms
             {
                Subject_name_combo.Items.Add(dr1.GetValue(0).ToString());
             }
+
+            type_combo_box.Items.Clear();
+            groupid_combo_box.Items.Clear();
+            sub_group_id_combo_box.Items.Clear();
+          //  duration_combo_box.Items.Clear();
+          //  Count_combo_box.Items.Clear();
+
+
+
+
 
         }
 
@@ -432,15 +548,151 @@ namespace TimeTableManagement.Forms
 
 
             }
+            SqlDataReader dr1 = parallecon.load_sesssion_details();
 
+
+
+            while (dr1.Read())
+            {
+                if (Subject_name_combo.Text.Equals(dr1.GetValue(1).ToString()))
+                {
+
+                    type_combo_box.Items.Add(dr1.GetValue(3).ToString());
+                    groupid_combo_box.Items.Add(dr1.GetValue(4).ToString());
+                    sub_group_id_combo_box.Items.Add(dr1.GetValue(5).ToString());
+                  //  duration_combo_box.Items.Add(dr1.GetValue(7).ToString());
+                  //  Count_combo_box.Items.Add(dr1.GetValue(6).ToString());
+
+                }
+
+
+            }
 
 
         }
 
+        private void type_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Startimecombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Startimecombobox_Click(object sender, EventArgs e)
+        {
+           Startimecombobox.Items.Clear();
+            SqlDataReader dr1 = parallecon.loadtimeslot();
+            while (dr1.Read())
+            {
+                Startimecombobox.Items.Add(dr1.GetValue(0).ToString());
+            }
+        }
+
+        private void subject_cod_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupid_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sub_group_id_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Yr_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Startimecombobox.Text == "" || day_combo_box.Text == "" || duration_txt.Text == "")
+            {
+                MessageBox.Show("Please Fill the  boxes ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            else
+            {
+               
+                paramodel.starttime = Startimecombobox.Text.ToString();
+                paramodel.day = day_combo_box.Text.ToString();
+                paramodel.duration = Int32.Parse(duration_txt.Text.ToString());
+                paramodel.subject = Subject_name_combo.Text.ToString();
+                paramodel.subject_code = subject_cod_txt.Text.ToString();
+                paramodel.type = type_combo_box.Text.ToString();
+                paramodel.groupid = groupid_combo_box.Text.ToString();
+                paramodel.sub_group_id = sub_group_id_combo_box.Text.ToString();
+                paramodel.lecturer = lecturer_combo_box.Text.ToString();
 
 
 
 
+                parallecon.insertparallelDetails(paramodel);
+                parallel_tbl.DataSource = parallecon.loadparallelvalues();
+               
+
+
+                starttimecomboBox.Text = "";
+                day_combo_box.Text = "";
+                duration_txt.Text = "";
+                Subject_name_combo.Text = "";
+                subjectcodetxt.Text = "";
+                typecombobox.Text = "";
+                groupid_combo_box.Text = "";
+                sub_group_id_combo_box.Text = "";
+                lecturer_combo_box.Text = "";
+            
+
+            }
+        }
+
+        private void lecturer_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
