@@ -31,6 +31,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.faculty = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.sessionType = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.aroomType = new System.Windows.Forms.ComboBox();
             this.assignRoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -38,8 +42,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.atag2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.notavltime = new System.Windows.Forms.ComboBox();
@@ -56,16 +58,28 @@
             this.locBtn2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.sessionType = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.faculty = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.rrrname = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rrbtn = new System.Windows.Forms.Button();
+            this.rntime = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.notAvailableGridView = new System.Windows.Forms.DataGridView();
+            this.rfaculty = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.rName = new System.Windows.Forms.ComboBox();
+            this.rreleaseRoom = new System.Windows.Forms.Label();
+            this.releaceBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomManagingSource)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notAvailableGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,9 +122,49 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1042, 647);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Assign Rooms";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // faculty
+            // 
+            this.faculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.faculty.FormattingEnabled = true;
+            this.faculty.Location = new System.Drawing.Point(133, 43);
+            this.faculty.Name = "faculty";
+            this.faculty.Size = new System.Drawing.Size(387, 28);
+            this.faculty.TabIndex = 70;
+            this.faculty.SelectedIndexChanged += new System.EventHandler(this.faculty_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(22, 48);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 23);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "Faculty";
+            // 
+            // sessionType
+            // 
+            this.sessionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sessionType.FormattingEnabled = true;
+            this.sessionType.Location = new System.Drawing.Point(133, 167);
+            this.sessionType.Name = "sessionType";
+            this.sessionType.Size = new System.Drawing.Size(387, 28);
+            this.sessionType.TabIndex = 68;
+            this.sessionType.SelectedIndexChanged += new System.EventHandler(this.sessionType_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(22, 170);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(122, 23);
+            this.label12.TabIndex = 67;
+            this.label12.Text = "Session Type";
             // 
             // aroomType
             // 
@@ -176,8 +230,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.atag2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.notavltime);
@@ -190,27 +242,8 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(6, 235);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1026, 211);
+            this.panel2.Size = new System.Drawing.Size(1026, 220);
             this.panel2.TabIndex = 56;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(681, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(300, 28);
-            this.comboBox1.TabIndex = 74;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(503, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 23);
-            this.label7.TabIndex = 73;
-            this.label7.Text = "Not available time";
             // 
             // atag2
             // 
@@ -365,53 +398,159 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.rrrname);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.rrbtn);
+            this.tabPage2.Controls.Add(this.rntime);
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.panel4);
+            this.tabPage2.Controls.Add(this.rfaculty);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.label15);
+            this.tabPage2.Controls.Add(this.rName);
+            this.tabPage2.Controls.Add(this.rreleaseRoom);
+            this.tabPage2.Controls.Add(this.releaceBtn);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1042, 647);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Release Rooms";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // sessionType
+            // rrrname
             // 
-            this.sessionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sessionType.FormattingEnabled = true;
-            this.sessionType.Location = new System.Drawing.Point(133, 167);
-            this.sessionType.Name = "sessionType";
-            this.sessionType.Size = new System.Drawing.Size(387, 28);
-            this.sessionType.TabIndex = 68;
-            this.sessionType.SelectedIndexChanged += new System.EventHandler(this.sessionType_SelectedIndexChanged);
+            this.rrrname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rrrname.FormattingEnabled = true;
+            this.rrrname.Location = new System.Drawing.Point(191, 228);
+            this.rrrname.Name = "rrrname";
+            this.rrrname.Size = new System.Drawing.Size(387, 28);
+            this.rrrname.TabIndex = 84;
+            this.rrrname.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged_1);
             // 
-            // label12
+            // label16
             // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(22, 170);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(122, 23);
-            this.label12.TabIndex = 67;
-            this.label12.Text = "Session Type";
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label16.Location = new System.Drawing.Point(13, 233);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(122, 23);
+            this.label16.TabIndex = 83;
+            this.label16.Text = "Room Name";
             // 
-            // faculty
+            // rrbtn
             // 
-            this.faculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.faculty.FormattingEnabled = true;
-            this.faculty.Location = new System.Drawing.Point(133, 43);
-            this.faculty.Name = "faculty";
-            this.faculty.Size = new System.Drawing.Size(387, 28);
-            this.faculty.TabIndex = 70;
-            this.faculty.SelectedIndexChanged += new System.EventHandler(this.faculty_SelectedIndexChanged);
+            this.rrbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.rrbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rrbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rrbtn.Location = new System.Drawing.Point(623, 222);
+            this.rrbtn.Name = "rrbtn";
+            this.rrbtn.Size = new System.Drawing.Size(259, 43);
+            this.rrbtn.TabIndex = 82;
+            this.rrbtn.Text = "Release Room";
+            this.rrbtn.UseVisualStyleBackColor = false;
+            this.rrbtn.Click += new System.EventHandler(this.rrbtn_Click);
             // 
-            // label9
+            // rntime
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(22, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 23);
-            this.label9.TabIndex = 69;
-            this.label9.Text = "Faculty";
+            this.rntime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rntime.FormattingEnabled = true;
+            this.rntime.Location = new System.Drawing.Point(191, 127);
+            this.rntime.Name = "rntime";
+            this.rntime.Size = new System.Drawing.Size(318, 28);
+            this.rntime.TabIndex = 81;
+            this.rntime.SelectedIndexChanged += new System.EventHandler(this.rntime_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(13, 129);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(168, 23);
+            this.label14.TabIndex = 80;
+            this.label14.Text = "Not available time";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.notAvailableGridView);
+            this.panel4.Location = new System.Drawing.Point(0, 447);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1043, 200);
+            this.panel4.TabIndex = 79;
+            // 
+            // notAvailableGridView
+            // 
+            this.notAvailableGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.notAvailableGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.notAvailableGridView.Location = new System.Drawing.Point(0, 0);
+            this.notAvailableGridView.Name = "notAvailableGridView";
+            this.notAvailableGridView.Size = new System.Drawing.Size(1043, 200);
+            this.notAvailableGridView.TabIndex = 0;
+            this.notAvailableGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.notAvailableGridView_CellContentClick);
+            // 
+            // rfaculty
+            // 
+            this.rfaculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rfaculty.FormattingEnabled = true;
+            this.rfaculty.Location = new System.Drawing.Point(191, 40);
+            this.rfaculty.Name = "rfaculty";
+            this.rfaculty.Size = new System.Drawing.Size(387, 28);
+            this.rfaculty.TabIndex = 78;
+            this.rfaculty.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(11, 45);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(122, 23);
+            this.label13.TabIndex = 77;
+            this.label13.Text = "Faculty";
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label15.Location = new System.Drawing.Point(13, 193);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(224, 23);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "Releasing rooms";
+            // 
+            // rName
+            // 
+            this.rName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rName.FormattingEnabled = true;
+            this.rName.Location = new System.Drawing.Point(191, 81);
+            this.rName.Name = "rName";
+            this.rName.Size = new System.Drawing.Size(387, 28);
+            this.rName.TabIndex = 75;
+            // 
+            // rreleaseRoom
+            // 
+            this.rreleaseRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rreleaseRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.rreleaseRoom.Location = new System.Drawing.Point(11, 86);
+            this.rreleaseRoom.Name = "rreleaseRoom";
+            this.rreleaseRoom.Size = new System.Drawing.Size(122, 23);
+            this.rreleaseRoom.TabIndex = 74;
+            this.rreleaseRoom.Text = "Room Name";
+            // 
+            // releaceBtn
+            // 
+            this.releaceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.releaceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.releaceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.releaceBtn.Location = new System.Drawing.Point(623, 40);
+            this.releaceBtn.Name = "releaceBtn";
+            this.releaceBtn.Size = new System.Drawing.Size(259, 43);
+            this.releaceBtn.TabIndex = 72;
+            this.releaceBtn.Text = "Add Room To Not Available Time";
+            this.releaceBtn.UseVisualStyleBackColor = false;
+            this.releaceBtn.Click += new System.EventHandler(this.releaceBtn_Click);
             // 
             // roomsManaging
             // 
@@ -421,12 +560,16 @@
             this.Controls.Add(this.panel1);
             this.Name = "roomsManaging";
             this.Text = "roomsManaging";
+            this.Load += new System.EventHandler(this.roomsManaging_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roomManagingSource)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.notAvailableGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,13 +600,24 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox assignRoom;
         private System.Windows.Forms.ComboBox aroomType;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox atag2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox sessionType;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox faculty;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView notAvailableGridView;
+        private System.Windows.Forms.ComboBox rfaculty;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox rName;
+        private System.Windows.Forms.Label rreleaseRoom;
+        private System.Windows.Forms.Button releaceBtn;
+        private System.Windows.Forms.ComboBox rntime;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox rrrname;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button rrbtn;
     }
 }

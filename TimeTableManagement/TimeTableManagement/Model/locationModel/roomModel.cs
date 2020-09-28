@@ -12,6 +12,7 @@ namespace TimeTableManagement.Model.locationModel
         public String subjectCode;
         public String tag2;
         public String NotAvailableTime;
+        public String facultyNme;
 
     }
 }

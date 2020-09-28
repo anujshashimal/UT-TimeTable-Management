@@ -112,6 +112,34 @@ namespace TimeTableManagement.Controller.LocationConn
 
             }
         }
+
+        public ArrayList getNotAvailableRooms()
+        {
+            {
+                ArrayList arrayList = new ArrayList();
+
+                if (con.State.ToString() != "Open")
+                {
+                    con.Open();
+                }
+
+                DataTable dataTable = new DataTable();
+                // Boolean dr1 = checkRoomIsAvailable(name);
+
+                string query = "select roomName from NotAvailableRoomTimes";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+                return arrayList;
+
+
+            }
+        }
         public ArrayList getSession()
         {
 
@@ -152,7 +180,7 @@ namespace TimeTableManagement.Controller.LocationConn
 
             DataTable dataTable = new DataTable();
 
-            string query = "select Tag1 from Consecutivetbl where subjectcode = '" + name + "'";
+            string query = "select Tag1 from Consecutivetbl where Tag1 = '" + name + "'";
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
 
@@ -220,14 +248,14 @@ namespace TimeTableManagement.Controller.LocationConn
                 {
                     con.Open();
                 }
-                String roomID = Convert.ToString(dr["roomName"]);
+                String subjectCode = Convert.ToString(dr["subjectCode"]);
 
-                if (roommodel.roomName.Equals(roomID)){
+                if (roommodel.subjectCode.Equals(subjectCode)){
                     string query = "update Consecutivetbl set roomName = '" + roommodel.roomName + "'where subjectCode = '" + roommodel.subjectCode + "'";
                     SqlCommand com = new SqlCommand(query, con);
                     MessageBox.Show("Updated!");
                     com.ExecuteNonQuery();
-                    insertNotAvailableTimes(roommodel.roomName, notavlTime);
+                    insertNotAvailableTimes(roommodel.roomName, roommodel.facultyNme, notavlTime);
                 }
             
             }
@@ -255,6 +283,21 @@ namespace TimeTableManagement.Controller.LocationConn
             return dtstudents;
         }
 
+        public DataTable load_not_available_details()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from NotAvailableRoomTimes ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
 
         public ArrayList getSessionTypeTable(String name)
         {
@@ -364,12 +407,12 @@ namespace TimeTableManagement.Controller.LocationConn
             return arrayList;
         }
 
-        public void insertNotAvailableTimes(String roomName, String notAvailableTime)
+        public void insertNotAvailableTimes(String roomName, String facultyName, String notAvailableTime)
         {
             if (con.State.ToString() != "Open")
             { con.Open(); }
 
-            string query = "INSERT INTO NotAvailableRoomTimes(roomName,notAvailableTime)  VALUES ('" + roomName + "','" + notAvailableTime + "')";
+            string query = "INSERT INTO NotAvailableRoomTimes(roomName,notAvailableTime,facultyName)  VALUES ('" + roomName + "','" + notAvailableTime + "','" + facultyName + "')";
 
             SqlCommand com = new SqlCommand(query, con);
             int ret = NewMethod(com);
@@ -482,6 +525,28 @@ namespace TimeTableManagement.Controller.LocationConn
                 return arrayList;
             
 
+        }
+
+        public void DeleteNotAvailableRooms( String roomName)
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "DELETE  FROM   NotAvailableRoomTimes  WHERE  roomName ='" + roomName + "'";
+            SqlCommand com = new SqlCommand(query, con);
+
+
+            string ans = MessageBox.Show("Are sure to delete this record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning).ToString();
+
+
+            if (ans == "Yes")
+            {
+                int ret = com.ExecuteNonQuery();
+                MessageBox.Show("No of records deleted" + ret, "Information");
+            }
+            con.Close();
         }
     }
 }
