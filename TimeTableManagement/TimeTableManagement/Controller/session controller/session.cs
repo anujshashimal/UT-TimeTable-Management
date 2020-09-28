@@ -205,6 +205,7 @@ namespace TimeTableManagement.Controller.session_controller
             }
 
             DataTable dataTable = new DataTable();
+
             string query = "SELECT Session.Subject, Session.subjectCode, Session.type,Session.GroupID ,Session.subgroup, Session.studentcount, Session.typeduration,Session.Lecturers,SubjectTable.offYear,offSem FROM Session LEFT Join  SubjectTable on Session.subjectCode = SubjectTable.SubCode";
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 

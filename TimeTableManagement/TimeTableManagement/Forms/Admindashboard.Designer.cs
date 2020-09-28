@@ -103,7 +103,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 811);
+            this.panel2.Size = new System.Drawing.Size(300, 749);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -441,7 +441,7 @@
             this.panelheader.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelheader.Location = new System.Drawing.Point(300, 0);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1084, 36);
+            this.panelheader.Size = new System.Drawing.Size(1064, 36);
             this.panelheader.TabIndex = 2;
             this.panelheader.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -466,9 +466,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.Color.Coral;
-            this.panel1.Location = new System.Drawing.Point(300, 789);
+            this.panel1.Location = new System.Drawing.Point(300, 727);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 22);
+            this.panel1.Size = new System.Drawing.Size(1064, 22);
             this.panel1.TabIndex = 5;
             // 
             // panel3
@@ -476,14 +476,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(300, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1084, 753);
+            this.panel3.Size = new System.Drawing.Size(1064, 691);
             this.panel3.TabIndex = 8;
             // 
             // Admindashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1384, 811);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelheader);

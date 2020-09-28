@@ -216,6 +216,7 @@ namespace TimeTableManagement.Forms
 
         }
 
+        private void tabPage1_Click(object sender, EventArgs e)
         public void show_data(DataTable dataTable, int count)
         {
            

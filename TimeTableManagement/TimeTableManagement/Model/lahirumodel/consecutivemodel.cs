@@ -8,6 +8,7 @@ namespace TimeTableManagement.Model.lahirumodel
 {
     class consecutivemodel
     {
+        public String lecturer;
         public String subject;
         public String subjectcode;
         public String groupid;

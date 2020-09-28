@@ -75,6 +75,10 @@ namespace TimeTableManagement.Forms
 
 
         private Form activeform = null;
+        private object notavaliableCon;
+
+        public object NotAvaliabletable { get; private set; }
+
         public void OpenChildForm(Form childform)
         {
 
