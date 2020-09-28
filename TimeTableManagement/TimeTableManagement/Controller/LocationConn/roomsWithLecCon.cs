@@ -87,11 +87,8 @@ namespace TimeTableManagement.Controller.LocationConn
                         {
                             string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'";
                             SqlCommand com1 = new SqlCommand(query, con);
-                            MessageBox.Show("Deleted!");
                             com1.ExecuteNonQuery();
-
                         }
-
                     }
 
                     com.ExecuteNonQuery();

@@ -283,6 +283,38 @@ namespace TimeTableManagement.Controller.LocationConn
             return dtstudents;
         }
 
+        public DataTable load_parallel_sesssion_details()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from Parallel_tbl ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
+        public DataTable load_normal_sesssion_details()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from Session ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
         public DataTable load_not_available_details()
         {
             if (con.State.ToString() != "Open")

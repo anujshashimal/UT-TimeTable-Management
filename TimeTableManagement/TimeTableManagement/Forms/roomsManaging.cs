@@ -35,7 +35,7 @@ namespace TimeTableManagement.Forms
             electurenme.DataSource = lecturer.getLectures();
             //           lroomtype.DataSource = roomsConn.
             loadLecturerPreferedTags();
-
+            loadSessionItems();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,16 +111,30 @@ namespace TimeTableManagement.Forms
             if (selectedSessionType.Equals("Normal")){
                 atag2.Hide();
                 label1.Hide();
- 
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
             }
             else
             {
                 atag2.Show();
                 label1.Show();
-
                // comboBox1.Show();
                // label7.Show();
             }
+            if (selectedSessionType.Equals("Normal"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+            }else if(selectedSessionType.Equals("Consecutive"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+
+            }
+            else if (selectedSessionType.Equals("Parallel"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
+
+
 
         }
         void loadSessionItems()
