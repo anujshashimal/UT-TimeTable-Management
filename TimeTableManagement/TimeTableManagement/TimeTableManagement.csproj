@@ -77,6 +77,7 @@
     <Compile Include="Controller\LectureController\LectureController.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
     <Compile Include="Controller\LocationConn\roomsConn.cs" />
+    <Compile Include="Controller\LocationConn\roomsWithLecCon.cs" />
     <Compile Include="Controller\session controller\session.cs" />
     <Compile Include="Controller\SubjectController\subjectController.cs" />
     <Compile Include="Controller\TimeTableCon\NumberOfWorkingDaysCon.cs" />

@@ -71,6 +71,17 @@
             this.rName = new System.Windows.Forms.ComboBox();
             this.rreleaseRoom = new System.Windows.Forms.Label();
             this.releaceBtn = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.electurenme = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lroomtype = new System.Windows.Forms.ComboBox();
+            this.lroomName = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lButton = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,6 +91,9 @@
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.notAvailableGridView)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,6 +108,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(3, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -552,6 +567,125 @@
             this.releaceBtn.UseVisualStyleBackColor = false;
             this.releaceBtn.Click += new System.EventHandler(this.releaceBtn_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel5);
+            this.tabPage3.Controls.Add(this.electurenme);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.lroomtype);
+            this.tabPage3.Controls.Add(this.lroomName);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.lButton);
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1042, 647);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // electurenme
+            // 
+            this.electurenme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.electurenme.FormattingEnabled = true;
+            this.electurenme.Location = new System.Drawing.Point(138, 50);
+            this.electurenme.Name = "electurenme";
+            this.electurenme.Size = new System.Drawing.Size(387, 28);
+            this.electurenme.TabIndex = 78;
+            this.electurenme.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(10, 55);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 23);
+            this.label7.TabIndex = 77;
+            this.label7.Text = "Lecture name";
+            // 
+            // lroomtype
+            // 
+            this.lroomtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lroomtype.FormattingEnabled = true;
+            this.lroomtype.Location = new System.Drawing.Point(138, 96);
+            this.lroomtype.Name = "lroomtype";
+            this.lroomtype.Size = new System.Drawing.Size(387, 28);
+            this.lroomtype.TabIndex = 76;
+            this.lroomtype.SelectedIndexChanged += new System.EventHandler(this.lroomtype_SelectedIndexChanged);
+            // 
+            // lroomName
+            // 
+            this.lroomName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lroomName.FormattingEnabled = true;
+            this.lroomName.Location = new System.Drawing.Point(138, 138);
+            this.lroomName.Name = "lroomName";
+            this.lroomName.Size = new System.Drawing.Size(387, 28);
+            this.lroomName.TabIndex = 75;
+            this.lroomName.SelectedIndexChanged += new System.EventHandler(this.lroomName_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label17.Location = new System.Drawing.Point(6, 14);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(224, 23);
+            this.label17.TabIndex = 74;
+            this.label17.Text = "Add Rooms to lecture";
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label18.Location = new System.Drawing.Point(10, 96);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 23);
+            this.label18.TabIndex = 73;
+            this.label18.Text = "Room type";
+            // 
+            // lButton
+            // 
+            this.lButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lButton.Location = new System.Drawing.Point(585, 50);
+            this.lButton.Name = "lButton";
+            this.lButton.Size = new System.Drawing.Size(259, 43);
+            this.lButton.TabIndex = 72;
+            this.lButton.Text = "Add lecturer to room";
+            this.lButton.UseVisualStyleBackColor = false;
+            this.lButton.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label19.Location = new System.Drawing.Point(10, 140);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(122, 23);
+            this.label19.TabIndex = 71;
+            this.label19.Text = "Room Number";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dataGridView1);
+            this.panel5.Location = new System.Drawing.Point(0, 407);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1042, 240);
+            this.panel5.TabIndex = 79;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1042, 240);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // roomsManaging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +704,9 @@
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.notAvailableGridView)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,5 +756,16 @@
         private System.Windows.Forms.ComboBox rrrname;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button rrbtn;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ComboBox electurenme;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox lroomtype;
+        private System.Windows.Forms.ComboBox lroomName;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button lButton;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

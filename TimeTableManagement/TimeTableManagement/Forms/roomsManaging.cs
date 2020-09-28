@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TimeTableManagement.Controller.LocationConn;
 using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.locationModel;
+using TimeTableManagement.Controller.session_controller;
 
 namespace TimeTableManagement.Forms
 {
@@ -19,6 +20,8 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
             roomsConn roomsConn = new roomsConn();
+            session lecturer = new session();
+
             consecutivesession consecutivesession = new consecutivesession();
 
             assignRoom.DataSource = roomsConn.getRooms();
@@ -27,9 +30,9 @@ namespace TimeTableManagement.Forms
             notAvailableGridView.DataSource = roomsConn.load_not_available_details();
             faculty.DataSource = roomsConn.getFaultyRooms();
             rfaculty.DataSource = roomsConn.getFaultyRooms();
-
-            loadSessionItems();
-
+            electurenme.DataSource = lecturer.getLectures();
+            //           lroomtype.DataSource = roomsConn.
+            loadLecturerPreferedTags();
 
         }
 
@@ -192,6 +195,37 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             String selectedFaculty = rfaculty.Text.ToString();
             rrrname.DataSource = roomsConn.getNotAvailableRooms();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        void loadLecturerPreferedTags()
+        {
+            lroomtype.Items.Add("Lecture");
+            lroomtype.Items.Add("Tutorial");
+            lroomtype.Items.Add("Lab");
+        }
+
+        private void lroomName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lroomtype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedRoomType = lroomtype.Text.ToString();
+            roomsWithLecCon rwl = new roomsWithLecCon();
+            lroomName.DataSource = rwl.LoadTagsWithRooms(selectedRoomType);
+
         }
     }
 }
