@@ -81,7 +81,7 @@
             this.lButton = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lecWithRoomsGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -93,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.notAvailableGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecWithRoomsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -671,20 +671,20 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dataGridView1);
+            this.panel5.Controls.Add(this.lecWithRoomsGrid);
             this.panel5.Location = new System.Drawing.Point(0, 407);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1042, 240);
             this.panel5.TabIndex = 79;
             // 
-            // dataGridView1
+            // lecWithRoomsGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1042, 240);
-            this.dataGridView1.TabIndex = 0;
+            this.lecWithRoomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lecWithRoomsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lecWithRoomsGrid.Location = new System.Drawing.Point(0, 0);
+            this.lecWithRoomsGrid.Name = "lecWithRoomsGrid";
+            this.lecWithRoomsGrid.Size = new System.Drawing.Size(1042, 240);
+            this.lecWithRoomsGrid.TabIndex = 0;
             // 
             // roomsManaging
             // 
@@ -706,7 +706,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.notAvailableGridView)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecWithRoomsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -766,6 +766,6 @@
         private System.Windows.Forms.Button lButton;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView lecWithRoomsGrid;
     }
 }

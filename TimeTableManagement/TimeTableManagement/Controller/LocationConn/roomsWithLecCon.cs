@@ -8,6 +8,7 @@ using TimeTableManagement.DBConnection;
 using TimeTableManagement.Model.locationModel;
 using TimeTableManagement.Controller.session_controller;
 using System.Collections;
+using System.Windows;
 
 namespace TimeTableManagement.Controller.LocationConn
 {
@@ -42,6 +43,89 @@ namespace TimeTableManagement.Controller.LocationConn
                 i++;
             }
             return arrayList;
+
+        }
+
+
+        public void insertLecWithPrefereedRoom(String lecturer, String roomType, String roomName)
+        {
+            if (con.State.ToString() != "Open")
+            { con.Open(); }
+
+            string query = "INSERT INTO LecturerWithRoom(Lecturer,roomType,roomName)  VALUES ('" + lecturer + "','" + roomType + "','" + roomName + "')";
+            
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+            updateLEcturerWithAssignedRoom(lecturer, roomName, roomType);
+            MessageBox.Show("Assigned Lecturer to the prefereed room");
+            con.Close();
+        }
+
+
+        public void updateLEcturerWithAssignedRoom(String lecturer, String roomName, String roomType)
+        {
+            if (con.State.ToString() != "Open")
+            { con.Open(); }
+            Console.WriteLine("awduqiquq"+lecturer);
+            String cemi = ",";
+            String nvla = lecturer + cemi;
+            Console.WriteLine("awduqiquq" + nvla);
+
+            SqlDataReader dr = loadAllSessions();
+
+            while (dr.Read())
+            {
+                String lecturerName = Convert.ToString(dr["Lecturers"]);
+                if (nvla.Equals(lecturerName))
+                {
+                    string sql = "UPDATE Session SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+                    SqlCommand com = new SqlCommand(sql, con);
+                    SqlDataReader dr1 = loadAllroomsWithLecturers();
+                    while (dr1.Read())
+                    {
+                        String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
+                        if (lecturer.Equals(lecturerNameN))
+                        {
+                            string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'";
+                            SqlCommand com1 = new SqlCommand(query, con);
+                            MessageBox.Show("Deleted!");
+                            com1.ExecuteNonQuery();
+
+                        }
+
+                    }
+
+                    com.ExecuteNonQuery();
+
+                }
+            }
+
+        }
+
+        public SqlDataReader loadAllSessions()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT * from Session";
+            SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
+
+            return dr;
+
+        }
+
+        public SqlDataReader loadAllroomsWithLecturers()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT * from LecturerWithRoom";
+            SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
+
+            return dr;
 
         }
 

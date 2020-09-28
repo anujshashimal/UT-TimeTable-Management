@@ -20,6 +20,7 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
             roomsConn roomsConn = new roomsConn();
+            roomsWithLecCon rql = new roomsWithLecCon();
             session lecturer = new session();
 
             consecutivesession consecutivesession = new consecutivesession();
@@ -28,6 +29,7 @@ namespace TimeTableManagement.Forms
             asubjectCode.DataSource = roomsConn.getSession();
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
             notAvailableGridView.DataSource = roomsConn.load_not_available_details();
+            lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
             faculty.DataSource = roomsConn.getFaultyRooms();
             rfaculty.DataSource = roomsConn.getFaultyRooms();
             electurenme.DataSource = lecturer.getLectures();
@@ -204,7 +206,14 @@ namespace TimeTableManagement.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            String lecName = electurenme.Text.ToString();
+            String roomType = lroomtype.Text.ToString();
+            String roomName = lroomName.Text.ToString();
+            roomsWithLecCon rwl = new roomsWithLecCon();
+            roomsConn roomsConn = new roomsConn();
 
+            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName);
+            lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
         }
 
 

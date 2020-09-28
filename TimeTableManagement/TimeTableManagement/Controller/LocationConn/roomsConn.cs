@@ -299,6 +299,21 @@ namespace TimeTableManagement.Controller.LocationConn
             return dtstudents;
         }
 
+        public DataTable load_Lec_with_rooms()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from LecturerWithRoom ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
         public ArrayList getSessionTypeTable(String name)
         {
 
