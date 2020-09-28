@@ -112,6 +112,34 @@ namespace TimeTableManagement.Controller.LocationConn
 
             }
         }
+
+        public ArrayList getNotAvailableRooms()
+        {
+            {
+                ArrayList arrayList = new ArrayList();
+
+                if (con.State.ToString() != "Open")
+                {
+                    con.Open();
+                }
+
+                DataTable dataTable = new DataTable();
+                // Boolean dr1 = checkRoomIsAvailable(name);
+
+                string query = "select roomName from NotAvailableRoomTimes";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+                return arrayList;
+
+
+            }
+        }
         public ArrayList getSession()
         {
 
@@ -152,7 +180,7 @@ namespace TimeTableManagement.Controller.LocationConn
 
             DataTable dataTable = new DataTable();
 
-            string query = "select Tag1 from Consecutivetbl where subjectcode = '" + name + "'";
+            string query = "select Tag1 from Consecutivetbl where Tag1 = '" + name + "'";
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
 

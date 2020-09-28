@@ -41,9 +41,7 @@ namespace TimeTableManagement.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             roomsConn roomsConn = new roomsConn();
-            String selectedNme = assignRoom.Text.ToString();
-            String selectedFaculty = faculty.Text.ToString();
-
+            String selectedNme = assignRoom.Text.ToString(); 
             aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
 
 
@@ -149,7 +147,7 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             String selectedFaculty = rfaculty.Text.ToString(); 
             rName.DataSource = roomsConn.getRoomsByFaculty(selectedFaculty);
-            rrrname.DataSource = roomsConn.getRoomsByFaculty(selectedFaculty);
+
 
         }
 
@@ -163,7 +161,7 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             roomsConn.insertNotAvailableTimes(rName.Text.ToString(), rfaculty.Text.ToString(), rntime.Text.ToString());
             notAvailableGridView.DataSource = roomsConn.load_not_available_details();
-
+            rrrname.DataSource = roomsConn.getNotAvailableRooms();
         }
 
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -178,7 +176,24 @@ namespace TimeTableManagement.Forms
 
             roomsConn.DeleteNotAvailableRooms(selectedRoomName);
             notAvailableGridView.DataSource = roomsConn.load_not_available_details();
+            rrrname.DataSource = roomsConn.getNotAvailableRooms();
+        }
 
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rntime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roomsManaging_Load(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            String selectedFaculty = rfaculty.Text.ToString();
+            rrrname.DataSource = roomsConn.getNotAvailableRooms();
         }
     }
 }
