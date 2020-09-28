@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TimeTableManagement.Controller.LocationConn;
 using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.locationModel;
+using TimeTableManagement.Controller.session_controller;
 
 namespace TimeTableManagement.Forms
 {
@@ -19,15 +20,21 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
             roomsConn roomsConn = new roomsConn();
+            roomsWithLecCon rql = new roomsWithLecCon();
+            session lecturer = new session();
+
             consecutivesession consecutivesession = new consecutivesession();
 
             assignRoom.DataSource = roomsConn.getRooms();
             asubjectCode.DataSource = roomsConn.getSession();
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+            notAvailableGridView.DataSource = roomsConn.load_not_available_details();
+            lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
             faculty.DataSource = roomsConn.getFaultyRooms();
-
-            loadSessionItems();
-
+            rfaculty.DataSource = roomsConn.getFaultyRooms();
+            electurenme.DataSource = lecturer.getLectures();
+            //           lroomtype.DataSource = roomsConn.
+            loadLecturerPreferedTags();
 
         }
 
@@ -39,9 +46,7 @@ namespace TimeTableManagement.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             roomsConn roomsConn = new roomsConn();
-            String selectedNme = assignRoom.Text.ToString();
-            String selectedFaculty = faculty.Text.ToString();
-
+            String selectedNme = assignRoom.Text.ToString(); 
             aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
 
 
@@ -55,6 +60,7 @@ namespace TimeTableManagement.Forms
 
             roomsModel.roomName = assignRoom.Text;
             roomsModel.subjectCode = asubjectCode.Text;
+            roomsModel.facultyNme = faculty.Text;
             roomsConn.updateSessionTable(roomsModel, notavltime.Text.ToString(), selectedSessionType);
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
 
@@ -105,17 +111,15 @@ namespace TimeTableManagement.Forms
             if (selectedSessionType.Equals("Normal")){
                 atag2.Hide();
                 label1.Hide();
-
-                comboBox1.Hide();
-                label7.Hide();
+ 
             }
             else
             {
                 atag2.Show();
                 label1.Show();
 
-                comboBox1.Show();
-                label7.Show();
+               // comboBox1.Show();
+               // label7.Show();
             }
 
         }
@@ -139,6 +143,98 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             String selectedFaculty = faculty.Text.ToString();
             assignRoom.DataSource = roomsConn.getRoomsByFaculty(selectedFaculty);
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            String selectedFaculty = rfaculty.Text.ToString(); 
+            rName.DataSource = roomsConn.getRoomsByFaculty(selectedFaculty);
+
+
+        }
+
+        private void notAvailableGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void releaceBtn_Click(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            roomsConn.insertNotAvailableTimes(rName.Text.ToString(), rfaculty.Text.ToString(), rntime.Text.ToString());
+            notAvailableGridView.DataSource = roomsConn.load_not_available_details();
+            rrrname.DataSource = roomsConn.getNotAvailableRooms();
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rrbtn_Click(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            String selectedRoomName = rrrname.Text.ToString();
+
+            roomsConn.DeleteNotAvailableRooms(selectedRoomName);
+            notAvailableGridView.DataSource = roomsConn.load_not_available_details();
+            rrrname.DataSource = roomsConn.getNotAvailableRooms();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rntime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roomsManaging_Load(object sender, EventArgs e)
+        {
+            roomsConn roomsConn = new roomsConn();
+            String selectedFaculty = rfaculty.Text.ToString();
+            rrrname.DataSource = roomsConn.getNotAvailableRooms();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String lecName = electurenme.Text.ToString();
+            String roomType = lroomtype.Text.ToString();
+            String roomName = lroomName.Text.ToString();
+            roomsWithLecCon rwl = new roomsWithLecCon();
+            roomsConn roomsConn = new roomsConn();
+
+            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName);
+            lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
+        }
+
+
+        void loadLecturerPreferedTags()
+        {
+            lroomtype.Items.Add("Lecture");
+            lroomtype.Items.Add("Tutorial");
+            lroomtype.Items.Add("Lab");
+        }
+
+        private void lroomName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lroomtype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedRoomType = lroomtype.Text.ToString();
+            roomsWithLecCon rwl = new roomsWithLecCon();
+            lroomName.DataSource = rwl.LoadTagsWithRooms(selectedRoomType);
+
         }
     }
 }

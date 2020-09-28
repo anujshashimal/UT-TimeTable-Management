@@ -13,7 +13,7 @@ using TimeTableManagement.Model.SessionModel;
 
 namespace TimeTableManagement.Forms
 {
-   
+
     public partial class CreateSession : Form
     {
         ArrayList lec = new ArrayList();
@@ -21,7 +21,7 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
 
-           
+
 
             session lecturer = new session();
 
@@ -33,7 +33,7 @@ namespace TimeTableManagement.Forms
             lecturerlist.DataSource = lecturer.getLectures();
 
             subNamelist.DataSource = lecturer.getSubjects();
-           
+
 
             sessionList.DataSource = lecturer.getSessiondatatoTable();
 
@@ -48,8 +48,8 @@ namespace TimeTableManagement.Forms
         {
 
             lec.Add(lecturerlist.Text);
-                lecList.Items.Add(lecturerlist.Text);
-            
+            lecList.Items.Add(lecturerlist.Text);
+
 
 
 
@@ -116,7 +116,7 @@ namespace TimeTableManagement.Forms
 
                 for (int i = 0; i < lecList.Items.Count; i++)
                 {
-                    sessionmodel.lec = sessionmodel.lec + lecList.Items[i].Text +",";
+                    sessionmodel.lec = sessionmodel.lec + lecList.Items[i].Text + ",";
                 }
 
                 sessionmodel.lecturers = lec;
@@ -137,17 +137,17 @@ namespace TimeTableManagement.Forms
                 //sessionList.DataSource = session.getSessiondatatoTable();
 
 
-                 sessionList.DataSource = session.getSessiondatatoTable();
+                sessionList.DataSource = session.getSessiondatatoTable();
 
                 flowLayoutPanel1.Controls.Clear();
 
-                for (int i = 0; i < session.getSessiondatatoTable().Rows.Count;i++)
+                for (int i = 0; i < session.getSessiondatatoTable().Rows.Count; i++)
                 {
 
                     show_data(session.getSessiondatatoTable(), i);
                 }
 
-                
+
 
 
 
@@ -164,7 +164,7 @@ namespace TimeTableManagement.Forms
 
         private void type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(type.Text != "Practical")
+            if (type.Text != "Practical")
             {
                 subBox.Hide();
                 sublbl.Hide();
@@ -210,53 +210,34 @@ namespace TimeTableManagement.Forms
 
             //System.Windows.Forms.MessageBox.Show(sessionModel.lec.ToString());
 
-            findSessionList.DataSource= searchsession.SearchSession(sessionModel);
+            findSessionList.DataSource = searchsession.SearchSession(sessionModel);
 
 
 
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
         public void show_data(DataTable dataTable, int count)
         {
-           
+
 
             Label lecturers = new Label();
             lecturers.AutoSize = true;
             lecturers.Height = 15;
             lecturers.Font = new Font("Microsoft Sans Serif", 12f);
-            lecturers.BackColor =Color.SandyBrown;
+            lecturers.BackColor = Color.SandyBrown;
             lecturers.BorderStyle = BorderStyle.FixedSingle;
-            
-            lecturers.Text = dataTable.Rows[count][7].ToString() +"\n"
-                        + dataTable.Rows[count][0].ToString() + "(" + dataTable.Rows[count][1].ToString() + ") \n"+ dataTable.Rows[count][2].ToString()+"\n"
-                        + dataTable.Rows[count][8].ToString() + "." + dataTable.Rows[count][9].ToString() + "." + dataTable.Rows[count][3].ToString() + "." + dataTable.Rows[count][4].ToString()+"\n"+
+
+            lecturers.Text = dataTable.Rows[count][7].ToString() + "\n"
+                        + dataTable.Rows[count][0].ToString() + "(" + dataTable.Rows[count][1].ToString() + ") \n" + dataTable.Rows[count][2].ToString() + "\n"
+                        + dataTable.Rows[count][8].ToString() + "." + dataTable.Rows[count][9].ToString() + "." + dataTable.Rows[count][3].ToString() + "." + dataTable.Rows[count][4].ToString() + "\n" +
                         dataTable.Rows[count][5].ToString() + "(" + dataTable.Rows[count][6].ToString() + ") \n \n";
             lecturers.Margin = new Padding(2);
-          
+
 
 
             flowLayoutPanel1.Controls.Add(lecturers);
 
 
-
-        }
-
-        private void flowLayoutPanel1_DoubleClick(object sender, EventArgs e)
-        {
-            
-        private void subcodeList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lecturerlist_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void subBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }
