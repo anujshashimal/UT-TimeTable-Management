@@ -124,7 +124,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Sessions";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // lecList
             // 
@@ -177,7 +176,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1043, 320);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.DoubleClick += new System.EventHandler(this.flowLayoutPanel1_DoubleClick);
             // 
             // sessionList
             // 
@@ -245,7 +243,6 @@
             this.subBox.Name = "subBox";
             this.subBox.Size = new System.Drawing.Size(129, 28);
             this.subBox.TabIndex = 14;
-            this.subBox.SelectedIndexChanged += new System.EventHandler(this.subBox_SelectedIndexChanged);
             // 
             // Gid
             // 
@@ -299,7 +296,6 @@
             this.subcodeList.Name = "subcodeList";
             this.subcodeList.Size = new System.Drawing.Size(387, 28);
             this.subcodeList.TabIndex = 11;
-            this.subcodeList.SelectedIndexChanged += new System.EventHandler(this.subcodeList_SelectedIndexChanged);
             // 
             // subNamelist
             // 
@@ -319,7 +315,6 @@
             this.lecturerlist.Name = "lecturerlist";
             this.lecturerlist.Size = new System.Drawing.Size(387, 28);
             this.lecturerlist.TabIndex = 9;
-            this.lecturerlist.SelectedIndexChanged += new System.EventHandler(this.lecturerlist_SelectedIndexChanged);
             // 
             // label9
             // 

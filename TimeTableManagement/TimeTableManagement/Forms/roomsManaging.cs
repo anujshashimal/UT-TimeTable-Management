@@ -106,17 +106,15 @@ namespace TimeTableManagement.Forms
             if (selectedSessionType.Equals("Normal")){
                 atag2.Hide();
                 label1.Hide();
-
-                comboBox1.Hide();
-                label7.Hide();
+ 
             }
             else
             {
                 atag2.Show();
                 label1.Show();
 
-                comboBox1.Show();
-                label7.Show();
+               // comboBox1.Show();
+               // label7.Show();
             }
 
         }
