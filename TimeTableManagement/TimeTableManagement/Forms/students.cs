@@ -867,10 +867,7 @@ namespace TimeTableManagement.Forms
 
         private void academicyearsem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
+           
         }
 
         private void Programme_comboBox_KeyPress(object sender, KeyPressEventArgs e)
