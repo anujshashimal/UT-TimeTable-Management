@@ -140,7 +140,7 @@ namespace TimeTableManagement.Controller.lahiruconn
 
             while (dr1.Read())
             {
-                if (parallelmodel.starttime.Equals(dr1.GetValue(1).ToString()) && parallelmodel.day.Equals(dr1.GetValue(2).ToString()) && parallelmodel.groupid.Equals(dr1.GetValue(7).ToString()) &&  parallelmodel.sub_group_id.Equals(dr1.GetValue(8).ToString()))
+                if (parallelmodel.starttime.Equals(dr1.GetValue(1).ToString()) && parallelmodel.day.Equals(dr1.GetValue(2).ToString()) && parallelmodel.groupid.Equals(dr1.GetValue(7).ToString()) ||  parallelmodel.sub_group_id.Equals(dr1.GetValue(8).ToString()))
                 {
 
                     MessageBox.Show("Sessions are overlapped !!", "Error", MessageBoxButton.OK);
@@ -149,6 +149,7 @@ namespace TimeTableManagement.Controller.lahiruconn
                 }
 
             }
+
 
              if(i != 1)
             { 

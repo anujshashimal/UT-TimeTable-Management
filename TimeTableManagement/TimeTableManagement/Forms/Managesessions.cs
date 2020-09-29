@@ -239,25 +239,27 @@ namespace TimeTableManagement.Forms
 
 
             while (dr.Read())
-            {
+            { 
                 if (subjectcomboBox.Text.Equals(dr.GetValue(1).ToString()))
                 {
+
+                    Console.WriteLine(dr);
                     subjectcodetxt.Text = dr.GetValue(2).ToString();
                     groupidtxt.Text = dr.GetValue(4).ToString();
-                    subgroupidtxt.Text = dr.GetValue(5).ToString();
+                   // subgroupidtxt.Text = dr.GetValue(5).ToString();
 
                     if (dr.GetValue(3).ToString() == "Lecture")
                     {
-
+                        Console.WriteLine("tute");
                         tag1txt.Text = dr.GetValue(3).ToString();
                         tag1timeduration.Text = dr.GetValue(7).ToString();
                         total = total + Int32.Parse(tag1timeduration.Text);
 
                     }
 
-                    if (dr.GetValue(3).ToString() == "Tutorial")
+                   if (dr.GetValue(3).ToString() == "Tutorial")
                     {
-
+                      
                         tag2txt.Text = dr.GetValue(3).ToString();
                         tag2timeduration.Text = dr.GetValue(7).ToString();
                         total = total + Int32.Parse(tag2timeduration.Text);
@@ -307,7 +309,7 @@ namespace TimeTableManagement.Forms
 
                 subjectcodetxt.Text = "";
                 groupidtxt.Text = "";
-                subgroupidtxt.Text = "";
+               // subgroupidtxt.Text = "";
                 tag1txt.Text = "";
                 tag1timeduration.Text = "";
                 tag2txt.Text = "";
@@ -363,7 +365,7 @@ namespace TimeTableManagement.Forms
                 consecutivemodel.subject = subjectcomboBox.Text.ToString();
                 consecutivemodel.subjectcode = subjectcodetxt.Text.ToString();
                 consecutivemodel.groupid = groupidtxt.Text.ToString();
-                consecutivemodel.subgroupid = subgroupidtxt.Text.ToString();
+               // consecutivemodel.subgroupid = subgroupidtxt.Text.ToString();
                 consecutivemodel.Tag1 = tag1txt.Text.ToString();
                 consecutivemodel.Tag2 = tag2txt.Text.ToString();
                 // consecutivemodel.Tag3 = tag3txt.Text.ToString();
@@ -386,7 +388,7 @@ namespace TimeTableManagement.Forms
                 //    tag3timeduration.Text = "";
                 subjectcodetxt.Text = "";
                 groupidtxt.Text = "";
-                subgroupidtxt.Text = "";
+               // subgroupidtxt.Text = "";
                 subjectcomboBox.Text = "";
                 thrstxt.Text = "";
 
@@ -416,29 +418,30 @@ namespace TimeTableManagement.Forms
         {
             int total = 0;
 
-            SqlDataReader dr = consecutivecon.load_sesssion_details();
+            SqlDataReader dr5 = consecutivecon.load_sesssion_details();
 
-            while (dr.Read())
+            while (dr5.Read())
             {
-                if (subjectcomboBox.Text.Equals(dr.GetValue(1).ToString()))
+                if (subjectcomboBox.Text.Equals(dr5.GetValue(1).ToString()))
                 {
-                    subjectcodetxt.Text = dr.GetValue(2).ToString();
-                    groupidtxt.Text = dr.GetValue(4).ToString();
-                    subgroupidtxt.Text = dr.GetValue(5).ToString();
+                    subjectcodetxt.Text = dr5.GetValue(2).ToString();
+                    groupidtxt.Text = dr5.GetValue(4).ToString();
+                   // subgroupidtxt.Text = dr5.GetValue(5).ToString();
 
-                    if (dr.GetValue(3).ToString() == "lecture")
+                    if ( dr5.GetValue(3).ToString()=="Lecture")
                     {
 
-                        tag1txt.Text = dr.GetValue(3).ToString();
-                        tag1timeduration.Text = dr.GetValue(7).ToString();
+                        tag1txt.Text = dr5.GetValue(3).ToString();
+                        tag1timeduration.Text = dr5.GetValue(7).ToString();
                         total = total + Int32.Parse(tag1timeduration.Text);
 
                     }
-                    if (dr.GetValue(3).ToString() == "tutorial")
+
+                   else if ( dr5.GetValue(3).ToString()=="Tutorial")
                     {
 
-                        tag2txt.Text = dr.GetValue(3).ToString();
-                        tag2timeduration.Text = dr.GetValue(7).ToString();
+                        tag2txt.Text = dr5.GetValue(3).ToString();
+                        tag2timeduration.Text = dr5.GetValue(7).ToString();
                         total = total + Int32.Parse(tag2timeduration.Text);
 
 
@@ -681,6 +684,11 @@ namespace TimeTableManagement.Forms
         }
 
         private void lecturer_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subjectcomboBox_TextChanged(object sender, EventArgs e)
         {
 
         }

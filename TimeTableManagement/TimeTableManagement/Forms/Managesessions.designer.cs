@@ -53,13 +53,13 @@
             this.typecombobox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.consecutive_lecturer_combo = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.thrstxt = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.consecutive_data_table = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.subgroupidtxt = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.groupidtxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tag2timeduration = new System.Windows.Forms.TextBox();
@@ -96,8 +96,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.parallel_tbl = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
-            this.consecutive_lecturer_combo = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -406,8 +404,6 @@
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.subgroupidtxt);
-            this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.groupidtxt);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.tag2timeduration);
@@ -431,9 +427,29 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // consecutive_lecturer_combo
+            // 
+            this.consecutive_lecturer_combo.AllowDrop = true;
+            this.consecutive_lecturer_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.consecutive_lecturer_combo.FormattingEnabled = true;
+            this.consecutive_lecturer_combo.Location = new System.Drawing.Point(238, 11);
+            this.consecutive_lecturer_combo.Name = "consecutive_lecturer_combo";
+            this.consecutive_lecturer_combo.Size = new System.Drawing.Size(214, 28);
+            this.consecutive_lecturer_combo.TabIndex = 114;
+            // 
+            // label30
+            // 
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label30.Location = new System.Drawing.Point(83, 17);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(74, 23);
+            this.label30.TabIndex = 113;
+            this.label30.Text = "Lecturer";
+            // 
             // thrstxt
             // 
-            this.thrstxt.Location = new System.Drawing.Point(246, 424);
+            this.thrstxt.Location = new System.Drawing.Point(247, 370);
             this.thrstxt.Multiline = true;
             this.thrstxt.Name = "thrstxt";
             this.thrstxt.ReadOnly = true;
@@ -444,7 +460,7 @@
             // 
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(72, 429);
+            this.label16.Location = new System.Drawing.Point(73, 375);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 23);
             this.label16.TabIndex = 64;
@@ -479,25 +495,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // subgroupidtxt
-            // 
-            this.subgroupidtxt.Location = new System.Drawing.Point(239, 220);
-            this.subgroupidtxt.Multiline = true;
-            this.subgroupidtxt.Name = "subgroupidtxt";
-            this.subgroupidtxt.ReadOnly = true;
-            this.subgroupidtxt.Size = new System.Drawing.Size(214, 28);
-            this.subgroupidtxt.TabIndex = 59;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(72, 226);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(103, 23);
-            this.label15.TabIndex = 58;
-            this.label15.Text = "Sub Group Id";
-            // 
             // groupidtxt
             // 
             this.groupidtxt.Location = new System.Drawing.Point(238, 166);
@@ -519,7 +516,7 @@
             // 
             // tag2timeduration
             // 
-            this.tag2timeduration.Location = new System.Drawing.Point(524, 336);
+            this.tag2timeduration.Location = new System.Drawing.Point(525, 282);
             this.tag2timeduration.Multiline = true;
             this.tag2timeduration.Name = "tag2timeduration";
             this.tag2timeduration.ReadOnly = true;
@@ -530,7 +527,7 @@
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(359, 341);
+            this.label11.Location = new System.Drawing.Point(360, 287);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(159, 23);
             this.label11.TabIndex = 50;
@@ -538,18 +535,18 @@
             // 
             // tag2txt
             // 
-            this.tag2txt.Location = new System.Drawing.Point(238, 341);
+            this.tag2txt.Location = new System.Drawing.Point(239, 287);
             this.tag2txt.Multiline = true;
             this.tag2txt.Name = "tag2txt";
             this.tag2txt.ReadOnly = true;
-            this.tag2txt.Size = new System.Drawing.Size(66, 28);
+            this.tag2txt.Size = new System.Drawing.Size(94, 28);
             this.tag2txt.TabIndex = 49;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label12.Location = new System.Drawing.Point(82, 346);
+            this.label12.Location = new System.Drawing.Point(83, 292);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 23);
             this.label12.TabIndex = 48;
@@ -557,7 +554,7 @@
             // 
             // tag1timeduration
             // 
-            this.tag1timeduration.Location = new System.Drawing.Point(524, 279);
+            this.tag1timeduration.Location = new System.Drawing.Point(525, 225);
             this.tag1timeduration.Multiline = true;
             this.tag1timeduration.Name = "tag1timeduration";
             this.tag1timeduration.ReadOnly = true;
@@ -568,7 +565,7 @@
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label10.Location = new System.Drawing.Point(359, 284);
+            this.label10.Location = new System.Drawing.Point(360, 230);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(157, 23);
             this.label10.TabIndex = 46;
@@ -576,11 +573,11 @@
             // 
             // tag1txt
             // 
-            this.tag1txt.Location = new System.Drawing.Point(238, 284);
+            this.tag1txt.Location = new System.Drawing.Point(239, 230);
             this.tag1txt.Multiline = true;
             this.tag1txt.Name = "tag1txt";
             this.tag1txt.ReadOnly = true;
-            this.tag1txt.Size = new System.Drawing.Size(66, 28);
+            this.tag1txt.Size = new System.Drawing.Size(94, 28);
             this.tag1txt.TabIndex = 45;
             this.tag1txt.TextChanged += new System.EventHandler(this.tag1txt_TextChanged);
             // 
@@ -588,7 +585,7 @@
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(82, 289);
+            this.label9.Location = new System.Drawing.Point(83, 235);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 23);
             this.label9.TabIndex = 44;
@@ -629,6 +626,7 @@
             this.subjectcomboBox.SelectedIndexChanged += new System.EventHandler(this.subjectcomboBox_SelectedIndexChanged);
             this.subjectcomboBox.TextUpdate += new System.EventHandler(this.subjectcomboBox_TextUpdate);
             this.subjectcomboBox.DropDownClosed += new System.EventHandler(this.subjectcomboBox_DropDownClosed);
+            this.subjectcomboBox.TextChanged += new System.EventHandler(this.subjectcomboBox_TextChanged);
             this.subjectcomboBox.Click += new System.EventHandler(this.subjectcomboBox_Click);
             this.subjectcomboBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.subjectcomboBox_DragEnter);
             this.subjectcomboBox.DragLeave += new System.EventHandler(this.subjectcomboBox_DragLeave);
@@ -915,26 +913,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // consecutive_lecturer_combo
-            // 
-            this.consecutive_lecturer_combo.AllowDrop = true;
-            this.consecutive_lecturer_combo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.consecutive_lecturer_combo.FormattingEnabled = true;
-            this.consecutive_lecturer_combo.Location = new System.Drawing.Point(238, 11);
-            this.consecutive_lecturer_combo.Name = "consecutive_lecturer_combo";
-            this.consecutive_lecturer_combo.Size = new System.Drawing.Size(214, 28);
-            this.consecutive_lecturer_combo.TabIndex = 114;
-            // 
-            // label30
-            // 
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label30.Location = new System.Drawing.Point(83, 17);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(74, 23);
-            this.label30.TabIndex = 113;
-            this.label30.Text = "Lecturer";
-            // 
             // Managesessions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -998,8 +976,6 @@
         private System.Windows.Forms.TextBox tag2txt;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox subgroupidtxt;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox groupidtxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox thrstxt;
