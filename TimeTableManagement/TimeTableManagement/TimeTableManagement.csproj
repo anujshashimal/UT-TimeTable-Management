@@ -75,7 +75,9 @@
     <Compile Include="Controller\lahiruconn\Studentcon.cs" />
     <Compile Include="Controller\lahiruconn\Tagcon.cs" />
     <Compile Include="Controller\LectureController\LectureController.cs" />
+    <Compile Include="Controller\LocationConn\BatchesConn.cs" />
     <Compile Include="Controller\LocationConn\LocationConn.cs" />
+    <Compile Include="Controller\LocationConn\roomsAvalability.cs" />
     <Compile Include="Controller\LocationConn\roomsConn.cs" />
     <Compile Include="Controller\LocationConn\roomsWithLecCon.cs" />
     <Compile Include="Controller\session controller\session.cs" />

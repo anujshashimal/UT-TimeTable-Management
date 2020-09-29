@@ -11,6 +11,7 @@ using TimeTableManagement.Controller.LocationConn;
 using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.locationModel;
 using TimeTableManagement.Controller.session_controller;
+using System.Collections;
 
 namespace TimeTableManagement.Forms
 {
@@ -45,10 +46,21 @@ namespace TimeTableManagement.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roomsConn roomsConn = new roomsConn();
-            String selectedNme = assignRoom.Text.ToString(); 
-            aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
+            Boolean boo = new Boolean();
 
+            roomsConn roomsConn = new roomsConn();
+            String selectedNme = assignRoom.Text.ToString();
+            roomsAvalability ra = new roomsAvalability();
+            boo = ra.checkRoomIsAvailable(selectedNme);
+
+            if (boo.Equals(true)) { 
+            aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
+            }
+            else
+            {
+            //    assignRoom.DataSource = roomsConn.checkRooooms(String roomnm);
+                MessageBox.Show("Room is already assigned");
+            }
 
         }
 
@@ -146,6 +158,10 @@ namespace TimeTableManagement.Forms
             sesType.Items.Add("Normal");
             sesType.Items.Add("Consecutive");
             sesType.Items.Add("Parallel");
+
+            sType.Items.Add("Normal");
+            sType.Items.Add("Consecutive");
+            sType.Items.Add("Parallel");
 
         }
 
@@ -252,6 +268,20 @@ namespace TimeTableManagement.Forms
             String selectedRoomType = lroomtype.Text.ToString();
             roomsWithLecCon rwl = new roomsWithLecCon();
             lroomName.DataSource = rwl.LoadTagsWithRooms(selectedRoomType);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BatchesConn bt = new BatchesConn();
+            String selectedSession = sType.Text.ToString();
+            String selectedSubject = subNme.Text.ToString();
+            sname.DataSource = bt.getSubjectAccourdingToSession(selectedSession);
 
         }
     }

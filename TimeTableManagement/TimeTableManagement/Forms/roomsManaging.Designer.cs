@@ -82,6 +82,23 @@
             this.label18 = new System.Windows.Forms.Label();
             this.lButton = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.rmType = new System.Windows.Forms.ComboBox();
+            this.rmName = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.grpNme = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.subNme = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.sname = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.sType = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -94,6 +111,7 @@
             this.tabPage3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lecWithRoomsGrid)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,6 +127,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(3, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -644,9 +663,9 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label17.Location = new System.Drawing.Point(6, 14);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(224, 23);
+            this.label17.Size = new System.Drawing.Size(265, 23);
             this.label17.TabIndex = 74;
-            this.label17.Text = "Add Rooms to lecture";
+            this.label17.Text = "Add Preferred Rooms To Lecturer";
             // 
             // label18
             // 
@@ -681,6 +700,189 @@
             this.label19.TabIndex = 71;
             this.label19.Text = "Room Number";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.sType);
+            this.tabPage4.Controls.Add(this.label28);
+            this.tabPage4.Controls.Add(this.sname);
+            this.tabPage4.Controls.Add(this.label27);
+            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.label21);
+            this.tabPage4.Controls.Add(this.rmType);
+            this.tabPage4.Controls.Add(this.rmName);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Controls.Add(this.label26);
+            this.tabPage4.Controls.Add(this.grpNme);
+            this.tabPage4.Controls.Add(this.label22);
+            this.tabPage4.Controls.Add(this.subNme);
+            this.tabPage4.Controls.Add(this.label23);
+            this.tabPage4.Controls.Add(this.label24);
+            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1042, 647);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(175, 314);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(387, 28);
+            this.comboBox1.TabIndex = 95;
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label21.Location = new System.Drawing.Point(24, 314);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(122, 23);
+            this.label21.TabIndex = 94;
+            this.label21.Text = "Tag type";
+            // 
+            // rmType
+            // 
+            this.rmType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rmType.FormattingEnabled = true;
+            this.rmType.Location = new System.Drawing.Point(175, 221);
+            this.rmType.Name = "rmType";
+            this.rmType.Size = new System.Drawing.Size(387, 28);
+            this.rmType.TabIndex = 93;
+            // 
+            // rmName
+            // 
+            this.rmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rmName.FormattingEnabled = true;
+            this.rmName.Location = new System.Drawing.Point(176, 266);
+            this.rmName.Name = "rmName";
+            this.rmName.Size = new System.Drawing.Size(387, 28);
+            this.rmName.TabIndex = 92;
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label25.Location = new System.Drawing.Point(23, 227);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(122, 23);
+            this.label25.TabIndex = 91;
+            this.label25.Text = "Room type";
+            // 
+            // label26
+            // 
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label26.Location = new System.Drawing.Point(22, 272);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(122, 23);
+            this.label26.TabIndex = 90;
+            this.label26.Text = "Room Name";
+            // 
+            // grpNme
+            // 
+            this.grpNme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpNme.FormattingEnabled = true;
+            this.grpNme.Location = new System.Drawing.Point(174, 135);
+            this.grpNme.Name = "grpNme";
+            this.grpNme.Size = new System.Drawing.Size(387, 28);
+            this.grpNme.TabIndex = 89;
+            // 
+            // label22
+            // 
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label22.Location = new System.Drawing.Point(22, 140);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(122, 23);
+            this.label22.TabIndex = 88;
+            this.label22.Text = "Group name";
+            // 
+            // subNme
+            // 
+            this.subNme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subNme.FormattingEnabled = true;
+            this.subNme.Location = new System.Drawing.Point(175, 175);
+            this.subNme.Name = "subNme";
+            this.subNme.Size = new System.Drawing.Size(387, 28);
+            this.subNme.TabIndex = 87;
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label23.Location = new System.Drawing.Point(20, 18);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(224, 23);
+            this.label23.TabIndex = 85;
+            this.label23.Text = "Add Rooms to Groups";
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label24.Location = new System.Drawing.Point(22, 181);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(138, 23);
+            this.label24.TabIndex = 84;
+            this.label24.Text = "Sub group name";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Location = new System.Drawing.Point(600, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(259, 43);
+            this.button1.TabIndex = 83;
+            this.button1.Text = "Add lecturer to room";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // sname
+            // 
+            this.sname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sname.FormattingEnabled = true;
+            this.sname.Location = new System.Drawing.Point(174, 95);
+            this.sname.Name = "sname";
+            this.sname.Size = new System.Drawing.Size(387, 28);
+            this.sname.TabIndex = 97;
+            // 
+            // label27
+            // 
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label27.Location = new System.Drawing.Point(22, 100);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(122, 23);
+            this.label27.TabIndex = 96;
+            this.label27.Text = "Subject name";
+            // 
+            // sType
+            // 
+            this.sType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sType.FormattingEnabled = true;
+            this.sType.Location = new System.Drawing.Point(174, 56);
+            this.sType.Name = "sType";
+            this.sType.Size = new System.Drawing.Size(387, 28);
+            this.sType.TabIndex = 99;
+            this.sType.SelectedIndexChanged += new System.EventHandler(this.sType_SelectedIndexChanged);
+            // 
+            // label28
+            // 
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label28.Location = new System.Drawing.Point(22, 61);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(122, 23);
+            this.label28.TabIndex = 98;
+            this.label28.Text = "Session type";
+            // 
             // roomsManaging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +904,7 @@
             this.tabPage3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lecWithRoomsGrid)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -762,5 +965,22 @@
         private System.Windows.Forms.DataGridView lecWithRoomsGrid;
         private System.Windows.Forms.ComboBox sesType;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox rmType;
+        private System.Windows.Forms.ComboBox rmName;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox grpNme;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox subNme;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox sType;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox sname;
+        private System.Windows.Forms.Label label27;
     }
 }

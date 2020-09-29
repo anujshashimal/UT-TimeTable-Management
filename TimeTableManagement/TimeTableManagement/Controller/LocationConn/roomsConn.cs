@@ -78,12 +78,13 @@ namespace TimeTableManagement.Controller.LocationConn
                 }
                 return arrayList;
             }
-    //        else
-   //         {
-     //           return arrayList;
+        //        else
+        //         {
+        //           return arrayList;
 
-     //       }
-        
+        //       }
+
+
 
         public ArrayList getRoomsByFaculty(String selectedFaculty)
         {
@@ -498,10 +499,6 @@ namespace TimeTableManagement.Controller.LocationConn
                 SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
                 return dr1;
             }
-
-
-
-
         }
 
         public Boolean checkRoomIsAvailable(String roomName)
