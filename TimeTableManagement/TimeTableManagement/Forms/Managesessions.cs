@@ -369,7 +369,7 @@ namespace TimeTableManagement.Forms
                 // consecutivemodel.Tag3 = tag3txt.Text.ToString();
 
                 consecutivemodel.Tag1timeduration = Convert.ToInt32(tag1timeduration.Text);
-                consecutivemodel.Tag2timeduration = Convert.ToInt32(tag2timeduration.Text);
+            //    consecutivemodel.Tag2timeduration = Convert.ToInt32(tag2timeduration.Text);
                 //   consecutivemodel.Tag3timeduration = Convert.ToInt32(tag3timeduration.Text);
 
                 consecutivemodel.total_hours = Convert.ToInt32(thrstxt.Text);

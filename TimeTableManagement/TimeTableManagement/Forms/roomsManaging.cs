@@ -80,7 +80,7 @@ namespace TimeTableManagement.Forms
         }
 
         private void aroomType_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   
             roomsConn roomsConn = new roomsConn();
 
             String selectedLabNme = aroomType.Text.ToString();
@@ -122,10 +122,10 @@ namespace TimeTableManagement.Forms
             }
             if (selectedSessionType.Equals("Normal"))
             {
-                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
             }else if(selectedSessionType.Equals("Consecutive"))
             {
-                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
 
             }
             else if (selectedSessionType.Equals("Parallel"))
@@ -143,7 +143,9 @@ namespace TimeTableManagement.Forms
             sessionType.Items.Add("Consecutive");
             sessionType.Items.Add("Parallel");
 
-
+            sesType.Items.Add("Normal");
+            sesType.Items.Add("Consecutive");
+            sesType.Items.Add("Parallel");
 
         }
 
@@ -220,13 +222,15 @@ namespace TimeTableManagement.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+                                                        
             String lecName = electurenme.Text.ToString();
             String roomType = lroomtype.Text.ToString();
             String roomName = lroomName.Text.ToString();
+            String roomTyp = sesType.Text.ToString();
             roomsWithLecCon rwl = new roomsWithLecCon();
             roomsConn roomsConn = new roomsConn();
 
-            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName);
+            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName, roomTyp);
             lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
         }
 
