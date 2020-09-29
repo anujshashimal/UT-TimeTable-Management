@@ -440,7 +440,7 @@ namespace TimeTableManagement.Controller.LocationConn
             }
             else if (tagType.Equals("Parallel"))
             {
-                string query = "select Tag1 from Consecutivetbl where subjectcode = '" + subCode + "'";
+                string query = "select Tag1 from Parallel_tbl where subjectcode = '" + subCode + "'";
                 SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
                 while (data.Read())
                 {
