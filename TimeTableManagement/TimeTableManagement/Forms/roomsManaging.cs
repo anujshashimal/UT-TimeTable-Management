@@ -23,7 +23,7 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             roomsWithLecCon rql = new roomsWithLecCon();
             session lecturer = new session();
-
+            BatchesConn bc = new BatchesConn();
             consecutivesession consecutivesession = new consecutivesession();
 
             assignRoom.DataSource = roomsConn.getRooms();
@@ -34,6 +34,9 @@ namespace TimeTableManagement.Forms
             faculty.DataSource = roomsConn.getFaultyRooms();
             rfaculty.DataSource = roomsConn.getFaultyRooms();
             electurenme.DataSource = lecturer.getLectures();
+            grpNme.DataSource = bc.getAllGroupIds();
+            subGNme.DataSource = bc.getAllSubGroupIds();
+
             //           lroomtype.DataSource = roomsConn.
             loadLecturerPreferedTags();
             loadSessionItems();
@@ -279,10 +282,47 @@ namespace TimeTableManagement.Forms
         private void sType_SelectedIndexChanged(object sender, EventArgs e)
         {
             BatchesConn bt = new BatchesConn();
+            roomsConn roomsConn = new roomsConn();
             String selectedSession = sType.Text.ToString();
-            String selectedSubject = subNme.Text.ToString();
+            String selectedSubject = subGNme.Text.ToString();
             sname.DataSource = bt.getSubjectAccourdingToSession(selectedSession);
 
+            if (selectedSession.Equals("Normal"))
+            {
+                grpWithRoomsGrid.DataSource = roomsConn.load_normal_sesssion_details();
+            }
+            else if (selectedSession.Equals("Consecutive"))
+            {
+                grpWithRoomsGrid.DataSource = roomsConn.load_con_sesssion_details();
+
+            }
+            else if (selectedSession.Equals("Parallel"))
+            {
+                grpWithRoomsGrid.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
+        }
+
+        private void sname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedSession = sType.Text.ToString();
+            String selectedSubject = sname.Text.ToString();
+            BatchesConn bc = new BatchesConn();
+    //        grpNme.DataSource = bc.getTheGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
+   //         subGNme.DataSource = bc.getTheSubGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
+    //        tagType.DataSource = bc.getTheTagTypeUsingSubjectnmeSession(selectedSession, selectedSubject);
+
+        }
+
+        private void grpNme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void subGNme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
