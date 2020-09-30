@@ -287,8 +287,23 @@ namespace TimeTableManagement.Forms
             String selectedTagType = tagType.Text.ToString();
             String selectedroomName = rmName.Text.ToString();
             BatchesConn bc = new BatchesConn();
+            roomsConn roomsConn = new roomsConn();
 
             bc.SR_updateGroupsWithAssignedRoom(selectedGroupName, selectedSubGroupName, selectedSessionType, selectedTagType, selectedroomName);
+            if (selectedSessionType.Equals("Normal"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+            }
+            else if (selectedSessionType.Equals("Consecutive"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+
+            }
+            else if (selectedSessionType.Equals("Parallel"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
         }
 
         private void sType_SelectedIndexChanged(object sender, EventArgs e)
