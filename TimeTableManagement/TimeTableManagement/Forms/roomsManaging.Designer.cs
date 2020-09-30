@@ -688,7 +688,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(259, 43);
             this.button3.TabIndex = 72;
-            this.button3.Text = "Add lecturer to room";
+            this.button3.Text = "Update special request";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -724,7 +724,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1042, 647);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Add rooms to groups";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tagType
@@ -826,7 +826,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(259, 43);
             this.button1.TabIndex = 83;
-            this.button1.Text = "Add lecturer to room";
+            this.button1.Text = "Update Sepcial Request";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

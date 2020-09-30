@@ -87,8 +87,10 @@ namespace TimeTableManagement.Forms
         {
             roomsConn roomsConn = new roomsConn();
             String getSelectedSubject = asubjectCode.Text.ToString();
-            atags.DataSource = roomsConn.getSessionType(getSelectedSubject);
-            atag2.DataSource = roomsConn.getTag2Type(getSelectedSubject);
+            String getSelectedSession = sessionType.Text.ToString();
+
+            atags.DataSource = roomsConn.getSessionType(getSelectedSubject, getSelectedSession);
+          //  atag2.DataSource = roomsConn.getTag2Type(getSelectedSubject, getSelectedSession);
 
             String selectedSessionType = sessionType.Text.ToString();
             String selectedSubject = asubjectCode.Text.ToString();
@@ -100,7 +102,8 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
 
             String selectedLabNme = aroomType.Text.ToString();
-            atags.DataSource = roomsConn.getSessionType(selectedLabNme);
+            String selectedSessionType = sessionType.Text.ToString();
+            atags.DataSource = roomsConn.getSessionType(selectedLabNme, selectedSessionType);
 
         }
 

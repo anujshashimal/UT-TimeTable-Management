@@ -63,7 +63,7 @@ namespace TimeTableManagement.Controller.LocationConn
             }
 
             DataTable dataTable = new DataTable();
-            string query = "select roomName from RoomTable where roomType = '" + name + "'";
+            string query = "select roomType from RoomTable where roomName = '" + name + "'";
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
             while (data.Read())
@@ -158,7 +158,7 @@ namespace TimeTableManagement.Controller.LocationConn
             return arrayList;
         }
 
-        public ArrayList getSessionType(String name)
+        public ArrayList getSessionType(String name, String getSelectedSession)
         {
 
             ArrayList arrayList = new ArrayList();
@@ -167,25 +167,62 @@ namespace TimeTableManagement.Controller.LocationConn
             {
                 con.Open();
             }
-            Console.WriteLine( name);
 
             DataTable dataTable = new DataTable();
+            if (getSelectedSession.Equals("Consecutive")) {
+                string query = "select Tag1 from Consecutivetbl where Tag1 = '" + name + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
-            string query = "select Tag1 from Consecutivetbl where Tag1 = '" + name + "'";
-            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
 
-            while (data.Read())
+                Console.WriteLine("awdwadaw", arrayList);
+
+                return arrayList;
+            }else if (getSelectedSession.Equals("Parallel"))
             {
-                int i = 0;
-                arrayList.Add(data.GetValue(i).ToString());
-                i++;
+                string query = "select Type from Parallel_tbl where Type = '" + name + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+                Console.WriteLine("awdwadaw", arrayList);
+
+                return arrayList;
+
             }
+            else
+            {
+                string query = "select type from Session where type = '" + name + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
-            Console.WriteLine("awdwadaw",arrayList);
 
-            return arrayList;
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+                Console.WriteLine("awdwadaw", arrayList);
+
+                return arrayList;
+                return arrayList;
+
+            }
         }
+        
 
 
         public ArrayList getTag2Type(String name)
