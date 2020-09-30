@@ -152,6 +152,7 @@
             this.button11.Text = "Generate TimeTables";
             this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // pictureBox13
             // 
