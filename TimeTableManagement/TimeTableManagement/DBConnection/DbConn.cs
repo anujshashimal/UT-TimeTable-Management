@@ -12,15 +12,18 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection()
         {
 
-            string conString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
-            SqlConnection conn = new SqlConnection(conString);
+
+            string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
+
+          SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
 
         public SqlConnection getDBConnection1()
         {
 
-            string conString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
+
+            string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -28,14 +31,16 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection2()
         {
 
-            string conString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
+
+            string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
         public SqlConnection getDBConnection3()
         {
 
-            string conString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
+
+            string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }

@@ -61,7 +61,7 @@ namespace TimeTableManagement.Controller.lahiruconn
                 con.Open();
             }
 
-            string query = "INSERT INTO  Consecutivetbl(Lecturer,subject,subjectcode,groupid,subgroupid,Tag1,Tag1timeduration,Tag2,Tag2timeduration,Tag3,Tag3timeduration,Totalhours)  VALUES ('" + consecutivemodel.lecturer + "','" + consecutivemodel.subject + "','" + consecutivemodel.subjectcode + "','" + consecutivemodel.groupid + "','" + consecutivemodel.subgroupid + "','" + consecutivemodel.Tag1 + "','" + consecutivemodel.Tag1timeduration + "','" + consecutivemodel.Tag2 + "','" + consecutivemodel.Tag2timeduration + "','" + consecutivemodel.Tag3 + "','" + consecutivemodel.Tag3timeduration + "','" + consecutivemodel.total_hours + "')";
+            string query = "INSERT INTO  Consecutivetbl(Lecturer,subject,subjectcode,groupid,Tag1,Tag1timeduration,Tag2,Tag2timeduration,Totalhours)  VALUES ('" + consecutivemodel.lecturer + "','" + consecutivemodel.subject + "','" + consecutivemodel.subjectcode + "','" + consecutivemodel.groupid + "','" + consecutivemodel.Tag1 + "','" + consecutivemodel.Tag1timeduration + "','" + consecutivemodel.Tag2 + "','" + consecutivemodel.Tag2timeduration + "','" + consecutivemodel.total_hours + "')";
             SqlCommand com = new SqlCommand(query, con);
             int ret = NewMethod(com);
 

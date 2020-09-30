@@ -283,6 +283,38 @@ namespace TimeTableManagement.Controller.LocationConn
             return dtstudents;
         }
 
+        public DataTable load_parallel_sesssion_details()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from Parallel_tbl ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
+        public DataTable load_normal_sesssion_details()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from Session ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
+
         public DataTable load_not_available_details()
         {
             if (con.State.ToString() != "Open")
@@ -299,6 +331,21 @@ namespace TimeTableManagement.Controller.LocationConn
             return dtstudents;
         }
 
+        public DataTable load_Lec_with_rooms()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dtstudents = new DataTable();
+
+            string query = "SELECT *  from LecturerWithRoom ";
+            SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
+
+            dtstudents.Load(dr1);
+            return dtstudents;
+        }
         public ArrayList getSessionTypeTable(String name)
         {
 
@@ -393,7 +440,7 @@ namespace TimeTableManagement.Controller.LocationConn
             }
             else if (tagType.Equals("Parallel"))
             {
-                string query = "select Tag1 from Consecutivetbl where subjectcode = '" + subCode + "'";
+                string query = "select Tag1 from Parallel_tbl where subjectcode = '" + subCode + "'";
                 SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
                 while (data.Read())
                 {

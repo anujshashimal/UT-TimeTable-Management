@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TimeTableManagement.Controller.LocationConn;
 using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.locationModel;
+using TimeTableManagement.Controller.session_controller;
 
 namespace TimeTableManagement.Forms
 {
@@ -19,18 +20,22 @@ namespace TimeTableManagement.Forms
         {
             InitializeComponent();
             roomsConn roomsConn = new roomsConn();
+            roomsWithLecCon rql = new roomsWithLecCon();
+            session lecturer = new session();
+
             consecutivesession consecutivesession = new consecutivesession();
 
             assignRoom.DataSource = roomsConn.getRooms();
             asubjectCode.DataSource = roomsConn.getSession();
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
             notAvailableGridView.DataSource = roomsConn.load_not_available_details();
+            lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
             faculty.DataSource = roomsConn.getFaultyRooms();
             rfaculty.DataSource = roomsConn.getFaultyRooms();
-
+            electurenme.DataSource = lecturer.getLectures();
+            //           lroomtype.DataSource = roomsConn.
+            loadLecturerPreferedTags();
             loadSessionItems();
-
-
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +80,7 @@ namespace TimeTableManagement.Forms
         }
 
         private void aroomType_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   
             roomsConn roomsConn = new roomsConn();
 
             String selectedLabNme = aroomType.Text.ToString();
@@ -106,16 +111,30 @@ namespace TimeTableManagement.Forms
             if (selectedSessionType.Equals("Normal")){
                 atag2.Hide();
                 label1.Hide();
- 
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
             }
             else
             {
                 atag2.Show();
                 label1.Show();
-
                // comboBox1.Show();
                // label7.Show();
             }
+            if (selectedSessionType.Equals("Normal"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+            }else if(selectedSessionType.Equals("Consecutive"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+
+            }
+            else if (selectedSessionType.Equals("Parallel"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
+
+
 
         }
         void loadSessionItems()
@@ -124,7 +143,9 @@ namespace TimeTableManagement.Forms
             sessionType.Items.Add("Consecutive");
             sessionType.Items.Add("Parallel");
 
-
+            sesType.Items.Add("Normal");
+            sesType.Items.Add("Consecutive");
+            sesType.Items.Add("Parallel");
 
         }
 
@@ -192,6 +213,46 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             String selectedFaculty = rfaculty.Text.ToString();
             rrrname.DataSource = roomsConn.getNotAvailableRooms();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+                                                        
+            String lecName = electurenme.Text.ToString();
+            String roomType = lroomtype.Text.ToString();
+            String roomName = lroomName.Text.ToString();
+            String roomTyp = sesType.Text.ToString();
+            roomsWithLecCon rwl = new roomsWithLecCon();
+            roomsConn roomsConn = new roomsConn();
+
+            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName, roomTyp);
+            lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
+        }
+
+
+        void loadLecturerPreferedTags()
+        {
+            lroomtype.Items.Add("Lecture");
+            lroomtype.Items.Add("Tutorial");
+            lroomtype.Items.Add("Lab");
+        }
+
+        private void lroomName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lroomtype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedRoomType = lroomtype.Text.ToString();
+            roomsWithLecCon rwl = new roomsWithLecCon();
+            lroomName.DataSource = rwl.LoadTagsWithRooms(selectedRoomType);
+
         }
     }
 }
