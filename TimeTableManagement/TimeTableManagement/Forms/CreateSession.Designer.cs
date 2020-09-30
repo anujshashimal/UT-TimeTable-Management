@@ -280,7 +280,7 @@
             this.type.FormattingEnabled = true;
             this.type.Items.AddRange(new object[] {
             "Lecture",
-            "Tutorial ",
+            "Tutorial",
             "Practical"});
             this.type.Location = new System.Drawing.Point(153, 152);
             this.type.Name = "type";

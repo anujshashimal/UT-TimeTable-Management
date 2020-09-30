@@ -35,7 +35,7 @@ namespace TimeTableManagement.Forms
             electurenme.DataSource = lecturer.getLectures();
             //           lroomtype.DataSource = roomsConn.
             loadLecturerPreferedTags();
-
+            loadSessionItems();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace TimeTableManagement.Forms
         }
 
         private void aroomType_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   
             roomsConn roomsConn = new roomsConn();
 
             String selectedLabNme = aroomType.Text.ToString();
@@ -111,16 +111,30 @@ namespace TimeTableManagement.Forms
             if (selectedSessionType.Equals("Normal")){
                 atag2.Hide();
                 label1.Hide();
- 
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
             }
             else
             {
                 atag2.Show();
                 label1.Show();
-
                // comboBox1.Show();
                // label7.Show();
             }
+            if (selectedSessionType.Equals("Normal"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+            }else if(selectedSessionType.Equals("Consecutive"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+
+            }
+            else if (selectedSessionType.Equals("Parallel"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
+
+
 
         }
         void loadSessionItems()
@@ -129,7 +143,9 @@ namespace TimeTableManagement.Forms
             sessionType.Items.Add("Consecutive");
             sessionType.Items.Add("Parallel");
 
-
+            sesType.Items.Add("Normal");
+            sesType.Items.Add("Consecutive");
+            sesType.Items.Add("Parallel");
 
         }
 
@@ -206,13 +222,15 @@ namespace TimeTableManagement.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
+                                                        
             String lecName = electurenme.Text.ToString();
             String roomType = lroomtype.Text.ToString();
             String roomName = lroomName.Text.ToString();
+            String roomTyp = sesType.Text.ToString();
             roomsWithLecCon rwl = new roomsWithLecCon();
             roomsConn roomsConn = new roomsConn();
 
-            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName);
+            rwl.insertLecWithPrefereedRoom(lecName, roomType, roomName, roomTyp);
             lecWithRoomsGrid.DataSource = roomsConn.load_Lec_with_rooms();
         }
 

@@ -39,8 +39,6 @@
             this.assignRoom = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.roomManagingSource = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.atag2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +70,10 @@
             this.rreleaseRoom = new System.Windows.Forms.Label();
             this.releaceBtn = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.sesType = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lecWithRoomsGrid = new System.Windows.Forms.DataGridView();
             this.electurenme = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lroomtype = new System.Windows.Forms.ComboBox();
@@ -80,8 +82,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.lButton = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lecWithRoomsGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -124,8 +124,6 @@
             this.tabPage1.Controls.Add(this.aroomType);
             this.tabPage1.Controls.Add(this.assignRoom);
             this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label3);
@@ -145,7 +143,7 @@
             // 
             this.faculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.faculty.FormattingEnabled = true;
-            this.faculty.Location = new System.Drawing.Point(133, 43);
+            this.faculty.Location = new System.Drawing.Point(133, 45);
             this.faculty.Name = "faculty";
             this.faculty.Size = new System.Drawing.Size(387, 28);
             this.faculty.TabIndex = 70;
@@ -218,30 +216,6 @@
             this.roomManagingSource.Size = new System.Drawing.Size(1042, 195);
             this.roomManagingSource.TabIndex = 0;
             this.roomManagingSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomManagingSource_CellContentClick);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(773, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(259, 43);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Delete Session";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(773, 84);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 43);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Edit Session";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -569,6 +543,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.sesType);
+            this.tabPage3.Controls.Add(this.label20);
             this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Controls.Add(this.electurenme);
             this.tabPage3.Controls.Add(this.label7);
@@ -583,8 +559,44 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1042, 647);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Add rooms to lecturers";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // sesType
+            // 
+            this.sesType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sesType.FormattingEnabled = true;
+            this.sesType.Location = new System.Drawing.Point(138, 182);
+            this.sesType.Name = "sesType";
+            this.sesType.Size = new System.Drawing.Size(387, 28);
+            this.sesType.TabIndex = 81;
+            // 
+            // label20
+            // 
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label20.Location = new System.Drawing.Point(10, 184);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(122, 23);
+            this.label20.TabIndex = 80;
+            this.label20.Text = "Session type";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lecWithRoomsGrid);
+            this.panel5.Location = new System.Drawing.Point(0, 407);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1042, 240);
+            this.panel5.TabIndex = 79;
+            // 
+            // lecWithRoomsGrid
+            // 
+            this.lecWithRoomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lecWithRoomsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lecWithRoomsGrid.Location = new System.Drawing.Point(0, 0);
+            this.lecWithRoomsGrid.Name = "lecWithRoomsGrid";
+            this.lecWithRoomsGrid.Size = new System.Drawing.Size(1042, 240);
+            this.lecWithRoomsGrid.TabIndex = 0;
             // 
             // electurenme
             // 
@@ -669,23 +681,6 @@
             this.label19.TabIndex = 71;
             this.label19.Text = "Room Number";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lecWithRoomsGrid);
-            this.panel5.Location = new System.Drawing.Point(0, 407);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1042, 240);
-            this.panel5.TabIndex = 79;
-            // 
-            // lecWithRoomsGrid
-            // 
-            this.lecWithRoomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.lecWithRoomsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lecWithRoomsGrid.Location = new System.Drawing.Point(0, 0);
-            this.lecWithRoomsGrid.Name = "lecWithRoomsGrid";
-            this.lecWithRoomsGrid.Size = new System.Drawing.Size(1042, 240);
-            this.lecWithRoomsGrid.TabIndex = 0;
-            // 
             // roomsManaging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,8 +717,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView roomManagingSource;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox notavltime;
         private System.Windows.Forms.ComboBox asubjectCode;
@@ -767,5 +760,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView lecWithRoomsGrid;
+        private System.Windows.Forms.ComboBox sesType;
+        private System.Windows.Forms.Label label20;
     }
 }
