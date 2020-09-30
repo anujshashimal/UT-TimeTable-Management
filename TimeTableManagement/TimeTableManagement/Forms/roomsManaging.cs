@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,7 @@ using TimeTableManagement.Controller.LocationConn;
 using TimeTableManagement.Controller.lahiruconn;
 using TimeTableManagement.Model.locationModel;
 using TimeTableManagement.Controller.session_controller;
+using System.Collections;
 
 namespace TimeTableManagement.Forms
 {
@@ -22,7 +24,7 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
             roomsWithLecCon rql = new roomsWithLecCon();
             session lecturer = new session();
-
+            BatchesConn bc = new BatchesConn();
             consecutivesession consecutivesession = new consecutivesession();
 
             assignRoom.DataSource = roomsConn.getRooms();
@@ -33,6 +35,9 @@ namespace TimeTableManagement.Forms
             faculty.DataSource = roomsConn.getFaultyRooms();
             rfaculty.DataSource = roomsConn.getFaultyRooms();
             electurenme.DataSource = lecturer.getLectures();
+            grpNme.DataSource = bc.getAllGroupIds();
+            subGNme.DataSource = bc.getAllSubGroupIds();
+
             //           lroomtype.DataSource = roomsConn.
             loadLecturerPreferedTags();
             loadSessionItems();
@@ -45,10 +50,21 @@ namespace TimeTableManagement.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            roomsConn roomsConn = new roomsConn();
-            String selectedNme = assignRoom.Text.ToString(); 
-            aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
+            Boolean boo = new Boolean();
 
+            roomsConn roomsConn = new roomsConn();
+            String selectedNme = assignRoom.Text.ToString();
+            roomsAvalability ra = new roomsAvalability();
+            boo = ra.checkRoomIsAvailable(selectedNme);
+
+            if (boo.Equals(true)) { 
+            aroomType.DataSource = roomsConn.getRoomsType(selectedNme);
+            }
+            else
+            {
+            //    assignRoom.DataSource = roomsConn.checkRooooms(String roomnm);
+                MessageBox.Show("Room is already assigned");
+            }
 
         }
 
@@ -71,8 +87,10 @@ namespace TimeTableManagement.Forms
         {
             roomsConn roomsConn = new roomsConn();
             String getSelectedSubject = asubjectCode.Text.ToString();
-            atags.DataSource = roomsConn.getSessionType(getSelectedSubject);
-            atag2.DataSource = roomsConn.getTag2Type(getSelectedSubject);
+            String getSelectedSession = sessionType.Text.ToString();
+
+            atags.DataSource = roomsConn.getSessionType(getSelectedSubject, getSelectedSession);
+          //  atag2.DataSource = roomsConn.getTag2Type(getSelectedSubject, getSelectedSession);
 
             String selectedSessionType = sessionType.Text.ToString();
             String selectedSubject = asubjectCode.Text.ToString();
@@ -84,7 +102,8 @@ namespace TimeTableManagement.Forms
             roomsConn roomsConn = new roomsConn();
 
             String selectedLabNme = aroomType.Text.ToString();
-            atags.DataSource = roomsConn.getSessionType(selectedLabNme);
+            String selectedSessionType = sessionType.Text.ToString();
+            atags.DataSource = roomsConn.getSessionType(selectedLabNme, selectedSessionType);
 
         }
 
@@ -146,6 +165,10 @@ namespace TimeTableManagement.Forms
             sesType.Items.Add("Normal");
             sesType.Items.Add("Consecutive");
             sesType.Items.Add("Parallel");
+
+            sType.Items.Add("Normal");
+            sType.Items.Add("Consecutive");
+            sType.Items.Add("Parallel");
 
         }
 
@@ -240,6 +263,10 @@ namespace TimeTableManagement.Forms
             lroomtype.Items.Add("Lecture");
             lroomtype.Items.Add("Tutorial");
             lroomtype.Items.Add("Lab");
+
+            tagType.Items.Add("Lecture");
+            tagType.Items.Add("Tutorial");
+            tagType.Items.Add("Lab");
         }
 
         private void lroomName_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,6 +279,94 @@ namespace TimeTableManagement.Forms
             String selectedRoomType = lroomtype.Text.ToString();
             roomsWithLecCon rwl = new roomsWithLecCon();
             lroomName.DataSource = rwl.LoadTagsWithRooms(selectedRoomType);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String selectedGroupName = grpNme.Text.ToString();
+            String selectedSubGroupName = subGNme.Text.ToString();
+            String selectedSessionType = sType.Text.ToString();
+            String selectedTagType = tagType.Text.ToString();
+            String selectedroomName = rmName.Text.ToString();
+            BatchesConn bc = new BatchesConn();
+            roomsConn roomsConn = new roomsConn();
+
+            bc.SR_updateGroupsWithAssignedRoom(selectedGroupName, selectedSubGroupName, selectedSessionType, selectedTagType, selectedroomName);
+            if (selectedSessionType.Equals("Normal"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+            }
+            else if (selectedSessionType.Equals("Consecutive"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+
+            }
+            else if (selectedSessionType.Equals("Parallel"))
+            {
+                roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
+        }
+
+        private void sType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BatchesConn bt = new BatchesConn();
+            roomsConn roomsConn = new roomsConn();
+            String selectedSession = sType.Text.ToString();
+            String selectedSubject = subGNme.Text.ToString();
+            sname.DataSource = bt.getSubjectAccourdingToSession(selectedSession);
+
+            if (selectedSession.Equals("Normal"))
+            {
+                grpWithRoomsGrid.DataSource = roomsConn.load_normal_sesssion_details();
+            }
+            else if (selectedSession.Equals("Consecutive"))
+            {
+                grpWithRoomsGrid.DataSource = roomsConn.load_con_sesssion_details();
+
+            }
+            else if (selectedSession.Equals("Parallel"))
+            {
+                grpWithRoomsGrid.DataSource = roomsConn.load_parallel_sesssion_details();
+
+            }
+        }
+
+        private void sname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String selectedSession = sType.Text.ToString();
+            String selectedSubject = sname.Text.ToString();
+            BatchesConn bc = new BatchesConn();
+    //        grpNme.DataSource = bc.getTheGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
+   //         subGNme.DataSource = bc.getTheSubGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
+    //        tagType.DataSource = bc.getTheTagTypeUsingSubjectnmeSession(selectedSession, selectedSubject);
+
+        }
+
+        private void grpNme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void subGNme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tagType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            String selectedTag = tagType.Text.ToString();
+            roomsConn roomsConn = new roomsConn();
+
+            rmName.DataSource = roomsConn.getRoomsType(selectedTag);
+
+        }
+
+        private void rmName_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
