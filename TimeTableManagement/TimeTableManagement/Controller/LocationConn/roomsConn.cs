@@ -63,27 +63,17 @@ namespace TimeTableManagement.Controller.LocationConn
             }
 
             DataTable dataTable = new DataTable();
-         //   Boolean dr1 = checkRoomIsAvailable(name);
+            string query = "select roomName from RoomTable where roomType = '" + name + "'";
+            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
- //           if (dr1.Equals("True")){
-                string query = "select roomType from RoomTable where roomName = '" + name + "'";
-                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
-
-
-                while (data.Read())
-                {
-                    int i = 0;
-                    arrayList.Add(data.GetValue(i).ToString());
-                    i++;
-                }
-                return arrayList;
+            while (data.Read())
+            {
+                int i = 0;
+                arrayList.Add(data.GetValue(i).ToString());
+                i++;
             }
-        //        else
-        //         {
-        //           return arrayList;
-
-        //       }
-
+            return arrayList;
+            }
 
 
         public ArrayList getRoomsByFaculty(String selectedFaculty)

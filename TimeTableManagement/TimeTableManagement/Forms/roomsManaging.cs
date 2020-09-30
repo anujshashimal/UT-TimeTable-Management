@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -259,6 +260,10 @@ namespace TimeTableManagement.Forms
             lroomtype.Items.Add("Lecture");
             lroomtype.Items.Add("Tutorial");
             lroomtype.Items.Add("Lab");
+
+            tagType.Items.Add("Lecture");
+            tagType.Items.Add("Tutorial");
+            tagType.Items.Add("Lab");
         }
 
         private void lroomName_SelectedIndexChanged(object sender, EventArgs e)
@@ -276,7 +281,14 @@ namespace TimeTableManagement.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String selectedGroupName = grpNme.Text.ToString();
+            String selectedSubGroupName = subGNme.Text.ToString();
+            String selectedSessionType = sType.Text.ToString();
+            String selectedTagType = tagType.Text.ToString();
+            String selectedroomName = rmName.Text.ToString();
+            BatchesConn bc = new BatchesConn();
 
+            bc.SR_updateGroupsWithAssignedRoom(selectedGroupName, selectedSubGroupName, selectedSessionType, selectedTagType, selectedroomName);
         }
 
         private void sType_SelectedIndexChanged(object sender, EventArgs e)
@@ -323,6 +335,21 @@ namespace TimeTableManagement.Forms
         private void subGNme_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void tagType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            String selectedTag = tagType.Text.ToString();
+            roomsConn roomsConn = new roomsConn();
+
+            rmName.DataSource = roomsConn.getRoomsType(selectedTag);
+
+        }
+
+        private void rmName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -80,14 +80,12 @@
             this.lroomName = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.lButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tagType = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.rmType = new System.Windows.Forms.ComboBox();
             this.rmName = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.grpNme = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -575,7 +573,7 @@
             this.tabPage3.Controls.Add(this.lroomName);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.label18);
-            this.tabPage3.Controls.Add(this.lButton);
+            this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -681,18 +679,18 @@
             this.label18.TabIndex = 73;
             this.label18.Text = "Room type";
             // 
-            // lButton
+            // button3
             // 
-            this.lButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lButton.Location = new System.Drawing.Point(585, 50);
-            this.lButton.Name = "lButton";
-            this.lButton.Size = new System.Drawing.Size(259, 43);
-            this.lButton.TabIndex = 72;
-            this.lButton.Text = "Add lecturer to room";
-            this.lButton.UseVisualStyleBackColor = false;
-            this.lButton.Click += new System.EventHandler(this.button3_Click);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button3.Location = new System.Drawing.Point(585, 50);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(259, 43);
+            this.button3.TabIndex = 72;
+            this.button3.Text = "Add lecturer to room";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label19
             // 
@@ -713,9 +711,7 @@
             this.tabPage4.Controls.Add(this.label27);
             this.tabPage4.Controls.Add(this.tagType);
             this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.rmType);
             this.tabPage4.Controls.Add(this.rmName);
-            this.tabPage4.Controls.Add(this.label25);
             this.tabPage4.Controls.Add(this.label26);
             this.tabPage4.Controls.Add(this.grpNme);
             this.tabPage4.Controls.Add(this.label22);
@@ -735,54 +731,37 @@
             // 
             this.tagType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tagType.FormattingEnabled = true;
-            this.tagType.Location = new System.Drawing.Point(175, 218);
+            this.tagType.Location = new System.Drawing.Point(176, 221);
             this.tagType.Name = "tagType";
             this.tagType.Size = new System.Drawing.Size(387, 28);
             this.tagType.TabIndex = 95;
+            this.tagType.SelectedIndexChanged += new System.EventHandler(this.tagType_SelectedIndexChanged);
             // 
             // label21
             // 
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label21.Location = new System.Drawing.Point(24, 218);
+            this.label21.Location = new System.Drawing.Point(22, 225);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(122, 23);
             this.label21.TabIndex = 94;
             this.label21.Text = "Tag type";
             // 
-            // rmType
-            // 
-            this.rmType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rmType.FormattingEnabled = true;
-            this.rmType.Location = new System.Drawing.Point(175, 260);
-            this.rmType.Name = "rmType";
-            this.rmType.Size = new System.Drawing.Size(387, 28);
-            this.rmType.TabIndex = 93;
-            // 
             // rmName
             // 
             this.rmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rmName.FormattingEnabled = true;
-            this.rmName.Location = new System.Drawing.Point(176, 305);
+            this.rmName.Location = new System.Drawing.Point(176, 264);
             this.rmName.Name = "rmName";
             this.rmName.Size = new System.Drawing.Size(387, 28);
             this.rmName.TabIndex = 92;
-            // 
-            // label25
-            // 
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label25.Location = new System.Drawing.Point(23, 266);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(122, 23);
-            this.label25.TabIndex = 91;
-            this.label25.Text = "Room type";
+            this.rmName.SelectedIndexChanged += new System.EventHandler(this.rmName_SelectedIndexChanged);
             // 
             // label26
             // 
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label26.Location = new System.Drawing.Point(22, 311);
+            this.label26.Location = new System.Drawing.Point(22, 270);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(122, 23);
             this.label26.TabIndex = 90;
@@ -792,7 +771,7 @@
             // 
             this.grpNme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpNme.FormattingEnabled = true;
-            this.grpNme.Location = new System.Drawing.Point(174, 63);
+            this.grpNme.Location = new System.Drawing.Point(176, 63);
             this.grpNme.Name = "grpNme";
             this.grpNme.Size = new System.Drawing.Size(387, 28);
             this.grpNme.TabIndex = 89;
@@ -812,7 +791,7 @@
             // 
             this.subGNme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subGNme.FormattingEnabled = true;
-            this.subGNme.Location = new System.Drawing.Point(175, 103);
+            this.subGNme.Location = new System.Drawing.Point(176, 103);
             this.subGNme.Name = "subGNme";
             this.subGNme.Size = new System.Drawing.Size(387, 28);
             this.subGNme.TabIndex = 87;
@@ -843,7 +822,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(600, 95);
+            this.button1.Location = new System.Drawing.Point(629, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(259, 43);
             this.button1.TabIndex = 83;
@@ -865,7 +844,7 @@
             // 
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label27.Location = new System.Drawing.Point(24, 184);
+            this.label27.Location = new System.Drawing.Point(21, 184);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(122, 23);
             this.label27.TabIndex = 96;
@@ -885,7 +864,7 @@
             // 
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label28.Location = new System.Drawing.Point(24, 145);
+            this.label28.Location = new System.Drawing.Point(22, 145);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(122, 23);
             this.label28.TabIndex = 98;
@@ -986,7 +965,7 @@
         private System.Windows.Forms.ComboBox lroomName;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button lButton;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView lecWithRoomsGrid;
@@ -995,9 +974,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.ComboBox tagType;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox rmType;
         private System.Windows.Forms.ComboBox rmName;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox grpNme;
         private System.Windows.Forms.Label label22;

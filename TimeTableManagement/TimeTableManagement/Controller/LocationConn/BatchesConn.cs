@@ -8,6 +8,7 @@ using TimeTableManagement.DBConnection;
 using TimeTableManagement.Model.locationModel;
 using System.Data;
 using System.Collections;
+using System.Windows;
 
 namespace TimeTableManagement.Controller.LocationConn
 {
@@ -342,5 +343,143 @@ namespace TimeTableManagement.Controller.LocationConn
 
         }
 
+
+        public void SR_updateGroupsWithAssignedRoom(String selectedGroupName, String selectedSubGroupName, String selectedSessionType, String selectedTagType, String selectedroomName)
+        {
+            if (con.State.ToString() != "Open")
+            { con.Open(); }
+
+            if (selectedSessionType.Equals("Normal"))
+            {
+
+                SqlDataReader dr = loadAllNormalSessions();
+
+                while (dr.Read())
+                {
+                    String GroupID = Convert.ToString(dr["GroupID"]);
+                    if (selectedGroupName.Equals(GroupID))
+                    {
+
+                        string sql = "UPDATE Session SET roomName='" + selectedroomName + "' WHERE GroupID = '" + selectedGroupName + "' AND type = '" + selectedTagType + "'";
+
+                        SqlCommand com = new SqlCommand(sql, con);
+
+                        MessageBox.Show("Updateddd");
+                        com.ExecuteNonQuery();
+                    }
+                }
+            }
+         /*   else if (SessionType.Equals("Consecutive"))
+            {
+                String cemi = ",";
+                String nvla = lecturer + cemi;
+                Console.WriteLine("awduqiquq" + nvla);
+
+                SqlDataReader dr = loadAllSessions();
+
+                while (dr.Read())
+                {
+                    String lecturerName = Convert.ToString(dr["Consecutive"]);
+                    if (nvla.Equals(lecturerName))
+                    {
+                        string sql = "UPDATE Session SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+                        SqlCommand com = new SqlCommand(sql, con);
+                        SqlDataReader dr1 = loadAllroomsWithLecturers();
+                        while (dr1.Read())
+                        {
+                            String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
+                            if (lecturer.Equals(lecturerNameN))
+                            {
+                                string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
+
+                                SqlCommand com1 = new SqlCommand(query, con);
+                                com1.ExecuteNonQuery();
+                            }
+                        }
+
+                        com.ExecuteNonQuery();
+
+                    }
+                }
+
+            }
+            else if (SessionType.Equals("Parallel"))
+            {
+                String cemi = ",";
+                String nvla = lecturer + cemi;
+                Console.WriteLine("awduqiquq" + nvla);
+
+                SqlDataReader dr = loadAllSessions();
+
+                while (dr.Read())
+                {
+                    String lecturerName = Convert.ToString(dr["Lecturers"]);
+                    if (nvla.Equals(lecturerName))
+                    {
+
+                        string sql = "UPDATE Parallel SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+
+                        SqlCommand com = new SqlCommand(sql, con);
+                        SqlDataReader dr1 = loadAllroomsWithLecturers();
+                        while (dr1.Read())
+                        {
+                            String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
+                            if (lecturer.Equals(lecturerNameN))
+                            {
+                                string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
+                                SqlCommand com1 = new SqlCommand(query, con);
+                                com1.ExecuteNonQuery();
+                            }
+                        }
+
+                        com.ExecuteNonQuery();
+
+                    }
+                }
+            }*/
+        }
+
+
+        public SqlDataReader loadAllNormalSessions()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT * from Session";
+            SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
+
+            return dr;
+
+        }
+
+        public SqlDataReader loadAllConseSessions()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT * from Consecutivetbl";
+            SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
+
+            return dr;
+
+        }
+
+        public SqlDataReader loadAllParallelSessions()
+        {
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "SELECT * from Parallel";
+            SqlDataReader dr = new SqlCommand(query, con).ExecuteReader();
+
+            return dr;
+
+        }
     }
 }
