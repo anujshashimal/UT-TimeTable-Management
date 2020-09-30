@@ -481,5 +481,30 @@ namespace TimeTableManagement.Controller.LocationConn
             return dr;
 
         }
+
+        public ArrayList getSubjectYear(String subjectName)
+        {
+
+            ArrayList arrayList = new ArrayList();
+
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "select offYear from SubjectTable where SubName = '" + subjectName + "'";
+
+            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+
+            while (data.Read())
+            {
+                int i = 0;
+                arrayList.Add(data.GetValue(i).ToString());
+                i++;
+            }
+            return arrayList;
+
+        }
     }
 }
