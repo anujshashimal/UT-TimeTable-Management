@@ -12,6 +12,7 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection()
         {
 
+
             string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
@@ -19,6 +20,7 @@ namespace TimeTableManagement.DBConnection
 
         public SqlConnection getDBConnection1()
         {
+
 
             string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
@@ -28,12 +30,14 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection2()
         {
 
+
             string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
         public SqlConnection getDBConnection3()
         {
+
 
             string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);

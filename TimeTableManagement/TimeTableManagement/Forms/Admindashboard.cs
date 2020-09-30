@@ -130,7 +130,7 @@ namespace TimeTableManagement.Forms
 
         private void button10_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new TimeTable());
+            OpenChildForm(new TimeSlots());
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -142,6 +142,11 @@ namespace TimeTableManagement.Forms
         private void button5_Click(object sender, EventArgs e)
         {
             OpenChildForm(new roomsManaging());
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new TimeTableGenerate());
         }
     }
 }
