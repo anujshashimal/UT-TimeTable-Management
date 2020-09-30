@@ -63,27 +63,18 @@ namespace TimeTableManagement.Controller.LocationConn
             }
 
             DataTable dataTable = new DataTable();
-         //   Boolean dr1 = checkRoomIsAvailable(name);
+            string query = "select roomType from RoomTable where roomName = '" + name + "'";
+            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
- //           if (dr1.Equals("True")){
-                string query = "select roomType from RoomTable where roomName = '" + name + "'";
-                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
-
-
-                while (data.Read())
-                {
-                    int i = 0;
-                    arrayList.Add(data.GetValue(i).ToString());
-                    i++;
-                }
-                return arrayList;
+            while (data.Read())
+            {
+                int i = 0;
+                arrayList.Add(data.GetValue(i).ToString());
+                i++;
             }
-    //        else
-   //         {
-     //           return arrayList;
+            return arrayList;
+            }
 
-     //       }
-        
 
         public ArrayList getRoomsByFaculty(String selectedFaculty)
         {
@@ -167,7 +158,7 @@ namespace TimeTableManagement.Controller.LocationConn
             return arrayList;
         }
 
-        public ArrayList getSessionType(String name)
+        public ArrayList getSessionType(String name, String getSelectedSession)
         {
 
             ArrayList arrayList = new ArrayList();
@@ -176,25 +167,62 @@ namespace TimeTableManagement.Controller.LocationConn
             {
                 con.Open();
             }
-            Console.WriteLine( name);
 
             DataTable dataTable = new DataTable();
+            if (getSelectedSession.Equals("Consecutive")) {
+                string query = "select Tag1 from Consecutivetbl where Tag1 = '" + name + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
-            string query = "select Tag1 from Consecutivetbl where Tag1 = '" + name + "'";
-            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
 
-            while (data.Read())
+                Console.WriteLine("awdwadaw", arrayList);
+
+                return arrayList;
+            }else if (getSelectedSession.Equals("Parallel"))
             {
-                int i = 0;
-                arrayList.Add(data.GetValue(i).ToString());
-                i++;
+                string query = "select Type from Parallel_tbl where Type = '" + name + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+                Console.WriteLine("awdwadaw", arrayList);
+
+                return arrayList;
+
             }
+            else
+            {
+                string query = "select type from Session where type = '" + name + "'";
+                SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 
-            Console.WriteLine("awdwadaw",arrayList);
 
-            return arrayList;
+                while (data.Read())
+                {
+                    int i = 0;
+                    arrayList.Add(data.GetValue(i).ToString());
+                    i++;
+                }
+
+                Console.WriteLine("awdwadaw", arrayList);
+
+                return arrayList;
+                return arrayList;
+
+            }
         }
+        
 
 
         public ArrayList getTag2Type(String name)
@@ -238,7 +266,7 @@ namespace TimeTableManagement.Controller.LocationConn
 
             DataTable dataTable = new DataTable();
             roomsConn roomsConn = new roomsConn();
-
+            if (sessionType.Equals("Consecutive")) { 
             SqlDataReader dr = roomsConn.load_sesssion_rooms_details(sessionType);
 
             while (dr.Read())
@@ -255,7 +283,7 @@ namespace TimeTableManagement.Controller.LocationConn
                     SqlCommand com = new SqlCommand(query, con);
                     MessageBox.Show("Updated!");
                     com.ExecuteNonQuery();
-                    insertNotAvailableTimes(roommodel.roomName, roommodel.facultyNme, notavlTime);
+                   // insertNotAvailableTimes(roommodel.roomName, roommodel.facultyNme, notavlTime);
                 }
             
             }
@@ -263,6 +291,59 @@ namespace TimeTableManagement.Controller.LocationConn
             Console.WriteLine("awdwadaw", arrayList);
 
             return arrayList;
+
+            }else if (sessionType.Equals("Parallel")){
+                SqlDataReader dr = roomsConn.load_sesssion_rooms_details(sessionType);
+
+                while (dr.Read())
+                {
+
+                    if (con.State.ToString() != "Open")
+                    {
+                        con.Open();
+                    }
+                    String subjectCode = Convert.ToString(dr["subjectCode"]);
+
+                    if (roommodel.subjectCode.Equals(subjectCode))
+                    {
+                        string query = "update Consecutivetbl set roomName = '" + roommodel.roomName + "'where subjectCode = '" + roommodel.subjectCode + "'";
+                        SqlCommand com = new SqlCommand(query, con);
+                        MessageBox.Show("Updated!");
+                        com.ExecuteNonQuery();
+                        // insertNotAvailableTimes(roommodel.roomName, roommodel.facultyNme, notavlTime);
+                    }
+
+                }
+                return arrayList;
+
+            }
+            else
+            {
+                SqlDataReader dr = roomsConn.load_sesssion_rooms_details(sessionType);
+
+                while (dr.Read())
+                {
+
+                    if (con.State.ToString() != "Open")
+                    {
+                        con.Open();
+                    }
+                    String subjectCode = Convert.ToString(dr["subjectCode"]);
+
+                    if (roommodel.subjectCode.Equals(subjectCode))
+                    {
+                        string query = "update Session set roomName = '" + roommodel.roomName + "'where subjectCode = '" + roommodel.subjectCode + "'";
+                        SqlCommand com = new SqlCommand(query, con);
+                        MessageBox.Show("Updated!");
+                        com.ExecuteNonQuery();
+                        // insertNotAvailableTimes(roommodel.roomName, roommodel.facultyNme, notavlTime);
+                    }
+
+                }
+
+                return arrayList;
+
+            }
         }
 
  
@@ -494,14 +575,10 @@ namespace TimeTableManagement.Controller.LocationConn
             }
             else
             {
-                string query = "SELECT *  from Consecutivetbl ";
+                string query = "SELECT *  from Parallel ";
                 SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
                 return dr1;
             }
-
-
-
-
         }
 
         public Boolean checkRoomIsAvailable(String roomName)
