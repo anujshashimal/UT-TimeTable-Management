@@ -47,25 +47,26 @@ namespace TimeTableManagement.Controller.LocationConn
         }
 
 
-        public void insertLecWithPrefereedRoom(String lecturer, String roomType, String roomName)
+        public void insertLecWithPrefereedRoom(String lecturer, String roomType, String roomName, String SessionType)
         {
             if (con.State.ToString() != "Open")
             { con.Open(); }
 
-            string query = "INSERT INTO LecturerWithRoom(Lecturer,roomType,roomName)  VALUES ('" + lecturer + "','" + roomType + "','" + roomName + "')";
+            string query = "INSERT INTO LecturerWithRoom(Lecturer,roomType,roomName, SessionType)  VALUES ('" + lecturer + "','" + roomType + "','" + roomName + "', '" + SessionType + "')";
             
             SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
-            updateLEcturerWithAssignedRoom(lecturer, roomName, roomType);
+            updateLEcturerWithAssignedRoom(lecturer, roomName, roomType, SessionType);
             MessageBox.Show("Assigned Lecturer to the prefereed room");
             con.Close();
         }
 
 
-        public void updateLEcturerWithAssignedRoom(String lecturer, String roomName, String roomType)
+        public void updateLEcturerWithAssignedRoom(String lecturer, String roomName, String roomType, String SessionType)
         {
             if (con.State.ToString() != "Open")
             { con.Open(); }
-            Console.WriteLine("awduqiquq"+lecturer);
+
+            if (SessionType.Equals("Normal")) { 
             String cemi = ",";
             String nvla = lecturer + cemi;
             Console.WriteLine("awduqiquq" + nvla);
@@ -77,28 +78,92 @@ namespace TimeTableManagement.Controller.LocationConn
                 String lecturerName = Convert.ToString(dr["Lecturers"]);
                 if (nvla.Equals(lecturerName))
                 {
+
                     string sql = "UPDATE Session SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
-                    SqlCommand com = new SqlCommand(sql, con);
+
+                        SqlCommand com = new SqlCommand(sql, con);
                     SqlDataReader dr1 = loadAllroomsWithLecturers();
                     while (dr1.Read())
                     {
                         String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
                         if (lecturer.Equals(lecturerNameN))
                         {
-                            string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'";
+                            string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
+                            MessageBox.Show("asdiuh");
                             SqlCommand com1 = new SqlCommand(query, con);
-                            MessageBox.Show("Deleted!");
                             com1.ExecuteNonQuery();
-
                         }
-
                     }
-
                     com.ExecuteNonQuery();
-
                 }
             }
+            }else if (SessionType.Equals("Consecutive"))
+            {
+                String cemi = ",";
+                String nvla = lecturer + cemi;
+                Console.WriteLine("awduqiquq" + nvla);
 
+                SqlDataReader dr = loadAllSessions();
+
+                while (dr.Read())
+                {
+                    String lecturerName = Convert.ToString(dr["Consecutive"]);
+                    if (nvla.Equals(lecturerName))
+                    {
+                        string sql = "UPDATE Session SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+                        SqlCommand com = new SqlCommand(sql, con);
+                        SqlDataReader dr1 = loadAllroomsWithLecturers();
+                        while (dr1.Read())
+                        {
+                            String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
+                            if (lecturer.Equals(lecturerNameN))
+                            {
+                                string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
+
+                                SqlCommand com1 = new SqlCommand(query, con);
+                                com1.ExecuteNonQuery();
+                            }
+                        }
+
+                        com.ExecuteNonQuery();
+
+                    }
+                }
+
+            }else if (SessionType.Equals("Parallel"))
+            {
+                String cemi = ",";
+                String nvla = lecturer + cemi;
+                Console.WriteLine("awduqiquq" + nvla);
+
+                SqlDataReader dr = loadAllSessions();
+
+                while (dr.Read())
+                {
+                    String lecturerName = Convert.ToString(dr["Lecturers"]);
+                    if (nvla.Equals(lecturerName))
+                    {
+
+                        string sql = "UPDATE Parallel SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+
+                        SqlCommand com = new SqlCommand(sql, con);
+                        SqlDataReader dr1 = loadAllroomsWithLecturers();
+                        while (dr1.Read())
+                        {
+                            String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
+                            if (lecturer.Equals(lecturerNameN))
+                            {
+                                string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
+                                SqlCommand com1 = new SqlCommand(query, con);
+                                com1.ExecuteNonQuery();
+                            }
+                        }
+
+                        com.ExecuteNonQuery();
+
+                    }
+                }
+            }
         }
 
         public SqlDataReader loadAllSessions()
