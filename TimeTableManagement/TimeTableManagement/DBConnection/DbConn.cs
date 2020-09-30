@@ -12,13 +12,16 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection()
         {
 
+
             string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
-            SqlConnection conn = new SqlConnection(conString);
+
+          SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
 
         public SqlConnection getDBConnection1()
         {
+
 
             string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
@@ -28,12 +31,14 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection2()
         {
 
+
             string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
         public SqlConnection getDBConnection3()
         {
+
 
             string conString = @"Data Source=DESKTOP-K2A7I3P\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);

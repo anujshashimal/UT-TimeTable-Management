@@ -80,10 +80,10 @@
     <Compile Include="Controller\LocationConn\roomsWithLecCon.cs" />
     <Compile Include="Controller\session controller\session.cs" />
     <Compile Include="Controller\SubjectController\subjectController.cs" />
-    <Compile Include="Controller\TimeTableCon\NumberOfWorkingDaysCon.cs" />
-    <Compile Include="Controller\TimeTableCon\TimeSloatCon.cs" />
-    <Compile Include="Controller\TimeTableCon\WorkingDaysCon.cs" />
-    <Compile Include="Controller\TimeTableCon\WorkingTimeCon.cs" />
+    <Compile Include="Controller\TimeSlotsController\NumberOfWorkingDaysCon.cs" />
+    <Compile Include="Controller\TimeSlotsController\TimeSlotsCon.cs" />
+    <Compile Include="Controller\TimeSlotsController\TimeSlotsConWE.cs" />
+    <Compile Include="Controller\TimeTableGenerate\TimeTableGenerateCon.cs" />
     <Compile Include="DBConnection\DbConn.cs" />
     <Compile Include="Forms\Admindashboard.cs">
       <SubType>Form</SubType>
@@ -173,11 +173,17 @@
     <Compile Include="Forms\subjectsform.Designer.cs">
       <DependentUpon>subjectsform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TimeTable.cs">
+    <Compile Include="Forms\TimeSlots.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TimeTable.designer.cs">
-      <DependentUpon>TimeTable.cs</DependentUpon>
+    <Compile Include="Forms\TimeSlots.Designer.cs">
+      <DependentUpon>TimeSlots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TimeTableGenerate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeTableGenerate.Designer.cs">
+      <DependentUpon>TimeTableGenerate.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\lahirumodel\consecutivemodel.cs" />
     <Compile Include="Model\lahirumodel\Notavaliablemodel.cs" />
@@ -189,10 +195,9 @@
     <Compile Include="Model\locationModel\roomModel.cs" />
     <Compile Include="Model\SessionModel\sessionModel.cs" />
     <Compile Include="Model\SubjectModel\subjectModel.cs" />
-    <Compile Include="Model\TimeTableModel\NumberOfWorkingDaysModel.cs" />
-    <Compile Include="Model\TimeTableModel\TimeSloatModel.cs" />
-    <Compile Include="Model\TimeTableModel\WorkingDaysModel.cs" />
-    <Compile Include="Model\TimeTableModel\WorkingTimeModel.cs" />
+    <Compile Include="Model\TimeSlotsModel\TimeSlotsModel.cs" />
+    <Compile Include="Model\TimeSlotsModel\TimeSlotsModelWE.cs" />
+    <Compile Include="Model\TimeSlotsModel\WorkingDaysModel.cs" />
     <Compile Include="myDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -274,8 +279,11 @@
     <EmbeddedResource Include="Forms\subjectsform.resx">
       <DependentUpon>subjectsform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TimeTable.resx">
-      <DependentUpon>TimeTable.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TimeSlots.resx">
+      <DependentUpon>TimeSlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeTableGenerate.resx">
+      <DependentUpon>TimeTableGenerate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
