@@ -367,7 +367,7 @@ namespace TimeTableManagement.Controller.LocationConn
                         MessageBox.Show("Updateddd");
                         com.ExecuteNonQuery();
                     }
-                }
+                } 
             }
          /*   else if (SessionType.Equals("Consecutive"))
             {

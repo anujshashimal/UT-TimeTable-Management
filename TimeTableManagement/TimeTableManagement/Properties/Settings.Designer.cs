@@ -26,17 +26,6 @@ namespace TimeTableManagement.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\myDB.mdf;Inte" +
-            "grated Security=True;Connect Timeout=30")]
-        public string myDBConnectionString {
-            get {
-                return ((string)(this["myDBConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aux-138\\Documents\\my" +
             "DB.mdf;Integrated Security=True;Connect Timeout=30")]
         public string myDBConnectionString1 {
@@ -53,6 +42,29 @@ namespace TimeTableManagement.Properties {
         public string myDBConnectionString2 {
             get {
                 return ((string)(this["myDBConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aux-138\\Documents\\TB" +
+            "_DB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = T" +
+            "rue")]
+        public string myDBConnectionString {
+            get {
+                return ((string)(this["myDBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aux-138\\Documents\\FT" +
+            "_FB.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string FT_FBConnectionString {
+            get {
+                return ((string)(this["FT_FBConnectionString"]));
             }
         }
     }

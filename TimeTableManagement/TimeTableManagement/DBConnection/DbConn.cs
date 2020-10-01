@@ -12,8 +12,7 @@ namespace TimeTableManagement.DBConnection
         public SqlConnection getDBConnection()
         {
 
-
-            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FT_FB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -22,7 +21,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FT_FB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -31,7 +30,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FT_FB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -39,7 +38,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FT_FB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }

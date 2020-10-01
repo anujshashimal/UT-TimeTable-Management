@@ -149,8 +149,15 @@ namespace TimeTableManagement.Forms
             }
             else if (selectedSessionType.Equals("Parallel"))
             {
+                atag2.Hide();
+                label1.Hide();
                 roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
 
+            }
+            else
+            {
+                atag2.Show();
+                label1.Show();
             }
 
 
