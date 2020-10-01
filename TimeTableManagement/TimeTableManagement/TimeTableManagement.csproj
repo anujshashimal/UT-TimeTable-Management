@@ -205,43 +205,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="myDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticsReleated\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Admindashboard.resx">
       <DependentUpon>Admindashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,83 +278,6 @@
     <None Include="myDBDataSet.xss">
       <DependentUpon>myDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="myDBDataSet1.xsc">
-      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet1.xss">
-      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet2.xsc">
-      <DependentUpon>myDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet2.xss">
-      <DependentUpon>myDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet3.xsc">
-      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet3.xss">
-      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet4.xsc">
-      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet4.xss">
-      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet5.xsc">
-      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet5.xss">
-      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet6.xsc">
-      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet6.xss">
-      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet7.xsc">
-      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet7.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet7.xss">
-      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -394,11 +287,30 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StaticsReleated\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StaticsReleated\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StaticsReleated\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="myDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="myDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>myDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

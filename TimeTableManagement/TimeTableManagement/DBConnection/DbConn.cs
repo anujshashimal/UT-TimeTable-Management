@@ -13,7 +13,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -22,7 +22,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -31,7 +31,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }
@@ -39,7 +39,7 @@ namespace TimeTableManagement.DBConnection
         {
 
 
-            string conString = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets = True";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\myDB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True";
             SqlConnection conn = new SqlConnection(conString);
             return conn;
         }

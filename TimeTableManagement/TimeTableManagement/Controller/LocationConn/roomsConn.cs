@@ -75,6 +75,28 @@ namespace TimeTableManagement.Controller.LocationConn
             return arrayList;
             }
 
+        public ArrayList getRoomsName(String name)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dataTable = new DataTable();
+            string query = "select roomName from RoomTable where roomType = '" + name + "'";
+            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+            while (data.Read())
+            {
+                int i = 0;
+                arrayList.Add(data.GetValue(i).ToString());
+                i++;
+            }
+            return arrayList;
+        }
+
 
         public ArrayList getRoomsByFaculty(String selectedFaculty)
         {

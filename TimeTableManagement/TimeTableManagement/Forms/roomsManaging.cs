@@ -338,8 +338,10 @@ namespace TimeTableManagement.Forms
             String selectedSession = sType.Text.ToString();
             String selectedSubject = sname.Text.ToString();
             BatchesConn bc = new BatchesConn();
+            sYear.DataSource = bc.getSubjectYear(selectedSubject);
+
     //        grpNme.DataSource = bc.getTheGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
-   //         subGNme.DataSource = bc.getTheSubGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
+    //         subGNme.DataSource = bc.getTheSubGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
     //        tagType.DataSource = bc.getTheTagTypeUsingSubjectnmeSession(selectedSession, selectedSubject);
 
         }
@@ -361,7 +363,7 @@ namespace TimeTableManagement.Forms
             String selectedTag = tagType.Text.ToString();
             roomsConn roomsConn = new roomsConn();
 
-            rmName.DataSource = roomsConn.getRoomsType(selectedTag);
+            rmName.DataSource = roomsConn.getRoomsName(selectedTag);
 
         }
 
