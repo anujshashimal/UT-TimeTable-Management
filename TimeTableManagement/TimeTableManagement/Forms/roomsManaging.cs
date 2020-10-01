@@ -77,7 +77,7 @@ namespace TimeTableManagement.Forms
             roomsModel.roomName = assignRoom.Text;
             roomsModel.subjectCode = asubjectCode.Text;
             roomsModel.facultyNme = faculty.Text;
-            roomsConn.updateSessionTable(roomsModel, notavltime.Text.ToString(), selectedSessionType);
+            roomsConn.updateSessionTable(roomsModel, selectedSessionType);
             roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
 
 

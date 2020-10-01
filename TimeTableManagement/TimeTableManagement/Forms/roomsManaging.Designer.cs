@@ -42,13 +42,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.atag2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.notavltime = new System.Windows.Forms.ComboBox();
             this.asubjectCode = new System.Windows.Forms.ComboBox();
-            this.agroupid = new System.Windows.Forms.ComboBox();
             this.atags = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -83,6 +79,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.sYear = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.grpWithRoomsGrid = new System.Windows.Forms.DataGridView();
             this.sType = new System.Windows.Forms.ComboBox();
@@ -99,8 +97,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.sYear = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.agroupid = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -244,11 +242,9 @@
             // 
             this.panel2.Controls.Add(this.atag2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.notavltime);
             this.panel2.Controls.Add(this.asubjectCode);
             this.panel2.Controls.Add(this.agroupid);
             this.panel2.Controls.Add(this.atags);
-            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
@@ -277,15 +273,6 @@
             this.label1.TabIndex = 70;
             this.label1.Text = "Tag 2";
             // 
-            // notavltime
-            // 
-            this.notavltime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notavltime.FormattingEnabled = true;
-            this.notavltime.Location = new System.Drawing.Point(195, 153);
-            this.notavltime.Name = "notavltime";
-            this.notavltime.Size = new System.Drawing.Size(300, 28);
-            this.notavltime.TabIndex = 69;
-            // 
             // asubjectCode
             // 
             this.asubjectCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,15 +282,6 @@
             this.asubjectCode.Size = new System.Drawing.Size(300, 28);
             this.asubjectCode.TabIndex = 68;
             this.asubjectCode.SelectedIndexChanged += new System.EventHandler(this.asubjectCode_SelectedIndexChanged);
-            // 
-            // agroupid
-            // 
-            this.agroupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agroupid.FormattingEnabled = true;
-            this.agroupid.Location = new System.Drawing.Point(195, 109);
-            this.agroupid.Name = "agroupid";
-            this.agroupid.Size = new System.Drawing.Size(300, 28);
-            this.agroupid.TabIndex = 66;
             // 
             // atags
             // 
@@ -315,16 +293,6 @@
             this.atags.TabIndex = 64;
             this.atags.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(17, 155);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 23);
-            this.label11.TabIndex = 63;
-            this.label11.Text = "Not available time";
-            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -334,16 +302,6 @@
             this.label10.Size = new System.Drawing.Size(128, 23);
             this.label10.TabIndex = 62;
             this.label10.Text = "Subject Code";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(16, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 20);
-            this.label8.TabIndex = 60;
-            this.label8.Text = "Group id/Subgroup id";
             // 
             // label6
             // 
@@ -731,6 +689,25 @@
             this.tabPage4.Text = "Add rooms to groups";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // sYear
+            // 
+            this.sYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sYear.FormattingEnabled = true;
+            this.sYear.Location = new System.Drawing.Point(176, 118);
+            this.sYear.Name = "sYear";
+            this.sYear.Size = new System.Drawing.Size(387, 28);
+            this.sYear.TabIndex = 102;
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label25.Location = new System.Drawing.Point(22, 126);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(122, 23);
+            this.label25.TabIndex = 101;
+            this.label25.Text = "Year";
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.grpWithRoomsGrid);
@@ -891,24 +868,24 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // sYear
+            // agroupid
             // 
-            this.sYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sYear.FormattingEnabled = true;
-            this.sYear.Location = new System.Drawing.Point(176, 118);
-            this.sYear.Name = "sYear";
-            this.sYear.Size = new System.Drawing.Size(387, 28);
-            this.sYear.TabIndex = 102;
+            this.agroupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agroupid.FormattingEnabled = true;
+            this.agroupid.Location = new System.Drawing.Point(195, 109);
+            this.agroupid.Name = "agroupid";
+            this.agroupid.Size = new System.Drawing.Size(300, 28);
+            this.agroupid.TabIndex = 66;
             // 
-            // label25
+            // label8
             // 
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label25.Location = new System.Drawing.Point(22, 126);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(122, 23);
-            this.label25.TabIndex = 101;
-            this.label25.Text = "Year";
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(16, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(168, 20);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Group id/Subgroup id";
             // 
             // roomsManaging
             // 
@@ -950,13 +927,9 @@
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.DataGridView roomManagingSource;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox notavltime;
         private System.Windows.Forms.ComboBox asubjectCode;
-        private System.Windows.Forms.ComboBox agroupid;
         private System.Windows.Forms.ComboBox atags;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -1013,5 +986,7 @@
         private System.Windows.Forms.DataGridView grpWithRoomsGrid;
         private System.Windows.Forms.ComboBox sYear;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox agroupid;
+        private System.Windows.Forms.Label label8;
     }
 }

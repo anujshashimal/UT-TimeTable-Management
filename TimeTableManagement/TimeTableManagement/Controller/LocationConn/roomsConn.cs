@@ -276,7 +276,7 @@ namespace TimeTableManagement.Controller.LocationConn
             return arrayList;
         }
 
-       public ArrayList updateSessionTable(roomModel roommodel, String notavlTime, String sessionType)
+       public ArrayList updateSessionTable(roomModel roommodel, String sessionType)
         {
 
             ArrayList arrayList = new ArrayList();
