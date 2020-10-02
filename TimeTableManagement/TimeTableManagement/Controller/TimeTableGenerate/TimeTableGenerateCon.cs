@@ -92,5 +92,33 @@ namespace TimeTableManagement.Controller.TimeTableGenerate
             dataTable.Load(data);
             return dataTable;
         }
+
+
+        public ArrayList getdatatoRooms()
+        {
+
+            ArrayList arrayList = new ArrayList();
+
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            DataTable dataTable = new DataTable();
+            string query = "select roomName from RoomTable";
+            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+
+            while (data.Read())
+            {
+                int i = 0;
+                arrayList.Add(data.GetValue(i).ToString());
+                i++;
+            }
+
+            con.Close();
+            return arrayList;
+        }
+
     }
 }

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeTableGenerate));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.LecTimeTable = new System.Windows.Forms.DataGridView();
             this.btnGenLec = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioWeekendLec = new System.Windows.Forms.RadioButton();
@@ -39,28 +38,29 @@
             this.selectLecture = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupId = new System.Windows.Forms.ComboBox();
+            this.groupSem = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.groupWeekend = new System.Windows.Forms.RadioButton();
+            this.groupWeekday = new System.Windows.Forms.RadioButton();
             this.selectGroupYear = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonRoomTimeTable = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.radioWeekendRoom = new System.Windows.Forms.RadioButton();
+            this.radioWeekdayRoom = new System.Windows.Forms.RadioButton();
+            this.Rooms = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.printPreviewDialogLecturer = new System.Windows.Forms.PrintPreviewDialog();
             this.printTimetableLecturer = new System.Drawing.Printing.PrintDocument();
-            this.groupSem = new System.Windows.Forms.ComboBox();
-            this.groupId = new System.Windows.Forms.ComboBox();
             this.printPreviewDialogGroup = new System.Windows.Forms.PrintPreviewDialog();
             this.printTimeTableGroup = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialogRoom = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocumentRoom = new System.Drawing.Printing.PrintDocument();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LecTimeTable)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,7 +81,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.LecTimeTable);
             this.tabPage1.Controls.Add(this.btnGenLec);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.selectLecture);
@@ -93,14 +92,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lecturer";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // LecTimeTable
-            // 
-            this.LecTimeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LecTimeTable.Location = new System.Drawing.Point(43, 241);
-            this.LecTimeTable.Name = "LecTimeTable";
-            this.LecTimeTable.Size = new System.Drawing.Size(948, 405);
-            this.LecTimeTable.TabIndex = 4;
             // 
             // btnGenLec
             // 
@@ -177,166 +168,6 @@
             this.tabPage2.Text = "Student Group";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(35, 187);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Generate";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Location = new System.Drawing.Point(35, 92);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(426, 51);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(316, 19);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(72, 17);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Weekend";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(97, 19);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(71, 17);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Weekday";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // selectGroupYear
-            // 
-            this.selectGroupYear.FormattingEnabled = true;
-            this.selectGroupYear.Items.AddRange(new object[] {
-            "Y1",
-            "Y2",
-            "Y3",
-            "Y4"});
-            this.selectGroupYear.Location = new System.Drawing.Point(132, 48);
-            this.selectGroupYear.Name = "selectGroupYear";
-            this.selectGroupYear.Size = new System.Drawing.Size(93, 21);
-            this.selectGroupYear.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Student Group";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Controls.Add(this.comboBox3);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1056, 675);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Room";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(24, 184);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Generate";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.radioButton5);
-            this.groupBox3.Controls.Add(this.radioButton6);
-            this.groupBox3.Location = new System.Drawing.Point(24, 89);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(426, 51);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(327, 19);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(72, 17);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Weekend";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(97, 19);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(71, 17);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Weekday";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(121, 42);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(329, 21);
-            this.comboBox3.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Room Name";
-            // 
-            // printPreviewDialogLecturer
-            // 
-            this.printPreviewDialogLecturer.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialogLecturer.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialogLecturer.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialogLecturer.Enabled = true;
-            this.printPreviewDialogLecturer.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogLecturer.Icon")));
-            this.printPreviewDialogLecturer.Name = "printPreviewDialogLecturer";
-            this.printPreviewDialogLecturer.Visible = false;
-            // 
-            // printTimetableLecturer
-            // 
-            this.printTimetableLecturer.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printTimetableLecturer_PrintPage);
-            // 
-            // groupSem
-            // 
-            this.groupSem.FormattingEnabled = true;
-            this.groupSem.Items.AddRange(new object[] {
-            "S1",
-            "S2"});
-            this.groupSem.Location = new System.Drawing.Point(254, 48);
-            this.groupSem.Name = "groupSem";
-            this.groupSem.Size = new System.Drawing.Size(93, 21);
-            this.groupSem.TabIndex = 8;
-            // 
             // groupId
             // 
             this.groupId.FormattingEnabled = true;
@@ -366,6 +197,168 @@
             this.groupId.Size = new System.Drawing.Size(93, 21);
             this.groupId.TabIndex = 9;
             // 
+            // groupSem
+            // 
+            this.groupSem.FormattingEnabled = true;
+            this.groupSem.Items.AddRange(new object[] {
+            "S1",
+            "S2"});
+            this.groupSem.Location = new System.Drawing.Point(254, 48);
+            this.groupSem.Name = "groupSem";
+            this.groupSem.Size = new System.Drawing.Size(93, 21);
+            this.groupSem.TabIndex = 8;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(35, 187);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Generate";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.groupWeekend);
+            this.groupBox2.Controls.Add(this.groupWeekday);
+            this.groupBox2.Location = new System.Drawing.Point(35, 92);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(426, 51);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupWeekend
+            // 
+            this.groupWeekend.AutoSize = true;
+            this.groupWeekend.Location = new System.Drawing.Point(316, 19);
+            this.groupWeekend.Name = "groupWeekend";
+            this.groupWeekend.Size = new System.Drawing.Size(72, 17);
+            this.groupWeekend.TabIndex = 1;
+            this.groupWeekend.TabStop = true;
+            this.groupWeekend.Text = "Weekend";
+            this.groupWeekend.UseVisualStyleBackColor = true;
+            // 
+            // groupWeekday
+            // 
+            this.groupWeekday.AutoSize = true;
+            this.groupWeekday.Location = new System.Drawing.Point(97, 19);
+            this.groupWeekday.Name = "groupWeekday";
+            this.groupWeekday.Size = new System.Drawing.Size(71, 17);
+            this.groupWeekday.TabIndex = 0;
+            this.groupWeekday.TabStop = true;
+            this.groupWeekday.Text = "Weekday";
+            this.groupWeekday.UseVisualStyleBackColor = true;
+            // 
+            // selectGroupYear
+            // 
+            this.selectGroupYear.FormattingEnabled = true;
+            this.selectGroupYear.Items.AddRange(new object[] {
+            "Y1",
+            "Y2",
+            "Y3",
+            "Y4"});
+            this.selectGroupYear.Location = new System.Drawing.Point(132, 48);
+            this.selectGroupYear.Name = "selectGroupYear";
+            this.selectGroupYear.Size = new System.Drawing.Size(93, 21);
+            this.selectGroupYear.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Student Group";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.buttonRoomTimeTable);
+            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.Rooms);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1056, 675);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Room";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // buttonRoomTimeTable
+            // 
+            this.buttonRoomTimeTable.Location = new System.Drawing.Point(24, 184);
+            this.buttonRoomTimeTable.Name = "buttonRoomTimeTable";
+            this.buttonRoomTimeTable.Size = new System.Drawing.Size(75, 23);
+            this.buttonRoomTimeTable.TabIndex = 11;
+            this.buttonRoomTimeTable.Text = "Generate";
+            this.buttonRoomTimeTable.UseVisualStyleBackColor = true;
+            this.buttonRoomTimeTable.Click += new System.EventHandler(this.buttonRoomTimeTable_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioWeekendRoom);
+            this.groupBox3.Controls.Add(this.radioWeekdayRoom);
+            this.groupBox3.Location = new System.Drawing.Point(24, 89);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(426, 51);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            // 
+            // radioWeekendRoom
+            // 
+            this.radioWeekendRoom.AutoSize = true;
+            this.radioWeekendRoom.Location = new System.Drawing.Point(327, 19);
+            this.radioWeekendRoom.Name = "radioWeekendRoom";
+            this.radioWeekendRoom.Size = new System.Drawing.Size(72, 17);
+            this.radioWeekendRoom.TabIndex = 1;
+            this.radioWeekendRoom.TabStop = true;
+            this.radioWeekendRoom.Text = "Weekend";
+            this.radioWeekendRoom.UseVisualStyleBackColor = true;
+            // 
+            // radioWeekdayRoom
+            // 
+            this.radioWeekdayRoom.AutoSize = true;
+            this.radioWeekdayRoom.Location = new System.Drawing.Point(97, 19);
+            this.radioWeekdayRoom.Name = "radioWeekdayRoom";
+            this.radioWeekdayRoom.Size = new System.Drawing.Size(71, 17);
+            this.radioWeekdayRoom.TabIndex = 0;
+            this.radioWeekdayRoom.TabStop = true;
+            this.radioWeekdayRoom.Text = "Weekday";
+            this.radioWeekdayRoom.UseVisualStyleBackColor = true;
+            // 
+            // Rooms
+            // 
+            this.Rooms.FormattingEnabled = true;
+            this.Rooms.Location = new System.Drawing.Point(121, 42);
+            this.Rooms.Name = "Rooms";
+            this.Rooms.Size = new System.Drawing.Size(329, 21);
+            this.Rooms.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Room Name";
+            // 
+            // printPreviewDialogLecturer
+            // 
+            this.printPreviewDialogLecturer.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogLecturer.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogLecturer.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialogLecturer.Enabled = true;
+            this.printPreviewDialogLecturer.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogLecturer.Icon")));
+            this.printPreviewDialogLecturer.Name = "printPreviewDialogLecturer";
+            this.printPreviewDialogLecturer.Visible = false;
+            this.printPreviewDialogLecturer.Load += new System.EventHandler(this.printPreviewDialogLecturer_Load);
+            // 
+            // printTimetableLecturer
+            // 
+            this.printTimetableLecturer.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printTimetableLecturer_PrintPage);
+            // 
             // printPreviewDialogGroup
             // 
             this.printPreviewDialogGroup.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -381,6 +374,20 @@
             // 
             this.printTimeTableGroup.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printTimeTableGroup_PrintPage);
             // 
+            // printPreviewDialogRoom
+            // 
+            this.printPreviewDialogRoom.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogRoom.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialogRoom.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialogRoom.Enabled = true;
+            this.printPreviewDialogRoom.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialogRoom.Icon")));
+            this.printPreviewDialogRoom.Name = "printPreviewDialogRoom";
+            this.printPreviewDialogRoom.Visible = false;
+            // 
+            // printDocumentRoom
+            // 
+            this.printDocumentRoom.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentRoom_PrintPage);
+            // 
             // TimeTableGenerate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,7 +399,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LecTimeTable)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -411,7 +417,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView LecTimeTable;
         private System.Windows.Forms.Button btnGenLec;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioWeekendLec;
@@ -421,16 +426,16 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton groupWeekend;
+        private System.Windows.Forms.RadioButton groupWeekday;
         private System.Windows.Forms.ComboBox selectGroupYear;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonRoomTimeTable;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.RadioButton radioWeekendRoom;
+        private System.Windows.Forms.RadioButton radioWeekdayRoom;
+        private System.Windows.Forms.ComboBox Rooms;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialogLecturer;
         private System.Drawing.Printing.PrintDocument printTimetableLecturer;
@@ -438,5 +443,7 @@
         private System.Windows.Forms.ComboBox groupId;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialogGroup;
         private System.Drawing.Printing.PrintDocument printTimeTableGroup;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialogRoom;
+        private System.Drawing.Printing.PrintDocument printDocumentRoom;
     }
 }
