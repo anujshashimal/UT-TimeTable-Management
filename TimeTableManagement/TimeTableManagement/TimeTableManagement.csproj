@@ -8,13 +8,14 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TimeTableManagement</RootNamespace>
     <AssemblyName>TimeTableManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>C:\Users\Aux-138\Desktop\SETUPPP\Version4\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,9 +25,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,6 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +52,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>54C91810150538086D9F488A14568E7B39A3EBE6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TimeTableManagement_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -187,6 +203,11 @@
     <Compile Include="Forms\TimeTableGenerate.Designer.cs">
       <DependentUpon>TimeTableGenerate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FT_FBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FT_FBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\lahirumodel\consecutivemodel.cs" />
     <Compile Include="Model\lahirumodel\Notavaliablemodel.cs" />
     <Compile Include="Model\lahirumodel\parallelmodel.cs" />
@@ -200,48 +221,13 @@
     <Compile Include="Model\TimeSlotsModel\TimeSlotsModel.cs" />
     <Compile Include="Model\TimeSlotsModel\TimeSlotsModelWE.cs" />
     <Compile Include="Model\TimeSlotsModel\WorkingDaysModel.cs" />
-    <Compile Include="myDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="myDBDataSet7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticsReleated\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Admindashboard.resx">
       <DependentUpon>Admindashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,93 +283,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="myDBDataSet.xsc">
-      <DependentUpon>myDBDataSet.xsd</DependentUpon>
+    <None Include="FT_FBDataSet1.xsc">
+      <DependentUpon>FT_FBDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="myDBDataSet.xsd">
+    <None Include="FT_FBDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>FT_FBDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="myDBDataSet.xss">
-      <DependentUpon>myDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet1.xsc">
-      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet1.xss">
-      <DependentUpon>myDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet2.xsc">
-      <DependentUpon>myDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet2.xss">
-      <DependentUpon>myDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet3.xsc">
-      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet3.xss">
-      <DependentUpon>myDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet4.xsc">
-      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet4.xss">
-      <DependentUpon>myDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet5.xsc">
-      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet5.xss">
-      <DependentUpon>myDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet6.xsc">
-      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet6.xss">
-      <DependentUpon>myDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet7.xsc">
-      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="myDBDataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>myDBDataSet7.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="myDBDataSet7.xss">
-      <DependentUpon>myDBDataSet7.xsd</DependentUpon>
+    <None Include="FT_FBDataSet1.xss">
+      <DependentUpon>FT_FBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -394,22 +303,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StaticsReleated\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StaticsReleated\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StaticsReleated\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TimeTableManagement_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2012 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FT_FB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FT_FB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>FT_FB.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
