@@ -8,14 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>TimeTableManagement</RootNamespace>
     <AssemblyName>TimeTableManagement</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <PublishUrl>C:\Users\Aux-138\Desktop\SETUPPP\Version4\</PublishUrl>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>C:\Users\Anuj\Desktop\SetupVersions\4\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>15</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -55,21 +54,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>54C91810150538086D9F488A14568E7B39A3EBE6</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>TimeTableManagement_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -103,6 +95,11 @@
     <Compile Include="Controller\TimeSlotsController\TimeSlotsConWE.cs" />
     <Compile Include="Controller\TimeTableGenerate\TimeTableGenerateCon.cs" />
     <Compile Include="DBConnection\DbConn.cs" />
+    <Compile Include="DBNewDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBNewDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admindashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,11 +200,6 @@
     <Compile Include="Forms\TimeTableGenerate.Designer.cs">
       <DependentUpon>TimeTableGenerate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FT_FBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FT_FBDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Model\lahirumodel\consecutivemodel.cs" />
     <Compile Include="Model\lahirumodel\Notavaliablemodel.cs" />
     <Compile Include="Model\lahirumodel\parallelmodel.cs" />
@@ -283,16 +275,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="FT_FBDataSet1.xsc">
-      <DependentUpon>FT_FBDataSet1.xsd</DependentUpon>
+    <None Include="DBNewDataSet.xsc">
+      <DependentUpon>DBNewDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FT_FBDataSet1.xsd">
+    <None Include="DBNewDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FT_FBDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBNewDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FT_FBDataSet1.xss">
-      <DependentUpon>FT_FBDataSet1.xsd</DependentUpon>
+    <None Include="DBNewDataSet.xss">
+      <DependentUpon>DBNewDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -314,7 +306,6 @@
     <None Include="StaticsReleated\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="TimeTableManagement_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -325,19 +316,29 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.13.2">
       <Visible>False</Visible>
-      <ProductName>SQL Server 2012 Express</ProductName>
+      <ProductName>SQL Server 2016 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x64">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SQLSysClrTypes.12.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Microsoft® System CLR Types for SQL Server® 2014 %28x86%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FT_FB.mdf">
+    <Content Include="DBNew.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="FT_FB_log.ldf">
+    <Content Include="DBNew_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>FT_FB.mdf</DependentUpon>
+      <DependentUpon>DBNew.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

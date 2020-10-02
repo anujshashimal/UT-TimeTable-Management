@@ -12,7 +12,7 @@ namespace TimeTableManagement.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -48,9 +48,19 @@ namespace TimeTableManagement.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aux-138\\Documents\\TB" +
-            "_DB.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets = T" +
-            "rue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aux-138\\Documents\\FT" +
+            "_FB.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string FT_FBConnectionString {
+            get {
+                return ((string)(this["FT_FBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\FT_FB.mdf;Int" +
+            "egrated Security=True;Connect Timeout=30;MultipleActiveResultSets = True")]
         public string myDBConnectionString {
             get {
                 return ((string)(this["myDBConnectionString"]));
@@ -60,11 +70,11 @@ namespace TimeTableManagement.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aux-138\\Documents\\FT" +
-            "_FB.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string FT_FBConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DBNew.mdf;Int" +
+            "egrated Security=True")]
+        public string DBNewConnectionString {
             get {
-                return ((string)(this["FT_FBConnectionString"]));
+                return ((string)(this["DBNewConnectionString"]));
             }
         }
     }

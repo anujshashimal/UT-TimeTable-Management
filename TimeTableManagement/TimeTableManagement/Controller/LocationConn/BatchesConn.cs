@@ -364,79 +364,53 @@ namespace TimeTableManagement.Controller.LocationConn
 
                         SqlCommand com = new SqlCommand(sql, con);
 
-                        MessageBox.Show("Updateddd");
+                        MessageBox.Show("Updated Normal Session!");
                         com.ExecuteNonQuery();
                     }
                 } 
             }
-         /*   else if (SessionType.Equals("Consecutive"))
+            else if (selectedSessionType.Equals("Consecutive"))
             {
-                String cemi = ",";
-                String nvla = lecturer + cemi;
-                Console.WriteLine("awduqiquq" + nvla);
-
-                SqlDataReader dr = loadAllSessions();
+                SqlDataReader dr = loadAllNormalSessions();
 
                 while (dr.Read())
                 {
-                    String lecturerName = Convert.ToString(dr["Consecutive"]);
-                    if (nvla.Equals(lecturerName))
+                    String GroupID = Convert.ToString(dr["GroupID"]);
+                    if (selectedGroupName.Equals(GroupID))
                     {
-                        string sql = "UPDATE Session SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+
+                        string sql = "UPDATE Consecutivetbl SET roomName='" + selectedroomName + "' WHERE groupid = '" + selectedGroupName + "' AND Tag1 = '" + selectedTagType + "'";
+
                         SqlCommand com = new SqlCommand(sql, con);
-                        SqlDataReader dr1 = loadAllroomsWithLecturers();
-                        while (dr1.Read())
-                        {
-                            String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
-                            if (lecturer.Equals(lecturerNameN))
-                            {
-                                string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
 
-                                SqlCommand com1 = new SqlCommand(query, con);
-                                com1.ExecuteNonQuery();
-                            }
-                        }
-
+                        MessageBox.Show("Updated Consecutive Session!");
                         com.ExecuteNonQuery();
-
                     }
                 }
 
             }
-            else if (SessionType.Equals("Parallel"))
+            else if (selectedSessionType.Equals("Parallel"))
             {
-                String cemi = ",";
-                String nvla = lecturer + cemi;
-                Console.WriteLine("awduqiquq" + nvla);
-
-                SqlDataReader dr = loadAllSessions();
+                SqlDataReader dr = loadAllNormalSessions();
+                Console.WriteLine("AWaaaaaaa" + selectedGroupName);
+                Console.WriteLine("AWaaaaaaa" + selectedroomName);
+                Console.WriteLine("AWaaaaaaa" + selectedTagType);
 
                 while (dr.Read())
                 {
-                    String lecturerName = Convert.ToString(dr["Lecturers"]);
-                    if (nvla.Equals(lecturerName))
+                    String GroupID = Convert.ToString(dr["GroupID"]);
+                    if (selectedGroupName.Equals(GroupID))
                     {
 
-                        string sql = "UPDATE Parallel SET roomName='" + roomName + "' WHERE Lecturers = '" + lecturerName + "' AND type = '" + roomType + "'";
+                        string sql = "UPDATE Parallel_tbl SET roomName='" + selectedroomName + "' WHERE Group_Id = '" + selectedGroupName + "' AND Type = '" + selectedTagType + "'";
 
                         SqlCommand com = new SqlCommand(sql, con);
-                        SqlDataReader dr1 = loadAllroomsWithLecturers();
-                        while (dr1.Read())
-                        {
-                            String lecturerNameN = Convert.ToString(dr1["Lecturer"]);
-                            if (lecturer.Equals(lecturerNameN))
-                            {
-                                string query = "DELETE  FROM LecturerWithRoom  WHERE  Lecturer ='" + lecturerNameN + "' AND roomType = '" + roomType + "' AND roomName = '" + roomName + "'AND SessionType = '" + SessionType + "'";
-                                SqlCommand com1 = new SqlCommand(query, con);
-                                com1.ExecuteNonQuery();
-                            }
-                        }
 
+                        MessageBox.Show("Updated Parallel Session!");
                         com.ExecuteNonQuery();
-
                     }
                 }
-            }*/
+            }
         }
 
 
@@ -493,6 +467,31 @@ namespace TimeTableManagement.Controller.LocationConn
             }
 
             string query = "select offYear from SubjectTable where SubName = '" + subjectName + "'";
+
+            SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
+
+
+            while (data.Read())
+            {
+                int i = 0;
+                arrayList.Add(data.GetValue(i).ToString());
+                i++;
+            }
+            return arrayList;
+
+        }
+
+        public ArrayList getBatchIDs(String subjectName)
+        {
+
+            ArrayList arrayList = new ArrayList();
+
+            if (con.State.ToString() != "Open")
+            {
+                con.Open();
+            }
+
+            string query = "select GroupID from Session where Subject = '" + subjectName + "'";
 
             SqlDataReader data = new SqlCommand(query, con).ExecuteReader();
 

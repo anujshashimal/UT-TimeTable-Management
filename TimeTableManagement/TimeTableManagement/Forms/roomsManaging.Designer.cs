@@ -43,8 +43,10 @@
             this.atag2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.asubjectCode = new System.Windows.Forms.ComboBox();
+            this.agroupid = new System.Windows.Forms.ComboBox();
             this.atags = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,8 +99,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.agroupid = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -283,6 +283,15 @@
             this.asubjectCode.TabIndex = 68;
             this.asubjectCode.SelectedIndexChanged += new System.EventHandler(this.asubjectCode_SelectedIndexChanged);
             // 
+            // agroupid
+            // 
+            this.agroupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agroupid.FormattingEnabled = true;
+            this.agroupid.Location = new System.Drawing.Point(195, 109);
+            this.agroupid.Name = "agroupid";
+            this.agroupid.Size = new System.Drawing.Size(300, 28);
+            this.agroupid.TabIndex = 66;
+            // 
             // atags
             // 
             this.atags.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -302,6 +311,16 @@
             this.label10.Size = new System.Drawing.Size(128, 23);
             this.label10.TabIndex = 62;
             this.label10.Text = "Subject Code";
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label8.Location = new System.Drawing.Point(16, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(168, 20);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Group id/Subgroup id";
             // 
             // label6
             // 
@@ -697,6 +716,7 @@
             this.sYear.Name = "sYear";
             this.sYear.Size = new System.Drawing.Size(387, 28);
             this.sYear.TabIndex = 102;
+            this.sYear.SelectedIndexChanged += new System.EventHandler(this.sYear_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -867,25 +887,6 @@
             this.button1.Text = "Update Sepcial Request";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // agroupid
-            // 
-            this.agroupid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agroupid.FormattingEnabled = true;
-            this.agroupid.Location = new System.Drawing.Point(195, 109);
-            this.agroupid.Name = "agroupid";
-            this.agroupid.Size = new System.Drawing.Size(300, 28);
-            this.agroupid.TabIndex = 66;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(16, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 20);
-            this.label8.TabIndex = 60;
-            this.label8.Text = "Group id/Subgroup id";
             // 
             // roomsManaging
             // 

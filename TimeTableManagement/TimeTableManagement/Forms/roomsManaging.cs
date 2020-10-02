@@ -74,12 +74,19 @@ namespace TimeTableManagement.Forms
             roomModel roomsModel = new roomModel();
             String selectedSessionType = sessionType.Text.ToString();
 
-            roomsModel.roomName = assignRoom.Text;
-            roomsModel.subjectCode = asubjectCode.Text;
-            roomsModel.facultyNme = faculty.Text;
-            roomsConn.updateSessionTable(roomsModel, selectedSessionType);
-            roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+            if (assignRoom.Text == "" || asubjectCode.Text == "" || faculty.Text == "")
+            {
+                MessageBox.Show("Please enter all required fields");
 
+            }
+            else
+            {
+                roomsModel.roomName = assignRoom.Text;
+                roomsModel.subjectCode = asubjectCode.Text;
+                roomsModel.facultyNme = faculty.Text;
+                roomsConn.updateSessionTable(roomsModel, selectedSessionType);
+                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+            }
 
         }
 
@@ -291,28 +298,38 @@ namespace TimeTableManagement.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String selectedGroupName = grpNme.Text.ToString();
-            String selectedSubGroupName = subGNme.Text.ToString();
-            String selectedSessionType = sType.Text.ToString();
-            String selectedTagType = tagType.Text.ToString();
-            String selectedroomName = rmName.Text.ToString();
-            BatchesConn bc = new BatchesConn();
-            roomsConn roomsConn = new roomsConn();
 
-            bc.SR_updateGroupsWithAssignedRoom(selectedGroupName, selectedSubGroupName, selectedSessionType, selectedTagType, selectedroomName);
-            if (selectedSessionType.Equals("Normal"))
+
+            if (sType.Text == "" || tagType.Text == "" || rmName.Text == "")
             {
-                roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
-            }
-            else if (selectedSessionType.Equals("Consecutive"))
-            {
-                roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+                MessageBox.Show("Please enter all required fields");
 
             }
-            else if (selectedSessionType.Equals("Parallel"))
+            else
             {
-                roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+                String selectedGroupName = grpNme.Text.ToString();
+                String selectedSubGroupName = subGNme.Text.ToString();
+                String selectedSessionType = sType.Text.ToString();
+                String selectedTagType = tagType.Text.ToString();
+                String selectedroomName = rmName.Text.ToString();
+                BatchesConn bc = new BatchesConn();
+                roomsConn roomsConn = new roomsConn();
 
+                bc.SR_updateGroupsWithAssignedRoom(selectedGroupName, selectedSubGroupName, selectedSessionType, selectedTagType, selectedroomName);
+                if (selectedSessionType.Equals("Normal"))
+                {
+                    roomManagingSource.DataSource = roomsConn.load_normal_sesssion_details();
+                }
+                else if (selectedSessionType.Equals("Consecutive"))
+                {
+                    roomManagingSource.DataSource = roomsConn.load_con_sesssion_details();
+
+                }
+                else if (selectedSessionType.Equals("Parallel"))
+                {
+                    roomManagingSource.DataSource = roomsConn.load_parallel_sesssion_details();
+
+                }
             }
         }
 
@@ -346,7 +363,7 @@ namespace TimeTableManagement.Forms
             String selectedSubject = sname.Text.ToString();
             BatchesConn bc = new BatchesConn();
             sYear.DataSource = bc.getSubjectYear(selectedSubject);
-
+            grpNme.DataSource = bc.getBatchIDs(selectedSubject);
     //        grpNme.DataSource = bc.getTheGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
     //         subGNme.DataSource = bc.getTheSubGroupIDsUsingSubjectnmeSession(selectedSession, selectedSubject);
     //        tagType.DataSource = bc.getTheTagTypeUsingSubjectnmeSession(selectedSession, selectedSubject);
@@ -375,6 +392,11 @@ namespace TimeTableManagement.Forms
         }
 
         private void rmName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sYear_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

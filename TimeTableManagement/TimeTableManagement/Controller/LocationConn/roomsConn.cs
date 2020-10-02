@@ -597,7 +597,7 @@ namespace TimeTableManagement.Controller.LocationConn
             }
             else
             {
-                string query = "SELECT *  from Parallel ";
+                string query = "SELECT *  from Parallel_tbl ";
                 SqlDataReader dr1 = new SqlCommand(query, con).ExecuteReader();
                 return dr1;
             }

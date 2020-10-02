@@ -39,7 +39,7 @@ namespace TimeTableManagement.Forms
         {
             string connetionString;
             SqlConnection con;
-            connetionString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
+            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBNew.mdf;Integrated Security=True;MultipleActiveResultSets = True";
             con = new SqlConnection(connetionString);
             con.Open();
             StringFormat stringFormat = new StringFormat();
@@ -382,7 +382,7 @@ namespace TimeTableManagement.Forms
         {
             string connetionString;
             SqlConnection con;
-            connetionString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
+            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBNew.mdf;Integrated Security=True;MultipleActiveResultSets = True";
             con = new SqlConnection(connetionString);
             con.Open();
             StringFormat stringFormat = new StringFormat();
@@ -706,7 +706,7 @@ namespace TimeTableManagement.Forms
         {
             string connetionString;
             SqlConnection con;
-            connetionString = @"Data Source=DESKTOP-2FO46M3;Initial Catalog=TimeTableDB;Integrated Security=True;MultipleActiveResultSets = True";
+            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBNew.mdf;Integrated Security=True;MultipleActiveResultSets = True";
             con = new SqlConnection(connetionString);
             con.Open();
             StringFormat stringFormat = new StringFormat();

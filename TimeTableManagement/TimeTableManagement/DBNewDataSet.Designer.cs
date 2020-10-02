@@ -20,9 +20,9 @@ namespace TimeTableManagement {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FT_FBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DBNewDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FT_FBDataSet : global::System.Data.DataSet {
+    public partial class DBNewDataSet : global::System.Data.DataSet {
         
         private AcademicyrsemtableDataTable tableAcademicyrsemtable;
         
@@ -94,7 +94,7 @@ namespace TimeTableManagement {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public FT_FBDataSet() {
+        public DBNewDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -105,7 +105,7 @@ namespace TimeTableManagement {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected FT_FBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DBNewDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -607,7 +607,7 @@ namespace TimeTableManagement {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FT_FBDataSet cln = ((FT_FBDataSet)(base.Clone()));
+            DBNewDataSet cln = ((DBNewDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -967,9 +967,9 @@ namespace TimeTableManagement {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FT_FBDataSet";
+            this.DataSetName = "DBNewDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FT_FBDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DBNewDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAcademicyrsemtable = new AcademicyrsemtableDataTable();
@@ -1249,7 +1249,7 @@ namespace TimeTableManagement {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FT_FBDataSet ds = new FT_FBDataSet();
+            DBNewDataSet ds = new DBNewDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1611,7 +1611,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1685,8 +1685,6 @@ namespace TimeTableManagement {
             
             private global::System.Data.DataColumn columngroupid;
             
-            private global::System.Data.DataColumn columnsubgroupid;
-            
             private global::System.Data.DataColumn columnTag1;
             
             private global::System.Data.DataColumn columnTag1timeduration;
@@ -1694,10 +1692,6 @@ namespace TimeTableManagement {
             private global::System.Data.DataColumn columnTag2;
             
             private global::System.Data.DataColumn columnTag2timeduration;
-            
-            private global::System.Data.DataColumn columnTag3;
-            
-            private global::System.Data.DataColumn columnTag3timeduration;
             
             private global::System.Data.DataColumn columnTotalhours;
             
@@ -1770,14 +1764,6 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn subgroupidColumn {
-                get {
-                    return this.columnsubgroupid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Tag1Column {
                 get {
                     return this.columnTag1;
@@ -1805,22 +1791,6 @@ namespace TimeTableManagement {
             public global::System.Data.DataColumn Tag2timedurationColumn {
                 get {
                     return this.columnTag2timeduration;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Tag3Column {
-                get {
-                    return this.columnTag3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Tag3timedurationColumn {
-                get {
-                    return this.columnTag3timeduration;
                 }
             }
             
@@ -1877,20 +1847,17 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ConsecutivetblRow AddConsecutivetblRow(string subject, string subjectcode, string groupid, string subgroupid, string Tag1, int Tag1timeduration, string Tag2, int Tag2timeduration, string Tag3, int Tag3timeduration, int Totalhours, string roomName) {
+            public ConsecutivetblRow AddConsecutivetblRow(string subject, string subjectcode, string groupid, string Tag1, int Tag1timeduration, string Tag2, int Tag2timeduration, int Totalhours, string roomName) {
                 ConsecutivetblRow rowConsecutivetblRow = ((ConsecutivetblRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         subject,
                         subjectcode,
                         groupid,
-                        subgroupid,
                         Tag1,
                         Tag1timeduration,
                         Tag2,
                         Tag2timeduration,
-                        Tag3,
-                        Tag3timeduration,
                         Totalhours,
                         roomName};
                 rowConsecutivetblRow.ItemArray = columnValuesArray;
@@ -1926,13 +1893,10 @@ namespace TimeTableManagement {
                 this.columnsubject = base.Columns["subject"];
                 this.columnsubjectcode = base.Columns["subjectcode"];
                 this.columngroupid = base.Columns["groupid"];
-                this.columnsubgroupid = base.Columns["subgroupid"];
                 this.columnTag1 = base.Columns["Tag1"];
                 this.columnTag1timeduration = base.Columns["Tag1timeduration"];
                 this.columnTag2 = base.Columns["Tag2"];
                 this.columnTag2timeduration = base.Columns["Tag2timeduration"];
-                this.columnTag3 = base.Columns["Tag3"];
-                this.columnTag3timeduration = base.Columns["Tag3timeduration"];
                 this.columnTotalhours = base.Columns["Totalhours"];
                 this.columnroomName = base.Columns["roomName"];
             }
@@ -1948,8 +1912,6 @@ namespace TimeTableManagement {
                 base.Columns.Add(this.columnsubjectcode);
                 this.columngroupid = new global::System.Data.DataColumn("groupid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngroupid);
-                this.columnsubgroupid = new global::System.Data.DataColumn("subgroupid", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsubgroupid);
                 this.columnTag1 = new global::System.Data.DataColumn("Tag1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTag1);
                 this.columnTag1timeduration = new global::System.Data.DataColumn("Tag1timeduration", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1958,10 +1920,6 @@ namespace TimeTableManagement {
                 base.Columns.Add(this.columnTag2);
                 this.columnTag2timeduration = new global::System.Data.DataColumn("Tag2timeduration", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTag2timeduration);
-                this.columnTag3 = new global::System.Data.DataColumn("Tag3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTag3);
-                this.columnTag3timeduration = new global::System.Data.DataColumn("Tag3timeduration", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTag3timeduration);
                 this.columnTotalhours = new global::System.Data.DataColumn("Totalhours", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalhours);
                 this.columnroomName = new global::System.Data.DataColumn("roomName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1980,11 +1938,8 @@ namespace TimeTableManagement {
                 this.columnsubjectcode.MaxLength = 10;
                 this.columngroupid.AllowDBNull = false;
                 this.columngroupid.MaxLength = 30;
-                this.columnsubgroupid.AllowDBNull = false;
-                this.columnsubgroupid.MaxLength = 10;
                 this.columnTag1.MaxLength = 10;
                 this.columnTag2.MaxLength = 10;
-                this.columnTag3.MaxLength = 10;
                 this.columnTotalhours.AllowDBNull = false;
                 this.columnroomName.MaxLength = 20;
             }
@@ -2054,7 +2009,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2332,7 +2287,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2609,7 +2564,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2990,7 +2945,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3056,13 +3011,13 @@ namespace TimeTableManagement {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class LecturerWithRoomDataTable : global::System.Data.TypedTableBase<LecturerWithRoomRow> {
             
-            private global::System.Data.DataColumn columnId;
-            
             private global::System.Data.DataColumn columnLecturer;
             
             private global::System.Data.DataColumn columnroomType;
             
             private global::System.Data.DataColumn columnroomName;
+            
+            private global::System.Data.DataColumn columnSessionType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3099,14 +3054,6 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
-                get {
-                    return this.columnId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn LecturerColumn {
                 get {
                     return this.columnLecturer;
@@ -3126,6 +3073,14 @@ namespace TimeTableManagement {
             public global::System.Data.DataColumn roomNameColumn {
                 get {
                     return this.columnroomName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SessionTypeColumn {
+                get {
+                    return this.columnSessionType;
                 }
             }
             
@@ -3166,13 +3121,13 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LecturerWithRoomRow AddLecturerWithRoomRow(string Lecturer, string roomType, string roomName) {
+            public LecturerWithRoomRow AddLecturerWithRoomRow(string Lecturer, string roomType, string roomName, string SessionType) {
                 LecturerWithRoomRow rowLecturerWithRoomRow = ((LecturerWithRoomRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         Lecturer,
                         roomType,
-                        roomName};
+                        roomName,
+                        SessionType};
                 rowLecturerWithRoomRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLecturerWithRoomRow);
                 return rowLecturerWithRoomRow;
@@ -3195,34 +3150,31 @@ namespace TimeTableManagement {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnId = base.Columns["Id"];
                 this.columnLecturer = base.Columns["Lecturer"];
                 this.columnroomType = base.Columns["roomType"];
                 this.columnroomName = base.Columns["roomName"];
+                this.columnSessionType = base.Columns["SessionType"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
                 this.columnLecturer = new global::System.Data.DataColumn("Lecturer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLecturer);
                 this.columnroomType = new global::System.Data.DataColumn("roomType", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnroomType);
                 this.columnroomName = new global::System.Data.DataColumn("roomName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnroomName);
-                this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
-                this.columnId.AllowDBNull = false;
-                this.columnId.ReadOnly = true;
+                this.columnSessionType = new global::System.Data.DataColumn("SessionType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSessionType);
                 this.columnLecturer.AllowDBNull = false;
                 this.columnLecturer.MaxLength = 100;
                 this.columnroomType.AllowDBNull = false;
                 this.columnroomType.MaxLength = 20;
                 this.columnroomName.AllowDBNull = false;
                 this.columnroomName.MaxLength = 20;
+                this.columnSessionType.AllowDBNull = false;
+                this.columnSessionType.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3290,7 +3242,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3564,7 +3516,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3952,7 +3904,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4230,7 +4182,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4522,7 +4474,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4800,7 +4752,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4874,8 +4826,6 @@ namespace TimeTableManagement {
             
             private global::System.Data.DataColumn columnDuration;
             
-            private global::System.Data.DataColumn columnYear;
-            
             private global::System.Data.DataColumn columnSubject;
             
             private global::System.Data.DataColumn columnSubject_code;
@@ -4888,7 +4838,7 @@ namespace TimeTableManagement {
             
             private global::System.Data.DataColumn columnLecturer;
             
-            private global::System.Data.DataColumn columnCategory;
+            private global::System.Data.DataColumn columnroomName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4957,14 +4907,6 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn YearColumn {
-                get {
-                    return this.columnYear;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn SubjectColumn {
                 get {
                     return this.columnSubject;
@@ -5013,9 +4955,9 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CategoryColumn {
+            public global::System.Data.DataColumn roomNameColumn {
                 get {
-                    return this.columnCategory;
+                    return this.columnroomName;
                 }
             }
             
@@ -5056,21 +4998,20 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Parallel_tblRow AddParallel_tblRow(string Start_Time, string Day, int Duration, string Year, string Subject, string Subject_code, string Type, string Group_Id, string Sub_Group_Id, string Lecturer, string Category) {
+            public Parallel_tblRow AddParallel_tblRow(string Start_Time, string Day, int Duration, string Subject, string Subject_code, string Type, string Group_Id, string Sub_Group_Id, string Lecturer, string roomName) {
                 Parallel_tblRow rowParallel_tblRow = ((Parallel_tblRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Start_Time,
                         Day,
                         Duration,
-                        Year,
                         Subject,
                         Subject_code,
                         Type,
                         Group_Id,
                         Sub_Group_Id,
                         Lecturer,
-                        Category};
+                        roomName};
                 rowParallel_tblRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowParallel_tblRow);
                 return rowParallel_tblRow;
@@ -5104,14 +5045,13 @@ namespace TimeTableManagement {
                 this.columnStart_Time = base.Columns["Start_Time"];
                 this.columnDay = base.Columns["Day"];
                 this.columnDuration = base.Columns["Duration"];
-                this.columnYear = base.Columns["Year"];
                 this.columnSubject = base.Columns["Subject"];
                 this.columnSubject_code = base.Columns["Subject_code"];
                 this.columnType = base.Columns["Type"];
                 this.columnGroup_Id = base.Columns["Group_Id"];
                 this.columnSub_Group_Id = base.Columns["Sub_Group_Id"];
                 this.columnLecturer = base.Columns["Lecturer"];
-                this.columnCategory = base.Columns["Category"];
+                this.columnroomName = base.Columns["roomName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5125,8 +5065,6 @@ namespace TimeTableManagement {
                 base.Columns.Add(this.columnDay);
                 this.columnDuration = new global::System.Data.DataColumn("Duration", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDuration);
-                this.columnYear = new global::System.Data.DataColumn("Year", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYear);
                 this.columnSubject = new global::System.Data.DataColumn("Subject", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubject);
                 this.columnSubject_code = new global::System.Data.DataColumn("Subject_code", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5139,8 +5077,8 @@ namespace TimeTableManagement {
                 base.Columns.Add(this.columnSub_Group_Id);
                 this.columnLecturer = new global::System.Data.DataColumn("Lecturer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLecturer);
-                this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategory);
+                this.columnroomName = new global::System.Data.DataColumn("roomName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroomName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -5154,7 +5092,6 @@ namespace TimeTableManagement {
                 this.columnDay.AllowDBNull = false;
                 this.columnDay.MaxLength = 20;
                 this.columnDuration.AllowDBNull = false;
-                this.columnYear.MaxLength = 10;
                 this.columnSubject.AllowDBNull = false;
                 this.columnSubject.MaxLength = 10;
                 this.columnSubject_code.AllowDBNull = false;
@@ -5163,10 +5100,11 @@ namespace TimeTableManagement {
                 this.columnType.MaxLength = 10;
                 this.columnGroup_Id.AllowDBNull = false;
                 this.columnGroup_Id.MaxLength = 20;
+                this.columnSub_Group_Id.AllowDBNull = false;
                 this.columnSub_Group_Id.MaxLength = 20;
                 this.columnLecturer.AllowDBNull = false;
                 this.columnLecturer.MaxLength = 20;
-                this.columnCategory.MaxLength = 20;
+                this.columnroomName.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5234,7 +5172,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5512,7 +5450,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5831,7 +5769,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6231,7 +6169,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6523,7 +6461,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6801,7 +6739,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7079,7 +7017,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7357,7 +7295,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -7634,7 +7572,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8026,7 +7964,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8304,7 +8242,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8568,7 +8506,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -8832,7 +8770,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9080,7 +9018,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9328,7 +9266,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9636,7 +9574,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -9958,7 +9896,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10311,7 +10249,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10589,7 +10527,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -10867,7 +10805,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11161,7 +11099,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11454,7 +11392,7 @@ namespace TimeTableManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FT_FBDataSet ds = new FT_FBDataSet();
+                DBNewDataSet ds = new DBNewDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -11610,17 +11548,6 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string subgroupid {
-                get {
-                    return ((string)(this[this.tableConsecutivetbl.subgroupidColumn]));
-                }
-                set {
-                    this[this.tableConsecutivetbl.subgroupidColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Tag1 {
                 get {
                     try {
@@ -11680,38 +11607,6 @@ namespace TimeTableManagement {
                 }
                 set {
                     this[this.tableConsecutivetbl.Tag2timedurationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Tag3 {
-                get {
-                    try {
-                        return ((string)(this[this.tableConsecutivetbl.Tag3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Tag3\' in table \'Consecutivetbl\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConsecutivetbl.Tag3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Tag3timeduration {
-                get {
-                    try {
-                        return ((int)(this[this.tableConsecutivetbl.Tag3timedurationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Tag3timeduration\' in table \'Consecutivetbl\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableConsecutivetbl.Tag3timedurationColumn] = value;
                 }
             }
             
@@ -11788,30 +11683,6 @@ namespace TimeTableManagement {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTag2timedurationNull() {
                 this[this.tableConsecutivetbl.Tag2timedurationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTag3Null() {
-                return this.IsNull(this.tableConsecutivetbl.Tag3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTag3Null() {
-                this[this.tableConsecutivetbl.Tag3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTag3timedurationNull() {
-                return this.IsNull(this.tableConsecutivetbl.Tag3timedurationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTag3timedurationNull() {
-                this[this.tableConsecutivetbl.Tag3timedurationColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12167,17 +12038,6 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Id {
-                get {
-                    return ((int)(this[this.tableLecturerWithRoom.IdColumn]));
-                }
-                set {
-                    this[this.tableLecturerWithRoom.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Lecturer {
                 get {
                     return ((string)(this[this.tableLecturerWithRoom.LecturerColumn]));
@@ -12206,6 +12066,17 @@ namespace TimeTableManagement {
                 }
                 set {
                     this[this.tableLecturerWithRoom.roomNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SessionType {
+                get {
+                    return ((string)(this[this.tableLecturerWithRoom.SessionTypeColumn]));
+                }
+                set {
+                    this[this.tableLecturerWithRoom.SessionTypeColumn] = value;
                 }
             }
         }
@@ -12668,22 +12539,6 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Year {
-                get {
-                    try {
-                        return ((string)(this[this.tableParallel_tbl.YearColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Year\' in table \'Parallel_tbl\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableParallel_tbl.YearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Subject {
                 get {
                     return ((string)(this[this.tableParallel_tbl.SubjectColumn]));
@@ -12730,12 +12585,7 @@ namespace TimeTableManagement {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Sub_Group_Id {
                 get {
-                    try {
-                        return ((string)(this[this.tableParallel_tbl.Sub_Group_IdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sub_Group_Id\' in table \'Parallel_tbl\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableParallel_tbl.Sub_Group_IdColumn]));
                 }
                 set {
                     this[this.tableParallel_tbl.Sub_Group_IdColumn] = value;
@@ -12755,54 +12605,30 @@ namespace TimeTableManagement {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Category {
+            public string roomName {
                 get {
                     try {
-                        return ((string)(this[this.tableParallel_tbl.CategoryColumn]));
+                        return ((string)(this[this.tableParallel_tbl.roomNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Category\' in table \'Parallel_tbl\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'roomName\' in table \'Parallel_tbl\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableParallel_tbl.CategoryColumn] = value;
+                    this[this.tableParallel_tbl.roomNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsYearNull() {
-                return this.IsNull(this.tableParallel_tbl.YearColumn);
+            public bool IsroomNameNull() {
+                return this.IsNull(this.tableParallel_tbl.roomNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetYearNull() {
-                this[this.tableParallel_tbl.YearColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSub_Group_IdNull() {
-                return this.IsNull(this.tableParallel_tbl.Sub_Group_IdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSub_Group_IdNull() {
-                this[this.tableParallel_tbl.Sub_Group_IdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCategoryNull() {
-                return this.IsNull(this.tableParallel_tbl.CategoryColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCategoryNull() {
-                this[this.tableParallel_tbl.CategoryColumn] = global::System.Convert.DBNull;
+            public void SetroomNameNull() {
+                this[this.tableParallel_tbl.roomNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -15629,7 +15455,7 @@ namespace TimeTableManagement {
         }
     }
 }
-namespace TimeTableManagement.FT_FBDataSetTableAdapters {
+namespace TimeTableManagement.DBNewDataSetTableAdapters {
     
     
     /// <summary>
@@ -15785,7 +15611,7 @@ SELECT AcademicYrsemId, AcademicYrsem FROM Academicyrsemtable WHERE (AcademicYrs
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15802,7 +15628,7 @@ SELECT AcademicYrsemId, AcademicYrsem FROM Academicyrsemtable WHERE (AcademicYrs
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.AcademicyrsemtableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.AcademicyrsemtableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -15815,9 +15641,9 @@ SELECT AcademicYrsemId, AcademicYrsem FROM Academicyrsemtable WHERE (AcademicYrs
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.AcademicyrsemtableDataTable GetData() {
+        public virtual DBNewDataSet.AcademicyrsemtableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.AcademicyrsemtableDataTable dataTable = new FT_FBDataSet.AcademicyrsemtableDataTable();
+            DBNewDataSet.AcademicyrsemtableDataTable dataTable = new DBNewDataSet.AcademicyrsemtableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -15825,14 +15651,14 @@ SELECT AcademicYrsemId, AcademicYrsem FROM Academicyrsemtable WHERE (AcademicYrs
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.AcademicyrsemtableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.AcademicyrsemtableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Academicyrsemtable");
         }
         
@@ -16075,25 +15901,21 @@ SELECT AcademicYrsemId, AcademicYrsem FROM Academicyrsemtable WHERE (AcademicYrs
             tableMapping.ColumnMappings.Add("subject", "subject");
             tableMapping.ColumnMappings.Add("subjectcode", "subjectcode");
             tableMapping.ColumnMappings.Add("groupid", "groupid");
-            tableMapping.ColumnMappings.Add("subgroupid", "subgroupid");
             tableMapping.ColumnMappings.Add("Tag1", "Tag1");
             tableMapping.ColumnMappings.Add("Tag1timeduration", "Tag1timeduration");
             tableMapping.ColumnMappings.Add("Tag2", "Tag2");
             tableMapping.ColumnMappings.Add("Tag2timeduration", "Tag2timeduration");
-            tableMapping.ColumnMappings.Add("Tag3", "Tag3");
-            tableMapping.ColumnMappings.Add("Tag3timeduration", "Tag3timeduration");
             tableMapping.ColumnMappings.Add("Totalhours", "Totalhours");
             tableMapping.ColumnMappings.Add("roomName", "roomName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Consecutivetbl] WHERE (([Id] = @Original_Id) AND ([subject] = @Original_subject) AND ([subjectcode] = @Original_subjectcode) AND ([groupid] = @Original_groupid) AND ([subgroupid] = @Original_subgroupid) AND ((@IsNull_Tag1 = 1 AND [Tag1] IS NULL) OR ([Tag1] = @Original_Tag1)) AND ((@IsNull_Tag1timeduration = 1 AND [Tag1timeduration] IS NULL) OR ([Tag1timeduration] = @Original_Tag1timeduration)) AND ((@IsNull_Tag2 = 1 AND [Tag2] IS NULL) OR ([Tag2] = @Original_Tag2)) AND ((@IsNull_Tag2timeduration = 1 AND [Tag2timeduration] IS NULL) OR ([Tag2timeduration] = @Original_Tag2timeduration)) AND ((@IsNull_Tag3 = 1 AND [Tag3] IS NULL) OR ([Tag3] = @Original_Tag3)) AND ((@IsNull_Tag3timeduration = 1 AND [Tag3timeduration] IS NULL) OR ([Tag3timeduration] = @Original_Tag3timeduration)) AND ([Totalhours] = @Original_Totalhours) AND ((@IsNull_roomName = 1 AND [roomName] IS NULL) OR ([roomName] = @Original_roomName)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Consecutivetbl] WHERE (([Id] = @Original_Id) AND ([subject] = @Original_subject) AND ([subjectcode] = @Original_subjectcode) AND ([groupid] = @Original_groupid) AND ((@IsNull_Tag1 = 1 AND [Tag1] IS NULL) OR ([Tag1] = @Original_Tag1)) AND ((@IsNull_Tag1timeduration = 1 AND [Tag1timeduration] IS NULL) OR ([Tag1timeduration] = @Original_Tag1timeduration)) AND ((@IsNull_Tag2 = 1 AND [Tag2] IS NULL) OR ([Tag2] = @Original_Tag2)) AND ((@IsNull_Tag2timeduration = 1 AND [Tag2timeduration] IS NULL) OR ([Tag2timeduration] = @Original_Tag2timeduration)) AND ([Totalhours] = @Original_Totalhours) AND ([roomName] = @Original_roomName))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_subjectcode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subjectcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_groupid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "groupid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_subgroupid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subgroupid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag1timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1timeduration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -16102,12 +15924,7 @@ SELECT AcademicYrsemId, AcademicYrsem FROM Academicyrsemtable WHERE (AcademicYrs
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag2timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2timeduration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag2timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2timeduration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag3timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3timeduration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag3timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3timeduration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Totalhours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Totalhours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_roomName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -16128,26 +15945,22 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Consecutivetbl] SET [subject] = @subject, [subjectcode] = @subjectcode, [groupid] = @groupid, [subgroupid] = @subgroupid, [Tag1] = @Tag1, [Tag1timeduration] = @Tag1timeduration, [Tag2] = @Tag2, [Tag2timeduration] = @Tag2timeduration, [Tag3] = @Tag3, [Tag3timeduration] = @Tag3timeduration, [Totalhours] = @Totalhours, [roomName] = @roomName WHERE (([Id] = @Original_Id) AND ([subject] = @Original_subject) AND ([subjectcode] = @Original_subjectcode) AND ([groupid] = @Original_groupid) AND ([subgroupid] = @Original_subgroupid) AND ((@IsNull_Tag1 = 1 AND [Tag1] IS NULL) OR ([Tag1] = @Original_Tag1)) AND ((@IsNull_Tag1timeduration = 1 AND [Tag1timeduration] IS NULL) OR ([Tag1timeduration] = @Original_Tag1timeduration)) AND ((@IsNull_Tag2 = 1 AND [Tag2] IS NULL) OR ([Tag2] = @Original_Tag2)) AND ((@IsNull_Tag2timeduration = 1 AND [Tag2timeduration] IS NULL) OR ([Tag2timeduration] = @Original_Tag2timeduration)) AND ((@IsNull_Tag3 = 1 AND [Tag3] IS NULL) OR ([Tag3] = @Original_Tag3)) AND ((@IsNull_Tag3timeduration = 1 AND [Tag3timeduration] IS NULL) OR ([Tag3timeduration] = @Original_Tag3timeduration)) AND ([Totalhours] = @Original_Totalhours) AND ((@IsNull_roomName = 1 AND [roomName] IS NULL) OR ([roomName] = @Original_roomName)));
-SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Tag2, Tag2timeduration, Tag3, Tag3timeduration, Totalhours, roomName FROM Consecutivetbl WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Consecutivetbl] SET [subject] = @subject, [subjectcode] = @subjectcode, [groupid] = @groupid, [Tag1] = @Tag1, [Tag1timeduration] = @Tag1timeduration, [Tag2] = @Tag2, [Tag2timeduration] = @Tag2timeduration, [Totalhours] = @Totalhours, [roomName] = @roomName WHERE (([Id] = @Original_Id) AND ([subject] = @Original_subject) AND ([subjectcode] = @Original_subjectcode) AND ([groupid] = @Original_groupid) AND ((@IsNull_Tag1 = 1 AND [Tag1] IS NULL) OR ([Tag1] = @Original_Tag1)) AND ((@IsNull_Tag1timeduration = 1 AND [Tag1timeduration] IS NULL) OR ([Tag1timeduration] = @Original_Tag1timeduration)) AND ((@IsNull_Tag2 = 1 AND [Tag2] IS NULL) OR ([Tag2] = @Original_Tag2)) AND ((@IsNull_Tag2timeduration = 1 AND [Tag2timeduration] IS NULL) OR ([Tag2timeduration] = @Original_Tag2timeduration)) AND ([Totalhours] = @Original_Totalhours) AND ([roomName] = @Original_roomName));
+SELECT Id, subject, subjectcode, groupid, Tag1, Tag1timeduration, Tag2, Tag2timeduration, Totalhours, roomName FROM Consecutivetbl WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@subjectcode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subjectcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@groupid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "groupid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@subgroupid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subgroupid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tag1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tag1timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1timeduration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tag2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tag2timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2timeduration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tag3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tag3timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3timeduration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Totalhours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Totalhours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_subjectcode", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subjectcode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_groupid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "groupid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_subgroupid", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "subgroupid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag1timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag1timeduration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -16156,12 +15969,7 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag2timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2timeduration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag2timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag2timeduration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tag3timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3timeduration", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tag3timeduration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tag3timeduration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Totalhours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Totalhours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_roomName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -16170,7 +15978,7 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16179,9 +15987,8 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Tag" +
-                "2, Tag2timeduration, Tag3, Tag3timeduration, Totalhours, roomName FROM dbo.Conse" +
-                "cutivetbl";
+            this._commandCollection[0].CommandText = "SELECT Id, subject, subjectcode, groupid, Tag1, Tag1timeduration, Tag2, Tag2timed" +
+                "uration, Totalhours, roomName FROM Consecutivetbl";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16189,7 +15996,7 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.ConsecutivetblDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.ConsecutivetblDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16202,9 +16009,9 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.ConsecutivetblDataTable GetData() {
+        public virtual DBNewDataSet.ConsecutivetblDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.ConsecutivetblDataTable dataTable = new FT_FBDataSet.ConsecutivetblDataTable();
+            DBNewDataSet.ConsecutivetblDataTable dataTable = new DBNewDataSet.ConsecutivetblDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16212,14 +16019,14 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.ConsecutivetblDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.ConsecutivetblDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Consecutivetbl");
         }
         
@@ -16242,7 +16049,7 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_subject, string Original_subjectcode, string Original_groupid, string Original_subgroupid, string Original_Tag1, global::System.Nullable<int> Original_Tag1timeduration, string Original_Tag2, global::System.Nullable<int> Original_Tag2timeduration, string Original_Tag3, global::System.Nullable<int> Original_Tag3timeduration, int Original_Totalhours, string Original_roomName) {
+        public virtual int Delete(int Original_Id, string Original_subject, string Original_subjectcode, string Original_groupid, string Original_Tag1, global::System.Nullable<int> Original_Tag1timeduration, string Original_Tag2, global::System.Nullable<int> Original_Tag2timeduration, int Original_Totalhours, string Original_roomName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_subject == null)) {
                 throw new global::System.ArgumentNullException("Original_subject");
@@ -16262,68 +16069,44 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_groupid));
             }
-            if ((Original_subgroupid == null)) {
-                throw new global::System.ArgumentNullException("Original_subgroupid");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_subgroupid));
-            }
             if ((Original_Tag1 == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Tag1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Tag1));
             }
             if ((Original_Tag1timeduration.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Tag1timeduration.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_Tag1timeduration.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_Tag2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Tag2));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Tag2));
             }
             if ((Original_Tag2timeduration.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Tag2timeduration.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_Tag2timeduration.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_Tag3 == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Tag3));
-            }
-            if ((Original_Tag3timeduration.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_Tag3timeduration.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_Totalhours));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Totalhours));
             if ((Original_roomName == null)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_roomName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((string)(Original_roomName));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_roomName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16437,26 +16220,20 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
                     string subject, 
                     string subjectcode, 
                     string groupid, 
-                    string subgroupid, 
                     string Tag1, 
                     global::System.Nullable<int> Tag1timeduration, 
                     string Tag2, 
                     global::System.Nullable<int> Tag2timeduration, 
-                    string Tag3, 
-                    global::System.Nullable<int> Tag3timeduration, 
                     int Totalhours, 
                     string roomName, 
                     int Original_Id, 
                     string Original_subject, 
                     string Original_subjectcode, 
                     string Original_groupid, 
-                    string Original_subgroupid, 
                     string Original_Tag1, 
                     global::System.Nullable<int> Original_Tag1timeduration, 
                     string Original_Tag2, 
                     global::System.Nullable<int> Original_Tag2timeduration, 
-                    string Original_Tag3, 
-                    global::System.Nullable<int> Original_Tag3timeduration, 
                     int Original_Totalhours, 
                     string Original_roomName, 
                     int Id) {
@@ -16478,138 +16255,96 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(groupid));
             }
-            if ((subgroupid == null)) {
-                throw new global::System.ArgumentNullException("subgroupid");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(subgroupid));
-            }
             if ((Tag1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Tag1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Tag1));
             }
             if ((Tag1timeduration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Tag1timeduration.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Tag1timeduration.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((Tag2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Tag2));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Tag2));
             }
             if ((Tag2timeduration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Tag2timeduration.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Tag2timeduration.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Tag3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Tag3));
-            }
-            if ((Tag3timeduration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Tag3timeduration.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Totalhours));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Totalhours));
             if ((roomName == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("roomName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(roomName));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(roomName));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Id));
             if ((Original_subject == null)) {
                 throw new global::System.ArgumentNullException("Original_subject");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_subject));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_subject));
             }
             if ((Original_subjectcode == null)) {
                 throw new global::System.ArgumentNullException("Original_subjectcode");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_subjectcode));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_subjectcode));
             }
             if ((Original_groupid == null)) {
                 throw new global::System.ArgumentNullException("Original_groupid");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_groupid));
-            }
-            if ((Original_subgroupid == null)) {
-                throw new global::System.ArgumentNullException("Original_subgroupid");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_subgroupid));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_groupid));
             }
             if ((Original_Tag1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Tag1));
+            }
+            if ((Original_Tag1timeduration.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Tag1timeduration.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Tag2 == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Tag1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Tag2));
             }
-            if ((Original_Tag1timeduration.HasValue == true)) {
+            if ((Original_Tag2timeduration.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Tag1timeduration.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Tag2timeduration.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_Tag2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Tag2));
-            }
-            if ((Original_Tag2timeduration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_Tag2timeduration.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Tag3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Tag3));
-            }
-            if ((Original_Tag3timeduration.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Tag3timeduration.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_Totalhours));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Totalhours));
             if ((Original_roomName == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_roomName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_roomName));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_roomName));
             }
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16634,29 +16369,23 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
                     string subject, 
                     string subjectcode, 
                     string groupid, 
-                    string subgroupid, 
                     string Tag1, 
                     global::System.Nullable<int> Tag1timeduration, 
                     string Tag2, 
                     global::System.Nullable<int> Tag2timeduration, 
-                    string Tag3, 
-                    global::System.Nullable<int> Tag3timeduration, 
                     int Totalhours, 
                     string roomName, 
                     int Original_Id, 
                     string Original_subject, 
                     string Original_subjectcode, 
                     string Original_groupid, 
-                    string Original_subgroupid, 
                     string Original_Tag1, 
                     global::System.Nullable<int> Original_Tag1timeduration, 
                     string Original_Tag2, 
                     global::System.Nullable<int> Original_Tag2timeduration, 
-                    string Original_Tag3, 
-                    global::System.Nullable<int> Original_Tag3timeduration, 
                     int Original_Totalhours, 
                     string Original_roomName) {
-            return this.Update(subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Tag2, Tag2timeduration, Tag3, Tag3timeduration, Totalhours, roomName, Original_Id, Original_subject, Original_subjectcode, Original_groupid, Original_subgroupid, Original_Tag1, Original_Tag1timeduration, Original_Tag2, Original_Tag2timeduration, Original_Tag3, Original_Tag3timeduration, Original_Totalhours, Original_roomName, Original_Id);
+            return this.Update(subject, subjectcode, groupid, Tag1, Tag1timeduration, Tag2, Tag2timeduration, Totalhours, roomName, Original_Id, Original_subject, Original_subjectcode, Original_groupid, Original_Tag1, Original_Tag1timeduration, Original_Tag2, Original_Tag2timeduration, Original_Totalhours, Original_roomName, Original_Id);
         }
     }
     
@@ -16813,7 +16542,7 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16830,7 +16559,7 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Group_idDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Group_idDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16843,9 +16572,9 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Group_idDataTable GetData() {
+        public virtual DBNewDataSet.Group_idDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Group_idDataTable dataTable = new FT_FBDataSet.Group_idDataTable();
+            DBNewDataSet.Group_idDataTable dataTable = new DBNewDataSet.Group_idDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -16853,14 +16582,14 @@ SELECT Id, subject, subjectcode, groupid, subgroupid, Tag1, Tag1timeduration, Ta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Group_idDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Group_idDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Group_id");
         }
         
@@ -17131,7 +16860,7 @@ SELECT Group_number_id, Group_number FROM Group_number_table WHERE (Group_number
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17148,7 +16877,7 @@ SELECT Group_number_id, Group_number FROM Group_number_table WHERE (Group_number
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Group_number_tableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Group_number_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17161,9 +16890,9 @@ SELECT Group_number_id, Group_number FROM Group_number_table WHERE (Group_number
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Group_number_tableDataTable GetData() {
+        public virtual DBNewDataSet.Group_number_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Group_number_tableDataTable dataTable = new FT_FBDataSet.Group_number_tableDataTable();
+            DBNewDataSet.Group_number_tableDataTable dataTable = new DBNewDataSet.Group_number_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17171,14 +16900,14 @@ SELECT Group_number_id, Group_number FROM Group_number_table WHERE (Group_number
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Group_number_tableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Group_number_tableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Group_number_table");
         }
         
@@ -17478,7 +17207,7 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17496,7 +17225,7 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.LecturerTblDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.LecturerTblDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -17509,9 +17238,9 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.LecturerTblDataTable GetData() {
+        public virtual DBNewDataSet.LecturerTblDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.LecturerTblDataTable dataTable = new FT_FBDataSet.LecturerTblDataTable();
+            DBNewDataSet.LecturerTblDataTable dataTable = new DBNewDataSet.LecturerTblDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17519,14 +17248,14 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.LecturerTblDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.LecturerTblDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LecturerTbl");
         }
         
@@ -18000,26 +17729,27 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "LecturerWithRoom";
-            tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Lecturer", "Lecturer");
             tableMapping.ColumnMappings.Add("roomType", "roomType");
             tableMapping.ColumnMappings.Add("roomName", "roomName");
+            tableMapping.ColumnMappings.Add("SessionType", "SessionType");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LecturerWithRoom] ([Lecturer], [roomType], [roomName]) VALUES " +
-                "(@Lecturer, @roomType, @roomName)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [LecturerWithRoom] ([Lecturer], [roomType], [roomName], [SessionType]" +
+                ") VALUES (@Lecturer, @roomType, @roomName, @SessionType)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lecturer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SessionType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SessionType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18028,7 +17758,7 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Lecturer, roomType, roomName FROM dbo.LecturerWithRoom";
+            this._commandCollection[0].CommandText = "SELECT Lecturer, roomType, roomName, SessionType FROM LecturerWithRoom";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18036,7 +17766,7 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.LecturerWithRoomDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.LecturerWithRoomDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18049,9 +17779,9 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.LecturerWithRoomDataTable GetData() {
+        public virtual DBNewDataSet.LecturerWithRoomDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.LecturerWithRoomDataTable dataTable = new FT_FBDataSet.LecturerWithRoomDataTable();
+            DBNewDataSet.LecturerWithRoomDataTable dataTable = new DBNewDataSet.LecturerWithRoomDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18059,14 +17789,14 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.LecturerWithRoomDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.LecturerWithRoomDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LecturerWithRoom");
         }
         
@@ -18089,7 +17819,7 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Lecturer, string roomType, string roomName) {
+        public virtual int Insert(string Lecturer, string roomType, string roomName, string SessionType) {
             if ((Lecturer == null)) {
                 throw new global::System.ArgumentNullException("Lecturer");
             }
@@ -18107,6 +17837,12 @@ SELECT Id, Eid, name, faculty, depertment, center, building, level, rank FROM Le
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(roomName));
+            }
+            if ((SessionType == null)) {
+                throw new global::System.ArgumentNullException("SessionType");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SessionType));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -18282,7 +18018,7 @@ SELECT locationID, locationName FROM LocationTimeTable WHERE (locationID = @loca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18299,7 +18035,7 @@ SELECT locationID, locationName FROM LocationTimeTable WHERE (locationID = @loca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.LocationTimeTableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.LocationTimeTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18312,9 +18048,9 @@ SELECT locationID, locationName FROM LocationTimeTable WHERE (locationID = @loca
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.LocationTimeTableDataTable GetData() {
+        public virtual DBNewDataSet.LocationTimeTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.LocationTimeTableDataTable dataTable = new FT_FBDataSet.LocationTimeTableDataTable();
+            DBNewDataSet.LocationTimeTableDataTable dataTable = new DBNewDataSet.LocationTimeTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18322,14 +18058,14 @@ SELECT locationID, locationName FROM LocationTimeTable WHERE (locationID = @loca
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.LocationTimeTableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.LocationTimeTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "LocationTimeTable");
         }
         
@@ -18662,7 +18398,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18680,7 +18416,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Not_Avalibale_tableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Not_Avalibale_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -18693,9 +18429,9 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Not_Avalibale_tableDataTable GetData() {
+        public virtual DBNewDataSet.Not_Avalibale_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Not_Avalibale_tableDataTable dataTable = new FT_FBDataSet.Not_Avalibale_tableDataTable();
+            DBNewDataSet.Not_Avalibale_tableDataTable dataTable = new DBNewDataSet.Not_Avalibale_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -18703,14 +18439,14 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Not_Avalibale_tableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Not_Avalibale_tableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Not_Avalibale_table");
         }
         
@@ -19178,7 +18914,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19195,7 +18931,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.NotAvailableRoomTimesDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.NotAvailableRoomTimesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19208,9 +18944,9 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.NotAvailableRoomTimesDataTable GetData() {
+        public virtual DBNewDataSet.NotAvailableRoomTimesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.NotAvailableRoomTimesDataTable dataTable = new FT_FBDataSet.NotAvailableRoomTimesDataTable();
+            DBNewDataSet.NotAvailableRoomTimesDataTable dataTable = new DBNewDataSet.NotAvailableRoomTimesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19218,14 +18954,14 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.NotAvailableRoomTimesDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.NotAvailableRoomTimesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "NotAvailableRoomTimes");
         }
         
@@ -19444,7 +19180,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19461,7 +19197,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.NumberOfWorkingDaysDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.NumberOfWorkingDaysDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19474,9 +19210,9 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.NumberOfWorkingDaysDataTable GetData() {
+        public virtual DBNewDataSet.NumberOfWorkingDaysDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.NumberOfWorkingDaysDataTable dataTable = new FT_FBDataSet.NumberOfWorkingDaysDataTable();
+            DBNewDataSet.NumberOfWorkingDaysDataTable dataTable = new DBNewDataSet.NumberOfWorkingDaysDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19484,14 +19220,14 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.NumberOfWorkingDaysDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.NumberOfWorkingDaysDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "NumberOfWorkingDays");
         }
         
@@ -19732,7 +19468,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19749,7 +19485,7 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.NumOfWorkingDaysDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.NumOfWorkingDaysDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -19762,9 +19498,9 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.NumOfWorkingDaysDataTable GetData() {
+        public virtual DBNewDataSet.NumOfWorkingDaysDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.NumOfWorkingDaysDataTable dataTable = new FT_FBDataSet.NumOfWorkingDaysDataTable();
+            DBNewDataSet.NumOfWorkingDaysDataTable dataTable = new DBNewDataSet.NumOfWorkingDaysDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -19772,14 +19508,14 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.NumOfWorkingDaysDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.NumOfWorkingDaysDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "NumOfWorkingDays");
         }
         
@@ -19948,81 +19684,72 @@ SELECT Id, Type, Type_name, Subject_code, Tag, Day, Time_From, Time_To, Avaliabi
             tableMapping.ColumnMappings.Add("Start_Time", "Start_Time");
             tableMapping.ColumnMappings.Add("Day", "Day");
             tableMapping.ColumnMappings.Add("Duration", "Duration");
-            tableMapping.ColumnMappings.Add("Year", "Year");
             tableMapping.ColumnMappings.Add("Subject", "Subject");
             tableMapping.ColumnMappings.Add("Subject_code", "Subject_code");
             tableMapping.ColumnMappings.Add("Type", "Type");
             tableMapping.ColumnMappings.Add("Group_Id", "Group_Id");
             tableMapping.ColumnMappings.Add("Sub_Group_Id", "Sub_Group_Id");
             tableMapping.ColumnMappings.Add("Lecturer", "Lecturer");
-            tableMapping.ColumnMappings.Add("Category", "Category");
+            tableMapping.ColumnMappings.Add("roomName", "roomName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Parallel_tbl] WHERE (([Id] = @Original_Id) AND ([Start_Time] = @Original_Start_Time) AND ([Day] = @Original_Day) AND ([Duration] = @Original_Duration) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)) AND ([Subject] = @Original_Subject) AND ([Subject_code] = @Original_Subject_code) AND ([Type] = @Original_Type) AND ([Group_Id] = @Original_Group_Id) AND ((@IsNull_Sub_Group_Id = 1 AND [Sub_Group_Id] IS NULL) OR ([Sub_Group_Id] = @Original_Sub_Group_Id)) AND ([Lecturer] = @Original_Lecturer) AND ((@IsNull_Category = 1 AND [Category] IS NULL) OR ([Category] = @Original_Category)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Parallel_tbl] WHERE (([Id] = @Original_Id) AND ([Start_Time] = @Original_Start_Time) AND ([Day] = @Original_Day) AND ([Duration] = @Original_Duration) AND ([Subject] = @Original_Subject) AND ([Subject_code] = @Original_Subject_code) AND ([Type] = @Original_Type) AND ([Group_Id] = @Original_Group_Id) AND ([Sub_Group_Id] = @Original_Sub_Group_Id) AND ([Lecturer] = @Original_Lecturer) AND ((@IsNull_roomName = 1 AND [roomName] IS NULL) OR ([roomName] = @Original_roomName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start_Time", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Day", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Year", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sub_Group_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Group_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sub_Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Group_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lecturer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_roomName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Parallel_tbl] ([Start_Time], [Day], [Duration], [Year], [Subject], [Subject_code], [Type], [Group_Id], [Sub_Group_Id], [Lecturer], [Category]) VALUES (@Start_Time, @Day, @Duration, @Year, @Subject, @Subject_code, @Type, @Group_Id, @Sub_Group_Id, @Lecturer, @Category);
-SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_Id, Sub_Group_Id, Lecturer, Category FROM Parallel_tbl WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Parallel_tbl] ([Start_Time], [Day], [Duration], [Subject], [Subject_code], [Type], [Group_Id], [Sub_Group_Id], [Lecturer], [roomName]) VALUES (@Start_Time, @Day, @Duration, @Subject, @Subject_code, @Type, @Group_Id, @Sub_Group_Id, @Lecturer, @roomName);
+SELECT Id, Start_Time, Day, Duration, Subject, Subject_code, Type, Group_Id, Sub_Group_Id, Lecturer, roomName FROM Parallel_tbl WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start_Time", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sub_Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Group_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lecturer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Parallel_tbl] SET [Start_Time] = @Start_Time, [Day] = @Day, [Duration] = @Duration, [Year] = @Year, [Subject] = @Subject, [Subject_code] = @Subject_code, [Type] = @Type, [Group_Id] = @Group_Id, [Sub_Group_Id] = @Sub_Group_Id, [Lecturer] = @Lecturer, [Category] = @Category WHERE (([Id] = @Original_Id) AND ([Start_Time] = @Original_Start_Time) AND ([Day] = @Original_Day) AND ([Duration] = @Original_Duration) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)) AND ([Subject] = @Original_Subject) AND ([Subject_code] = @Original_Subject_code) AND ([Type] = @Original_Type) AND ([Group_Id] = @Original_Group_Id) AND ((@IsNull_Sub_Group_Id = 1 AND [Sub_Group_Id] IS NULL) OR ([Sub_Group_Id] = @Original_Sub_Group_Id)) AND ([Lecturer] = @Original_Lecturer) AND ((@IsNull_Category = 1 AND [Category] IS NULL) OR ([Category] = @Original_Category)));
-SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_Id, Sub_Group_Id, Lecturer, Category FROM Parallel_tbl WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Parallel_tbl] SET [Start_Time] = @Start_Time, [Day] = @Day, [Duration] = @Duration, [Subject] = @Subject, [Subject_code] = @Subject_code, [Type] = @Type, [Group_Id] = @Group_Id, [Sub_Group_Id] = @Sub_Group_Id, [Lecturer] = @Lecturer, [roomName] = @roomName WHERE (([Id] = @Original_Id) AND ([Start_Time] = @Original_Start_Time) AND ([Day] = @Original_Day) AND ([Duration] = @Original_Duration) AND ([Subject] = @Original_Subject) AND ([Subject_code] = @Original_Subject_code) AND ([Type] = @Original_Type) AND ([Group_Id] = @Original_Group_Id) AND ([Sub_Group_Id] = @Original_Sub_Group_Id) AND ([Lecturer] = @Original_Lecturer) AND ((@IsNull_roomName = 1 AND [roomName] IS NULL) OR ([roomName] = @Original_roomName)));
+SELECT Id, Start_Time, Day, Duration, Subject, Subject_code, Type, Group_Id, Sub_Group_Id, Lecturer, roomName FROM Parallel_tbl WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start_Time", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sub_Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Group_Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lecturer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start_Time", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Day", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Duration", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Duration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Year", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject_code", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sub_Group_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Group_Id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sub_Group_Id", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sub_Group_Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lecturer", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_roomName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roomName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -20030,7 +19757,7 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20039,8 +19766,8 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_Id" +
-                ", Sub_Group_Id, Lecturer, Category FROM dbo.Parallel_tbl";
+            this._commandCollection[0].CommandText = "SELECT Id, Start_Time, Day, Duration, Subject, Subject_code, Type, Group_Id, Sub_" +
+                "Group_Id, Lecturer, roomName FROM dbo.Parallel_tbl";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20048,7 +19775,7 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Parallel_tblDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Parallel_tblDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20061,9 +19788,9 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Parallel_tblDataTable GetData() {
+        public virtual DBNewDataSet.Parallel_tblDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Parallel_tblDataTable dataTable = new FT_FBDataSet.Parallel_tblDataTable();
+            DBNewDataSet.Parallel_tblDataTable dataTable = new DBNewDataSet.Parallel_tblDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20071,14 +19798,14 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Parallel_tblDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Parallel_tblDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Parallel_tbl");
         }
         
@@ -20101,7 +19828,7 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Start_Time, string Original_Day, int Original_Duration, string Original_Year, string Original_Subject, string Original_Subject_code, string Original_Type, string Original_Group_Id, string Original_Sub_Group_Id, string Original_Lecturer, string Original_Category) {
+        public virtual int Delete(int Original_Id, string Original_Start_Time, string Original_Day, int Original_Duration, string Original_Subject, string Original_Subject_code, string Original_Type, string Original_Group_Id, string Original_Sub_Group_Id, string Original_Lecturer, string Original_roomName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Start_Time == null)) {
                 throw new global::System.ArgumentNullException("Original_Start_Time");
@@ -20116,59 +19843,49 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Day));
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Duration));
-            if ((Original_Year == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Year));
-            }
             if ((Original_Subject == null)) {
                 throw new global::System.ArgumentNullException("Original_Subject");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Subject));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Subject));
             }
             if ((Original_Subject_code == null)) {
                 throw new global::System.ArgumentNullException("Original_Subject_code");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Subject_code));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Subject_code));
             }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Type));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Type));
             }
             if ((Original_Group_Id == null)) {
                 throw new global::System.ArgumentNullException("Original_Group_Id");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Group_Id));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Group_Id));
             }
             if ((Original_Sub_Group_Id == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Sub_Group_Id");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_Sub_Group_Id));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Sub_Group_Id));
             }
             if ((Original_Lecturer == null)) {
                 throw new global::System.ArgumentNullException("Original_Lecturer");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Lecturer));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Lecturer));
             }
-            if ((Original_Category == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            if ((Original_roomName == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Category));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_roomName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -20190,7 +19907,7 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Start_Time, string Day, int Duration, string Year, string Subject, string Subject_code, string Type, string Group_Id, string Sub_Group_Id, string Lecturer, string Category) {
+        public virtual int Insert(string Start_Time, string Day, int Duration, string Subject, string Subject_code, string Type, string Group_Id, string Sub_Group_Id, string Lecturer, string roomName) {
             if ((Start_Time == null)) {
                 throw new global::System.ArgumentNullException("Start_Time");
             }
@@ -20204,53 +19921,47 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Day));
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Duration));
-            if ((Year == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Year));
-            }
             if ((Subject == null)) {
                 throw new global::System.ArgumentNullException("Subject");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Subject));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Subject));
             }
             if ((Subject_code == null)) {
                 throw new global::System.ArgumentNullException("Subject_code");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Subject_code));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Subject_code));
             }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Type));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Type));
             }
             if ((Group_Id == null)) {
                 throw new global::System.ArgumentNullException("Group_Id");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Group_Id));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Group_Id));
             }
             if ((Sub_Group_Id == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Sub_Group_Id");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Sub_Group_Id));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Sub_Group_Id));
             }
             if ((Lecturer == null)) {
                 throw new global::System.ArgumentNullException("Lecturer");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Lecturer));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Lecturer));
             }
-            if ((Category == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((roomName == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Category));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(roomName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -20276,26 +19987,24 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
                     string Start_Time, 
                     string Day, 
                     int Duration, 
-                    string Year, 
                     string Subject, 
                     string Subject_code, 
                     string Type, 
                     string Group_Id, 
                     string Sub_Group_Id, 
                     string Lecturer, 
-                    string Category, 
+                    string roomName, 
                     int Original_Id, 
                     string Original_Start_Time, 
                     string Original_Day, 
                     int Original_Duration, 
-                    string Original_Year, 
                     string Original_Subject, 
                     string Original_Subject_code, 
                     string Original_Type, 
                     string Original_Group_Id, 
                     string Original_Sub_Group_Id, 
                     string Original_Lecturer, 
-                    string Original_Category, 
+                    string Original_roomName, 
                     int Id) {
             if ((Start_Time == null)) {
                 throw new global::System.ArgumentNullException("Start_Time");
@@ -20310,123 +20019,107 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Day));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Duration));
-            if ((Year == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Year));
-            }
             if ((Subject == null)) {
                 throw new global::System.ArgumentNullException("Subject");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Subject));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Subject));
             }
             if ((Subject_code == null)) {
                 throw new global::System.ArgumentNullException("Subject_code");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Subject_code));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Subject_code));
             }
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Type));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Type));
             }
             if ((Group_Id == null)) {
                 throw new global::System.ArgumentNullException("Group_Id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Group_Id));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Group_Id));
             }
             if ((Sub_Group_Id == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Sub_Group_Id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Sub_Group_Id));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Sub_Group_Id));
             }
             if ((Lecturer == null)) {
                 throw new global::System.ArgumentNullException("Lecturer");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Lecturer));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Lecturer));
             }
-            if ((Category == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((roomName == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Category));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(roomName));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id));
             if ((Original_Start_Time == null)) {
                 throw new global::System.ArgumentNullException("Original_Start_Time");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Start_Time));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Start_Time));
             }
             if ((Original_Day == null)) {
                 throw new global::System.ArgumentNullException("Original_Day");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Day));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Day));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Duration));
-            if ((Original_Year == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Year));
-            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Duration));
             if ((Original_Subject == null)) {
                 throw new global::System.ArgumentNullException("Original_Subject");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Subject));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Subject));
             }
             if ((Original_Subject_code == null)) {
                 throw new global::System.ArgumentNullException("Original_Subject_code");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Subject_code));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Subject_code));
             }
             if ((Original_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Type));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Type));
             }
             if ((Original_Group_Id == null)) {
                 throw new global::System.ArgumentNullException("Original_Group_Id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Group_Id));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Group_Id));
             }
             if ((Original_Sub_Group_Id == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_Sub_Group_Id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Sub_Group_Id));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Sub_Group_Id));
             }
             if ((Original_Lecturer == null)) {
                 throw new global::System.ArgumentNullException("Original_Lecturer");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Lecturer));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Lecturer));
             }
-            if ((Original_Category == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            if ((Original_roomName == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Category));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_roomName));
             }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20451,27 +20144,25 @@ SELECT Id, Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_I
                     string Start_Time, 
                     string Day, 
                     int Duration, 
-                    string Year, 
                     string Subject, 
                     string Subject_code, 
                     string Type, 
                     string Group_Id, 
                     string Sub_Group_Id, 
                     string Lecturer, 
-                    string Category, 
+                    string roomName, 
                     int Original_Id, 
                     string Original_Start_Time, 
                     string Original_Day, 
                     int Original_Duration, 
-                    string Original_Year, 
                     string Original_Subject, 
                     string Original_Subject_code, 
                     string Original_Type, 
                     string Original_Group_Id, 
                     string Original_Sub_Group_Id, 
                     string Original_Lecturer, 
-                    string Original_Category) {
-            return this.Update(Start_Time, Day, Duration, Year, Subject, Subject_code, Type, Group_Id, Sub_Group_Id, Lecturer, Category, Original_Id, Original_Start_Time, Original_Day, Original_Duration, Original_Year, Original_Subject, Original_Subject_code, Original_Type, Original_Group_Id, Original_Sub_Group_Id, Original_Lecturer, Original_Category, Original_Id);
+                    string Original_roomName) {
+            return this.Update(Start_Time, Day, Duration, Subject, Subject_code, Type, Group_Id, Sub_Group_Id, Lecturer, roomName, Original_Id, Original_Start_Time, Original_Day, Original_Duration, Original_Subject, Original_Subject_code, Original_Type, Original_Group_Id, Original_Sub_Group_Id, Original_Lecturer, Original_roomName, Original_Id);
         }
     }
     
@@ -20628,7 +20319,7 @@ SELECT Programme_Id, Programme_name FROM Programme_table WHERE (Programme_Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20645,7 +20336,7 @@ SELECT Programme_Id, Programme_name FROM Programme_table WHERE (Programme_Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Programme_tableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Programme_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20658,9 +20349,9 @@ SELECT Programme_Id, Programme_name FROM Programme_table WHERE (Programme_Id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Programme_tableDataTable GetData() {
+        public virtual DBNewDataSet.Programme_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Programme_tableDataTable dataTable = new FT_FBDataSet.Programme_tableDataTable();
+            DBNewDataSet.Programme_tableDataTable dataTable = new DBNewDataSet.Programme_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -20668,14 +20359,14 @@ SELECT Programme_Id, Programme_name FROM Programme_table WHERE (Programme_Id = @
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Programme_tableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Programme_tableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Programme_table");
         }
         
@@ -20962,7 +20653,7 @@ SELECT buildingName, roomID, roomName, roomCapacity, roomType FROM RoomTable WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20979,7 +20670,7 @@ SELECT buildingName, roomID, roomName, roomCapacity, roomType FROM RoomTable WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.RoomTableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.RoomTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20992,9 +20683,9 @@ SELECT buildingName, roomID, roomName, roomCapacity, roomType FROM RoomTable WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.RoomTableDataTable GetData() {
+        public virtual DBNewDataSet.RoomTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.RoomTableDataTable dataTable = new FT_FBDataSet.RoomTableDataTable();
+            DBNewDataSet.RoomTableDataTable dataTable = new DBNewDataSet.RoomTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21002,14 +20693,14 @@ SELECT buildingName, roomID, roomName, roomCapacity, roomType FROM RoomTable WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.RoomTableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.RoomTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "RoomTable");
         }
         
@@ -21415,7 +21106,7 @@ SELECT Id, Subject, subjectCode, type, GroupID, subgroup, studentcount, typedura
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21433,7 +21124,7 @@ SELECT Id, Subject, subjectCode, type, GroupID, subgroup, studentcount, typedura
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.SessionDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.SessionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21446,9 +21137,9 @@ SELECT Id, Subject, subjectCode, type, GroupID, subgroup, studentcount, typedura
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.SessionDataTable GetData() {
+        public virtual DBNewDataSet.SessionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.SessionDataTable dataTable = new FT_FBDataSet.SessionDataTable();
+            DBNewDataSet.SessionDataTable dataTable = new DBNewDataSet.SessionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21456,14 +21147,14 @@ SELECT Id, Subject, subjectCode, type, GroupID, subgroup, studentcount, typedura
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.SessionDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.SessionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Session");
         }
         
@@ -21952,7 +21643,7 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21969,7 +21660,7 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.sessionLecturerDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.sessionLecturerDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -21982,9 +21673,9 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.sessionLecturerDataTable GetData() {
+        public virtual DBNewDataSet.sessionLecturerDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.sessionLecturerDataTable dataTable = new FT_FBDataSet.sessionLecturerDataTable();
+            DBNewDataSet.sessionLecturerDataTable dataTable = new DBNewDataSet.sessionLecturerDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -21992,14 +21683,14 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.sessionLecturerDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.sessionLecturerDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "sessionLecturer");
         }
         
@@ -22288,7 +21979,7 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22305,7 +21996,7 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.start_timeDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.start_timeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22318,9 +22009,9 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.start_timeDataTable GetData() {
+        public virtual DBNewDataSet.start_timeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.start_timeDataTable dataTable = new FT_FBDataSet.start_timeDataTable();
+            DBNewDataSet.start_timeDataTable dataTable = new DBNewDataSet.start_timeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22328,14 +22019,14 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.start_timeDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.start_timeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "start_time");
         }
         
@@ -22518,7 +22209,7 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22535,7 +22226,7 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.start_timeWEDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.start_timeWEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22548,9 +22239,9 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.start_timeWEDataTable GetData() {
+        public virtual DBNewDataSet.start_timeWEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.start_timeWEDataTable dataTable = new FT_FBDataSet.start_timeWEDataTable();
+            DBNewDataSet.start_timeWEDataTable dataTable = new DBNewDataSet.start_timeWEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22558,14 +22249,14 @@ SELECT Id, subjectCode, Lecturer FROM sessionLecturer WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.start_timeWEDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.start_timeWEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "start_timeWE");
         }
         
@@ -22762,7 +22453,7 @@ SELECT Subgroup_id_key, Subgroup_id_value FROM Sub_group_id_table WHERE (Subgrou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22779,7 +22470,7 @@ SELECT Subgroup_id_key, Subgroup_id_value FROM Sub_group_id_table WHERE (Subgrou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Sub_group_id_tableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Sub_group_id_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -22792,9 +22483,9 @@ SELECT Subgroup_id_key, Subgroup_id_value FROM Sub_group_id_table WHERE (Subgrou
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Sub_group_id_tableDataTable GetData() {
+        public virtual DBNewDataSet.Sub_group_id_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Sub_group_id_tableDataTable dataTable = new FT_FBDataSet.Sub_group_id_tableDataTable();
+            DBNewDataSet.Sub_group_id_tableDataTable dataTable = new DBNewDataSet.Sub_group_id_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -22802,14 +22493,14 @@ SELECT Subgroup_id_key, Subgroup_id_value FROM Sub_group_id_table WHERE (Subgrou
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Sub_group_id_tableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Sub_group_id_tableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Sub_group_id_table");
         }
         
@@ -23080,7 +22771,7 @@ SELECT Sub_group_id, Sub_group_number FROM Sub_group_numbers WHERE (Sub_group_id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23097,7 +22788,7 @@ SELECT Sub_group_id, Sub_group_number FROM Sub_group_numbers WHERE (Sub_group_id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Sub_group_numbersDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Sub_group_numbersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -23110,9 +22801,9 @@ SELECT Sub_group_id, Sub_group_number FROM Sub_group_numbers WHERE (Sub_group_id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Sub_group_numbersDataTable GetData() {
+        public virtual DBNewDataSet.Sub_group_numbersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Sub_group_numbersDataTable dataTable = new FT_FBDataSet.Sub_group_numbersDataTable();
+            DBNewDataSet.Sub_group_numbersDataTable dataTable = new DBNewDataSet.Sub_group_numbersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23120,14 +22811,14 @@ SELECT Sub_group_id, Sub_group_number FROM Sub_group_numbers WHERE (Sub_group_id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Sub_group_numbersDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Sub_group_numbersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Sub_group_numbers");
         }
         
@@ -23434,7 +23125,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23452,7 +23143,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.SubjectTableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.SubjectTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -23465,9 +23156,9 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.SubjectTableDataTable GetData() {
+        public virtual DBNewDataSet.SubjectTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.SubjectTableDataTable dataTable = new FT_FBDataSet.SubjectTableDataTable();
+            DBNewDataSet.SubjectTableDataTable dataTable = new DBNewDataSet.SubjectTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23475,14 +23166,14 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.SubjectTableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.SubjectTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "SubjectTable");
         }
         
@@ -24020,7 +23711,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24037,7 +23728,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Tag_tableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Tag_tableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24050,9 +23741,9 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Tag_tableDataTable GetData() {
+        public virtual DBNewDataSet.Tag_tableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Tag_tableDataTable dataTable = new FT_FBDataSet.Tag_tableDataTable();
+            DBNewDataSet.Tag_tableDataTable dataTable = new DBNewDataSet.Tag_tableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24060,14 +23751,14 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Tag_tableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Tag_tableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Tag_table");
         }
         
@@ -24321,7 +24012,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24338,7 +24029,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.time_sloat_typeDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.time_sloat_typeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24351,9 +24042,9 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.time_sloat_typeDataTable GetData() {
+        public virtual DBNewDataSet.time_sloat_typeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.time_sloat_typeDataTable dataTable = new FT_FBDataSet.time_sloat_typeDataTable();
+            DBNewDataSet.time_sloat_typeDataTable dataTable = new DBNewDataSet.time_sloat_typeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24361,14 +24052,14 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.time_sloat_typeDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.time_sloat_typeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "time_sloat_type");
         }
         
@@ -24552,7 +24243,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24569,7 +24260,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.time_sloat_typeWEDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.time_sloat_typeWEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24582,9 +24273,9 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.time_sloat_typeWEDataTable GetData() {
+        public virtual DBNewDataSet.time_sloat_typeWEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.time_sloat_typeWEDataTable dataTable = new FT_FBDataSet.time_sloat_typeWEDataTable();
+            DBNewDataSet.time_sloat_typeWEDataTable dataTable = new DBNewDataSet.time_sloat_typeWEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24592,14 +24283,14 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.time_sloat_typeWEDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.time_sloat_typeWEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "time_sloat_typeWE");
         }
         
@@ -24781,7 +24472,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24798,7 +24489,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.time_slotsDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.time_slotsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24811,9 +24502,9 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.time_slotsDataTable GetData() {
+        public virtual DBNewDataSet.time_slotsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.time_slotsDataTable dataTable = new FT_FBDataSet.time_slotsDataTable();
+            DBNewDataSet.time_slotsDataTable dataTable = new DBNewDataSet.time_slotsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24821,14 +24512,14 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.time_slotsDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.time_slotsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "time_slots");
         }
         
@@ -25004,7 +24695,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25021,7 +24712,7 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.time_slotsWEDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.time_slotsWEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25034,9 +24725,9 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.time_slotsWEDataTable GetData() {
+        public virtual DBNewDataSet.time_slotsWEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.time_slotsWEDataTable dataTable = new FT_FBDataSet.time_slotsWEDataTable();
+            DBNewDataSet.time_slotsWEDataTable dataTable = new DBNewDataSet.time_slotsWEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25044,14 +24735,14 @@ SELECT Id, offSem, offYear, SubName, SubCode, LecHrs, TuteHrs, LabHrs, EvalHrs, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.time_slotsWEDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.time_slotsWEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "time_slotsWE");
         }
         
@@ -25257,7 +24948,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25274,7 +24965,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.TimeSlotsDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.TimeSlotsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25287,9 +24978,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.TimeSlotsDataTable GetData() {
+        public virtual DBNewDataSet.TimeSlotsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.TimeSlotsDataTable dataTable = new FT_FBDataSet.TimeSlotsDataTable();
+            DBNewDataSet.TimeSlotsDataTable dataTable = new DBNewDataSet.TimeSlotsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25297,14 +24988,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.TimeSlotsDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.TimeSlotsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "TimeSlots");
         }
         
@@ -25576,7 +25267,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25594,7 +25285,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.WeekdayTimeTableDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.WeekdayTimeTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25607,9 +25298,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.WeekdayTimeTableDataTable GetData() {
+        public virtual DBNewDataSet.WeekdayTimeTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.WeekdayTimeTableDataTable dataTable = new FT_FBDataSet.WeekdayTimeTableDataTable();
+            DBNewDataSet.WeekdayTimeTableDataTable dataTable = new DBNewDataSet.WeekdayTimeTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25617,14 +25308,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.WeekdayTimeTableDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.WeekdayTimeTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "WeekdayTimeTable");
         }
         
@@ -25851,7 +25542,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25869,7 +25560,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.Working_daysDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.Working_daysDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -25882,9 +25573,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.Working_daysDataTable GetData() {
+        public virtual DBNewDataSet.Working_daysDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.Working_daysDataTable dataTable = new FT_FBDataSet.Working_daysDataTable();
+            DBNewDataSet.Working_daysDataTable dataTable = new DBNewDataSet.Working_daysDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -25892,14 +25583,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.Working_daysDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.Working_daysDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Working_days");
         }
         
@@ -26122,7 +25813,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26139,7 +25830,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.working_timeDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.working_timeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26152,9 +25843,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.working_timeDataTable GetData() {
+        public virtual DBNewDataSet.working_timeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.working_timeDataTable dataTable = new FT_FBDataSet.working_timeDataTable();
+            DBNewDataSet.working_timeDataTable dataTable = new DBNewDataSet.working_timeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26162,14 +25853,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.working_timeDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.working_timeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "working_time");
         }
         
@@ -26352,7 +26043,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26369,7 +26060,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.working_timeWEDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.working_timeWEDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26382,9 +26073,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.working_timeWEDataTable GetData() {
+        public virtual DBNewDataSet.working_timeWEDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.working_timeWEDataTable dataTable = new FT_FBDataSet.working_timeWEDataTable();
+            DBNewDataSet.working_timeWEDataTable dataTable = new DBNewDataSet.working_timeWEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26392,14 +26083,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.working_timeWEDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.working_timeWEDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "working_timeWE");
         }
         
@@ -26601,7 +26292,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26618,7 +26309,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.WorkingDaysDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.WorkingDaysDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26631,9 +26322,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.WorkingDaysDataTable GetData() {
+        public virtual DBNewDataSet.WorkingDaysDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.WorkingDaysDataTable dataTable = new FT_FBDataSet.WorkingDaysDataTable();
+            DBNewDataSet.WorkingDaysDataTable dataTable = new DBNewDataSet.WorkingDaysDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26641,14 +26332,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.WorkingDaysDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.WorkingDaysDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "WorkingDays");
         }
         
@@ -26948,7 +26639,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.FT_FBConnectionString;
+            this._connection.ConnectionString = global::TimeTableManagement.Properties.Settings.Default.DBNewConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26965,7 +26656,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FT_FBDataSet.WorkingTimeDataTable dataTable) {
+        public virtual int Fill(DBNewDataSet.WorkingTimeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -26978,9 +26669,9 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FT_FBDataSet.WorkingTimeDataTable GetData() {
+        public virtual DBNewDataSet.WorkingTimeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FT_FBDataSet.WorkingTimeDataTable dataTable = new FT_FBDataSet.WorkingTimeDataTable();
+            DBNewDataSet.WorkingTimeDataTable dataTable = new DBNewDataSet.WorkingTimeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26988,14 +26679,14 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet.WorkingTimeDataTable dataTable) {
+        public virtual int Update(DBNewDataSet.WorkingTimeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FT_FBDataSet dataSet) {
+        public virtual int Update(DBNewDataSet dataSet) {
             return this.Adapter.Update(dataSet, "WorkingTime");
         }
         
@@ -27944,7 +27635,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(FT_FBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DBNewDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._academicyrsemtableTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Academicyrsemtable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -28251,7 +27942,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(FT_FBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DBNewDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._academicyrsemtableTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Academicyrsemtable.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -28525,7 +28216,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(FT_FBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DBNewDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._workingTimeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.WorkingTime.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -28823,7 +28514,7 @@ SELECT id, Type, startTime, endTime FROM TimeSlots WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(FT_FBDataSet dataSet) {
+        public virtual int UpdateAll(DBNewDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
