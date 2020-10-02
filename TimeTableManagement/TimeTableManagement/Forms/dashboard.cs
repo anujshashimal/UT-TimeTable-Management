@@ -23,6 +23,9 @@ namespace TimeTableManagement.Forms
           
         }
 
+        private void dashboard_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
